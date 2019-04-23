@@ -9,7 +9,7 @@ export class Carousel extends React.Component {
     }
 
     render(){
-        const carousel = this.props.data.results.map((item, index) => {
+        const carousel = this.props.movies.map((item, index) => {
             return (
                 <CarouselItem data={item} index={index} />
             );

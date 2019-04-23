@@ -1,4 +1,3 @@
-
 export const FETCH_UPCOMING_SUCCESS = 'FETCH_UPCOMING_SUCCESS';
 export const fetchUpcomingSuccess = upcoming => ({
     type: FETCH_UPCOMING_SUCCESS,
@@ -15,7 +14,7 @@ export const fetchUpcoming = () => dispatch => {
             return res.json()
         })
         .then(upcoming => {
-            dispatch(fetchUpcomingSuccess(upcoming))
+            dispatch(fetchUpcomingSuccess(upcoming.results));
         })
         .catch(err => console.log(err));
 }
