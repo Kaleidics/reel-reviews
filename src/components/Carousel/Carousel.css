@@ -1,0 +1,16 @@
+.outer-carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-carousel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    text-align: center;
+}
