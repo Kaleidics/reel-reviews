@@ -1,11 +1,11 @@
 export const FETCH_PLAYING_SUCCESS = 'FETCH_PLAYING_SUCCESS';
-export const fetchPlayingSuccess = upcoming => ({
+export const fetchPlayingSuccess = playing => ({
     type: FETCH_PLAYING_SUCCESS,
-    upcoming
+    playing
 })
 
 export const fetchPlaying = () => dispatch => {
-    const url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
     return fetch(url)
         .then(res => {
             if (!res.ok) {
