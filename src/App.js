@@ -1,15 +1,33 @@
 import React from 'react';
-import Carousel from './components/Carousel/Carousel';
-import { fetchUpcoming, fetchTop } from './actions';
+import {Carousel} from './components/Carousel/Carousel';
+import { connect } from 'react-redux';
+import { fetchPopular, fetchUpcoming, fetchTop } from './actions';
 
-function App() {
-  return (
-    <div>
-      <Carousel title={"Upcoming"} api={fetchUpcoming} />
-      <Carousel title={"Top Rated"} api={fetchTop} />
-    </div>
-   
-  );
+export class App extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchPopular());
+    this.props.dispatch(fetchUpcoming());
+    this.props.dispatch(fetchTop());
+  }
+
+  render(){
+    return (
+      <div>
+        <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
+        <Carousel title={"Popular"} movies={this.props.moviesPopular} />
+        <Carousel title={"Top Rated"} movies={this.props.moviesTop} />
+      </div>
+     
+    );
+  }
+  
 }
 
-export default App;
+const mapStateToProps = state => ({
+  moviesUpcoming: state.moviesUpcoming,
+  moviesPopular: state.moviesPopular,
+  moviesTop: state.moviesTop
+});
+
+export default connect(mapStateToProps)(App);
+

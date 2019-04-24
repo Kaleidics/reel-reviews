@@ -1,12 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import CarouselItem from '../CarouselItem/CarouselItem';
 import './Carousel.css'
 
 export class Carousel extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(this.props.api());
-    }
 
     render(){
         const carousel = this.props.movies.map((item, index) => {
@@ -26,8 +22,4 @@ export class Carousel extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    movies: state.movies
-});
 
-export default connect(mapStateToProps)(Carousel);
