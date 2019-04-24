@@ -1,6 +1,12 @@
 .movieContainer {
     width: 8%;
     margin: 5px;
+    cursor: pointer;
+}
+
+.movieContainer:hover {
+    position: relative;
+    top: -5px;
 }
 
 .moviePoster {
