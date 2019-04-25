@@ -101,8 +101,9 @@
   min-height: 100%;
   overflow: hidden;
   animation: fadeOut;
-  animation-duration: 4s;
-  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 }
 .loader {
   background: #222428;
@@ -185,5 +186,6 @@ html body h4 {
 
 @keyframes fadeOut {
    0% {opacity: 1;}
+   50% {opacity: 1}
    100% {opacity: 0;} 
 } 

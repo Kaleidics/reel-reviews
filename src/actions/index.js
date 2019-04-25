@@ -97,7 +97,7 @@ export const fetchTop = () => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(3000)
+            sleeper(3100)
         )
         .then(top => {
             dispatch(loaderDecrement());
