@@ -1,7 +1,9 @@
 import React from 'react';
 import {Carousel} from './components/Carousel/Carousel';
+import Loader from './components/Loader/Loader';
 import { connect } from 'react-redux';
 import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from './actions';
+import './App.css';
 
 export class App extends React.Component {
   componentDidMount() {
@@ -11,9 +13,16 @@ export class App extends React.Component {
     this.props.dispatch(fetchTop());
   }
 
+  
   render(){
+    let loader;
+    if (this.props.isLoading > 0) {
+      loader = <Loader />
+    }
+
     return (
       <div>
+        {loader}
         <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
         <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
         <Carousel title={"Popular"} movies={this.props.moviesPopular} />
@@ -25,6 +34,7 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  isLoading: state.isLoading,
   moviesPlaying: state.moviesPlaying,
   moviesUpcoming: state.moviesUpcoming,
   moviesPopular: state.moviesPopular,
