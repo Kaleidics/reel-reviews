@@ -1,13 +1,26 @@
-import { FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS } from "../actions";
+import { LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS } from "../actions";
 
 const initialState = {
+    isLoading: 0,
     moviesPlaying: [],
     moviesPopular: [],
     moviesUpcoming: [],
     moviesTop: []
 };
 
-export const upcomingReducer = (state=initialState, action) => {
+export const Reducer = (state=initialState, action) => {
+
+    if (action.type === LOADER_INCREMENT ) {
+        return Object.assign({}, state, {
+            isLoading: state.isLoading + 1
+        });
+    }
+
+    if (action.type === LOADER_DECREMENT) {
+        return Object.assign({}, state, {
+            isLoading: state.isLoading -1
+        });
+    }
 
     if (action.type === FETCH_PLAYING_SUCCESS) {
         return Object.assign({}, state, {
