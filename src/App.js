@@ -1,5 +1,6 @@
 import React from 'react';
 import {Carousel} from './components/Carousel/Carousel';
+import MovieBoard from './components/MovieBoard/MovieBoard';
 import Loader from './components/Loader/Loader';
 import { connect } from 'react-redux';
 import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from './actions';
@@ -23,6 +24,7 @@ export class App extends React.Component {
     return (
       <div>
         {loader}
+        <MovieBoard movies={this.props.moviesPopular} />
         <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
         <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
         <Carousel title={"Popular"} movies={this.props.moviesPopular} />
