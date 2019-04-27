@@ -25,12 +25,13 @@ export class App extends React.Component {
       <div className="container">
         {loader}
         <MovieBoard movies={this.props.moviesPopular} />
-        <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
-        <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
-        <Carousel title={"Popular"} movies={this.props.moviesPopular} />
-        <Carousel title={"Top Rated"} movies={this.props.moviesTop} />
+        <div className="carousels">
+          <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
+          <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
+          <Carousel title={"Popular"} movies={this.props.moviesPopular} />
+          <Carousel title={"Top Rated"} movies={this.props.moviesTop} />
+        </div>
       </div>
-     
     );
   }
 }
