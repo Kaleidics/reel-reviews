@@ -6,3 +6,7 @@ body {
   background: #f9faff;
   box-sizing: border-box;
 }
+
+.container {
+  overflow: hidden;
+}

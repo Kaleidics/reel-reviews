@@ -22,7 +22,7 @@ export class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="container">
         {loader}
         <MovieBoard movies={this.props.moviesPopular} />
         <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
