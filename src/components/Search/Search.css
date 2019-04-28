@@ -1,0 +1,10 @@
+.searchBar {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    background-color: #666;
+    height: 5vh;
+    flex-direction: column;
+    align-items: center;
+}
+

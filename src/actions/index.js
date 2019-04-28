@@ -105,3 +105,24 @@ export const fetchTop = () => dispatch => {
         })
         .catch(err => console.log(err));
 }
+
+export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
+export const searchMovieSuccess = results => ({
+    type: SEARCH_MOVIE_SUCCESS,
+    results
+});
+
+export const searchMovie = () => dispatch => {
+    const url = 'https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=the+avengers'
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(results => {
+            dispatch(searchMovieSuccess(results));
+        })
+        .catch(err => console.log(err));
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
-import Landingpage from './components/LandingPage/LandingPage';
+import LandingPage from './components/LandingPage/LandingPage';
+import SearchPage from './components/SearchPage/SearchPage';
 import './App.css';
 
 export class App extends React.Component {
@@ -17,7 +18,8 @@ export class App extends React.Component {
       <BrowserRouter>
       <div className="outer-container">
         {loader}
-       <Route exact path="/" component={Landingpage} />
+       <Route exact path="/" component={LandingPage} />
+       <Route path="/search" component={SearchPage} />
       </div>
       </BrowserRouter>
     );
