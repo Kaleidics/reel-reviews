@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
 import { Carousel } from '../Carousel/Carousel';
 import MovieBoard from '../MovieBoard/MovieBoard';
 import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from '../../actions/index';
