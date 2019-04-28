@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchBar from '../Search/Search'
+import SearchResults from '../SearchResults/SearchResults'
 import {searchMovie} from '../../actions/index';
 
 export class SearchPage extends React.Component {
@@ -14,6 +15,7 @@ export class SearchPage extends React.Component {
         return (
             <div >
                <SearchBar />
+               <SearchResults />
             </div>
         )
     }
@@ -21,7 +23,6 @@ export class SearchPage extends React.Component {
 
 const mapStateToProps = state => ({
     isLoading: state.isLoading,
-    results: state.movieSearch
 });
 
 export default connect(mapStateToProps)(SearchPage);

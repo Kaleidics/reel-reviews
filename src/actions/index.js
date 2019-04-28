@@ -122,7 +122,7 @@ export const searchMovie = () => dispatch => {
             return res.json()
         })
         .then(results => {
-            dispatch(searchMovieSuccess(results));
+            dispatch(searchMovieSuccess(results.results));
         })
         .catch(err => console.log(err));
 }

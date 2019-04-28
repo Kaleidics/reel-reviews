@@ -5,7 +5,8 @@ const initialState = {
     moviesPlaying: [],
     moviesPopular: [],
     moviesUpcoming: [],
-    moviesTop: []
+    moviesTop: [],
+    movieSearch:[]
 };
 
 export const Reducer = (state=initialState, action) => {

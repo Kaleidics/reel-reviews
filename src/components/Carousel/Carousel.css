@@ -7,7 +7,7 @@
 }
 
 .outer-carousel:first-of-type {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55));
+    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55)); */
 }
 
 .inner-carousel {

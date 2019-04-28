@@ -7,7 +7,7 @@ export class SearchResults extends React.Component {
 
     render() {
 
-        const searchResults = this.props.results.map((item, index) => {
+        const searchResults = this.props.movieSearch.map((item, index) => {
             return (
                 <CarouselItem data={item} index={index} />
             );
@@ -22,7 +22,7 @@ export class SearchResults extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    results: state.movieSearch
+    movieSearch: state.movieSearch
 });
 
 export default connect(mapStateToProps)(SearchResults);
