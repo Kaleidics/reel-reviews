@@ -11,7 +11,7 @@ export default class MovieBoard extends React.Component {
         return (
             <div className="outer-MovieBoard">
             <div className="opacity-layer"></div>
-            {movieBoardItems}
+                {movieBoardItems}
             </div>
         )
     }
