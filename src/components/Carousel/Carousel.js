@@ -5,9 +5,9 @@ import './Carousel.css'
 export class Carousel extends React.Component {
 
     render(){
-        const carousel = this.props.movies.map((item, index) => {
+        const carousel = this.props.movies.map((item, index, key) => {
             return (
-                <CarouselItem data={item} index={index} />
+                <CarouselItem data={item} index={index} key={this.props.movies[index].id} />
             );
         });
 
