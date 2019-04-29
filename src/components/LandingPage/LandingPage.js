@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import MovieBoard from '../MovieBoard/MovieBoard';
 import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from '../../actions/index';
+import NavBar from '../NavBar/NavBar'
 import './LandingPage.css';
 
 export class LandingPage extends React.Component {
@@ -18,6 +19,7 @@ export class LandingPage extends React.Component {
 
         return (
             <div className="container">
+                <NavBar />
                 <MovieBoard movies={this.props.moviesPopular} />
                 <div className="carousels">
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
