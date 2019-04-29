@@ -1,6 +1,6 @@
 .movieContainer {
     width: 8%;
-    margin: 5px;
+    margin: 15px;
     cursor: pointer;
 }
 
@@ -10,5 +10,6 @@
 }
 
 .moviePoster {
+    border-radius: 10px;
     width: 100%;
 }

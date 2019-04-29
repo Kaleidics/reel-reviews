@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import CarouselItem from '../CarouselItem/CarouselItem'
+import SearchResultsItem from '../SearchResultsItem/SearchResultsItem'
+import './SearchResults.css'
 
 export class SearchResults extends React.Component {
 
@@ -9,13 +10,19 @@ export class SearchResults extends React.Component {
 
         const searchResults = this.props.movieSearch.map((item, index) => {
             return (
-                <CarouselItem data={item} index={index} />
+                <SearchResultsItem data={item} index={index} />
             );
         });
 
         return (
-            <div >
-                {searchResults}
+            <div className="searchResults">
+                <div className="searchResults-div">
+                    <h2 className="searchResults-h2">Search Results</h2>
+                    <hr></hr>
+                </div>
+                <div className="searchResults-movies">
+                    {searchResults}
+                </div>
             </div>
         )
     }

@@ -1,0 +1,27 @@
+.searchResults {
+    margin-top: 10vh;
+}
+
+
+.searchResults-div {
+    width: 33%;
+    margin: 0 auto;
+}
+
+.searchResults-h2 {
+    text-align: center;
+    color: white;
+}
+.searchResults-div hr {
+    height: 2px;
+    background-image: linear-gradient(90deg, transparent, #555, transparent);
+    border: 0;
+}
+
+.searchResults-movies {
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,16 @@
+.movieResultsContainer {
+    width: 14%;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.movieResultsContainer:hover {
+    position: relative;
+    top: -5px;
+}
+
+.movieResultsPoster {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}

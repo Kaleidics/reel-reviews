@@ -113,6 +113,7 @@ export const searchMovieSuccess = results => ({
 });
 
 export const searchMovie = () => dispatch => {
+    dispatch(loaderIncrement());
     const url = 'https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=the+avengers'
     return fetch(url)
         .then(res => {
@@ -121,7 +122,11 @@ export const searchMovie = () => dispatch => {
             }
             return res.json()
         })
+        .then(
+            sleeper(3100)
+        )
         .then(results => {
+            dispatch(loaderDecrement());
             dispatch(searchMovieSuccess(results.results));
         })
         .catch(err => console.log(err));
