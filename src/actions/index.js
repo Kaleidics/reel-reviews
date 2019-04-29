@@ -134,5 +134,5 @@ export const searchMovie = () => dispatch => {
 
 export const loadHandler = () => dispatch => {
     dispatch(loaderIncrement());
-    setTimeout(loaderDecrement, 2500);
+    setTimeout(dispatch(loaderDecrement), 2000);
 }
