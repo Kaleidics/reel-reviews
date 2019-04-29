@@ -1,19 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchResults from '../SearchResults/SearchResults'
-import {searchMovie} from '../../actions/index';
 import NavBar from '../NavBar/NavBar'
-
+import {loadHandler} from '../../actions/index';
 export class SearchPage extends React.Component {
 
     componentDidMount() {
-        this.props.dispatch(searchMovie());
+        this.props.dispatch(loadHandler());
     }
 
     render() {
 
         return (
-            <div className="container">
+            <div>
                 <NavBar />
                <SearchResults />
             </div>
@@ -22,7 +21,7 @@ export class SearchPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    isLoading: state.isLoading,
+    isLoading: state.app.isLoading,
 });
 
 export default connect(mapStateToProps)(SearchPage);

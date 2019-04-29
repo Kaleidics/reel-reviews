@@ -29,7 +29,7 @@ export class SearchResults extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    movieSearch: state.movieSearch
+    movieSearch: state.app.movieSearch
 });
 
 export default connect(mapStateToProps)(SearchResults);

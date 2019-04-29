@@ -33,11 +33,11 @@ export class LandingPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    isLoading: state.isLoading,
-    moviesPlaying: state.moviesPlaying,
-    moviesUpcoming: state.moviesUpcoming,
-    moviesPopular: state.moviesPopular,
-    moviesTop: state.moviesTop
+    isLoading: state.app.isLoading,
+    moviesPlaying: state.app.moviesPlaying,
+    moviesUpcoming: state.app.moviesUpcoming,
+    moviesPopular: state.app.moviesPopular,
+    moviesTop: state.app.moviesTop
 });
 
 export default connect(mapStateToProps)(LandingPage);

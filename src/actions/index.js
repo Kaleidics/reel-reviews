@@ -97,7 +97,7 @@ export const fetchTop = () => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(3100)
+            sleeper(2500)
         )
         .then(top => {
             dispatch(loaderDecrement());
@@ -123,11 +123,16 @@ export const searchMovie = () => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(3100)
+            sleeper(2500)
         )
         .then(results => {
             dispatch(loaderDecrement());
             dispatch(searchMovieSuccess(results.results));
         })
         .catch(err => console.log(err));
+}
+
+export const loadHandler = () => dispatch => {
+    dispatch(loaderIncrement());
+    setTimeout(loaderDecrement, 2500);
 }

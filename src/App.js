@@ -27,7 +27,7 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  isLoading: state.isLoading,
+  isLoading: state.app.isLoading,
 });
 
 export default connect(mapStateToProps)(App);
