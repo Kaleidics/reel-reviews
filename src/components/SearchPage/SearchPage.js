@@ -8,7 +8,7 @@ export class SearchPage extends React.Component {
     componentDidMount() {
         this.props.dispatch(loaderIncrement());
         setTimeout(() => {
-            this.props.dispatch(loaderDecrement)
+            this.props.dispatch(loaderDecrement())
         }, 2000)
     }
 
