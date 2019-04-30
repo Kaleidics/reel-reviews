@@ -112,13 +112,12 @@ export const searchMovieSuccess = results => ({
     results
 });
 
-export const searchMovie = () => (dispatch) => {
+export const searchMovie = (searchTerm) => (dispatch) => {
     dispatch(loaderIncrement());
 
+    let search = encodeURIComponent(searchTerm);
 
-
-
-    const url = 'https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=the+avengers'
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=${search}`;
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -134,8 +133,14 @@ export const searchMovie = () => (dispatch) => {
             dispatch(searchMovieSuccess(results.results));
         })
         .catch(err => console.log(err));
-}
+};
 
 export const loaderHandler = () => dispatch => {
     dispatch(loaderDecrement());    
-}
+};
+
+export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
+export const setSearchTerm = (searchTerm) => ({
+    type: SET_SEARCH_TERM,
+    searchTerm
+});
