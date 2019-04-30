@@ -126,7 +126,7 @@ export const searchMovie = (searchTerm) => (dispatch) => {
             return res.json()
         })
         .then(
-            sleeper(2500)
+            sleeper(3000)
         )
         .then(results => {
             dispatch(loaderDecrement());

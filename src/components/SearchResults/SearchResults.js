@@ -18,7 +18,7 @@ export class SearchResults extends React.Component {
 
     render() {
 
-        const searchResults = this.props.movieSearch.map((item, index, key) => {
+        const searchResults = this.props.movieSearch.map((item, index) => {
             return (
                 <SearchResultsItem data={item} index={index} key={this.props.movieSearch[index].id}/>
             );

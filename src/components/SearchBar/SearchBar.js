@@ -13,14 +13,7 @@ export class SearchBar extends React.Component {
     // }
 
 
-    state = {
-        searchValue: ''
-    }
-
     handleSearchinput = e => {
-        this.setState({
-            searchValue: e.target.value
-        });
         let searchTerm = e.target.value;
         console.log(searchTerm);
         this.props.dispatch(setSearchTerm(searchTerm));
@@ -37,7 +30,7 @@ export class SearchBar extends React.Component {
             <div className="searchBar" >
                 <form className="searchForm" >
                     <input onChange={this.handleSearchinput} type="text" placeholder="Search for a movie" />
-                        <Link to={`/search/${this.state.searchValue}`} >
+                        <Link to={`/search/${this.props.searchTerm}`} >
                             <button type="submit">Search</button>
                         </Link>
                     </form>
