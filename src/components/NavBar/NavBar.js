@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar'
 import './NavBar.css'
+import { Link, withRouter } from 'react-router-dom';
+
 
 export default class NavBar extends React.Component {
 
@@ -9,7 +11,7 @@ export default class NavBar extends React.Component {
         return (
             <header className="navBar">
                <ul className="navBar-ul">
-                   <li className="logo"><a>Logo</a></li>
+                   <li className="logo"><Link to="/">Logo</Link></li>
                    <li><SearchBar /></li>
                    <li><a>Login/Register</a></li>
                </ul>

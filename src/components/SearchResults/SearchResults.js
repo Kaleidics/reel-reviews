@@ -9,11 +9,11 @@ import './SearchResults.css'
 export class SearchResults extends React.Component {
 
     componentDidMount() {
-        const { searchTerm } = this.props;
-        // this.props.dispatch(setSearchTerm(undefined));
-        if (searchTerm) {
-            this.props.dispatch(searchMovie(searchTerm));
-        }
+        const params = (new URL(document.location)).searchParams;
+        const searchterm = params.get("query");
+        console.log('here', searchterm);
+        this.props.dispatch(setSearchTerm(searchterm));
+        this.props.dispatch(searchMovie(searchterm));
     }
 
     render() {

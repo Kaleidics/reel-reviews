@@ -3,31 +3,25 @@ import './SearchBar.css'
 import { reduxForm, Field } from 'redux-form';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { searchMovie } from '../../actions/index';
+
 
 import { setSearchTerm } from '../../actions/index';
 
 export class SearchBar extends React.Component {
-    // handleSubmit(values) {
-    //     this.props.dispatch(setSearchTerm(values.search));
-    //     // this.props.history.push("/search");
-    // }
-
-
     handleSearchinput = e => {
         e.preventDefault();
         let searchTerm = this.refs.search.value;
         console.log(searchTerm);
-        this.props.history.push(`/search/${searchTerm}`)
-        this.props.dispatch(setSearchTerm(searchTerm));
+        this.props.history.push(`/search/?query=${searchTerm}`);
+        const params = (new URL(document.location)).searchParams;
+        const searchterm = params.get("query");
+        console.log('here',searchterm);
+        this.props.dispatch(setSearchTerm(searchterm));
+        this.props.dispatch(searchMovie(searchterm));
     }
 
     render() {
-        // console.log(this.props.searchTerm)
-        // if (this.props.searchTerm) {
-        //     return (
-        //         <Redirect to='/search' />
-        //     )
-        // }
         return (
             <div className="searchBar" >
                 <form className="searchForm" onSubmit={this.handleSearchinput} >
@@ -39,10 +33,6 @@ export class SearchBar extends React.Component {
         );
     }
 }
-
-// const comp = reduxForm({
-//     form: 'search'
-// })(SearchBar);
 
 const mapStateToProps = state => ({
     movieSearch: state.app.movieSearch,
