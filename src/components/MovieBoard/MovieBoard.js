@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieBoardItem from '../MovieBoardItem/MovieBoardItem';
 import './MovieBoard.css';
-import Slider from 'react-slick'
 
 export default class MovieBoard extends React.Component {
     render() {
