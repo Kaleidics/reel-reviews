@@ -1,5 +1,8 @@
 .searchResults {
     margin-top: 10vh;
+    width: 100%;
+    min-height: 120vh;
+    margin-bottom: 10vh;
 }
 
 
