@@ -125,13 +125,11 @@ export const searchMovie = (searchTerm) => (dispatch) => {
             }
             return res.json()
         })
+        .then(sleeper(2500))
         .then(results => {
-            console.log('loader');
+            dispatch(loaderDecrement());
             dispatch(searchMovieSuccess(results.results));
         })
-        .then(
-            dispatch(loaderDecrement())
-        )
         .catch(err => console.log(err));
 };
 
