@@ -1,7 +1,7 @@
 import React from 'react';
 import './SearchBar.css'
 import { reduxForm, Field } from 'redux-form';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { setSearchTerm } from '../../actions/index';
@@ -14,8 +14,10 @@ export class SearchBar extends React.Component {
 
 
     handleSearchinput = e => {
-        let searchTerm = e.target.value;
+        e.preventDefault();
+        let searchTerm = this.refs.search.value;
         console.log(searchTerm);
+        this.props.history.push(`/search/${searchTerm}`)
         this.props.dispatch(setSearchTerm(searchTerm));
     }
 
@@ -28,11 +30,9 @@ export class SearchBar extends React.Component {
         // }
         return (
             <div className="searchBar" >
-                <form className="searchForm" >
-                    <input onChange={this.handleSearchinput} type="text" placeholder="Search for a movie" />
-                        <Link to={`/search/${this.props.searchTerm}`} >
+                <form className="searchForm" onSubmit={this.handleSearchinput} >
+                    <input type="text" placeholder="Search for a movie" ref="search" />
                             <button type="submit">Search</button>
-                        </Link>
                     </form>
                 
             </div>
@@ -49,5 +49,5 @@ const mapStateToProps = state => ({
     searchTerm: state.app.searchTerm
 });
 
-export default connect(mapStateToProps)(SearchBar);
+export default connect(mapStateToProps)(withRouter(SearchBar));
 
