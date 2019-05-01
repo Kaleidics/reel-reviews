@@ -5,6 +5,7 @@ import Loader from './components/Loader/Loader';
 import LandingPage from './components/LandingPage/LandingPage';
 import SearchPage from './components/SearchPage/SearchPage';
 import './App.css';
+import NavBar from './components/NavBar/NavBar';
 
 export class App extends React.Component {
 
@@ -18,6 +19,7 @@ export class App extends React.Component {
       <BrowserRouter>
       <div className="outer-container">
         {loader}
+        <NavBar />
        <Route exact path="/" component={LandingPage} />
        <Route path="/search" component={SearchPage} />
       </div>

@@ -16,7 +16,7 @@ export class SearchPage extends React.Component {
 
         return (
             <div>
-                <NavBar />
+                {/* <NavBar /> */}
                <SearchResults />
             </div>
         )
