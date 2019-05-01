@@ -6,7 +6,7 @@ import Slider from 'react-slick'
 export default class MovieBoard extends React.Component {
     render() {
 
-        const movieBoardItems = this.props.movies.slice(0,2).map((item, index, key ) => {
+        const movieBoardItems = this.props.movies.slice(0,1).map((item, index, key ) => {
             return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} />
         });
         return (

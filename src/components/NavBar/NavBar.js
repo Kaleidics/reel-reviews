@@ -11,7 +11,7 @@ export default class NavBar extends React.Component {
         return (
             <header className="navBar">
                <ul className="navBar-ul">
-                   <li className="logo"><Link to="/">Logo</Link></li>
+                   <li className="logo"><Link to="/">Home</Link></li>
                    <li><SearchBar /></li>
                    <li><a>Login/Register</a></li>
                </ul>
