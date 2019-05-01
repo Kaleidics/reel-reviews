@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from '../SearchBar/SearchBar'
 import './NavBar.css'
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 
 export default class NavBar extends React.Component {
@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
                <ul className="navBar-ul">
                    <li className="logo"><Link to="/">Home</Link></li>
                    <li><SearchBar /></li>
-                   <li><a>Login/Register</a></li>
+                   <li>Login/Register</li>
                </ul>
             </header>
         )

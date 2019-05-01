@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import MovieBoard from '../MovieBoard/MovieBoard';
 import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from '../../actions/index';
-import NavBar from '../NavBar/NavBar'
 import './LandingPage.css';
 
 export class LandingPage extends React.Component {

@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import SearchResults from '../SearchResults/SearchResults'
-import NavBar from '../NavBar/NavBar'
-import {loaderIncrement, loaderHandler, loaderDecrement} from '../../actions/index';
+import { loaderIncrement, loaderDecrement } from '../../actions/index';
 export class SearchPage extends React.Component {
 
     componentDidMount() {

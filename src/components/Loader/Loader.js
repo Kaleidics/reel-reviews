@@ -1,6 +1,6 @@
 import React from 'react';
 import './Loader.css';
-import {loader} from './svg';
+import { loader } from './svg';
 
 export default function Loader() {
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import './SearchBar.css'
-import { reduxForm, Field } from 'redux-form';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { searchMovie } from '../../actions/index';
 
