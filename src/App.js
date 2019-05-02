@@ -7,8 +7,13 @@ import SearchPage from './components/SearchPage/SearchPage';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
+import { setSearchTerm } from './actions/index';
 
 export class App extends React.Component {
+
+  componentDidMount() {
+    this.props.dispatch(setSearchTerm(''));
+  }
 
   render(){
     let loader;

@@ -18,6 +18,7 @@ export class SearchBar extends React.Component {
         console.log('here',searchterm);
         this.props.dispatch(setSearchTerm(searchterm));
         this.props.dispatch(searchMovie(searchterm));
+        this.refs.search.value ='';
     }
 
     render() {
