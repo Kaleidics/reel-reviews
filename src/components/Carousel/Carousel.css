@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: rgb(5, 46, 55);
+    /* background: rgb(5, 46, 55); */
 }
 
 .outer-carousel:first-of-type {
@@ -11,12 +11,13 @@
 }
 
 .inner-carousel {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .section-title {
-    color: #e7a136;
-    text-align: center;
+    color: white;
+    /* text-align: center; */
 }

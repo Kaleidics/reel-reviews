@@ -24,7 +24,7 @@ export class LandingPage extends React.Component {
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
                     <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
                     <Carousel title={"Popular"} movies={this.props.moviesPopular} />
-                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} />
+                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} /> 
                 </div>
             </div>
         );
