@@ -9,6 +9,14 @@ import './SearchResults.css'
 export class SearchResults extends React.Component {
 
     componentDidMount() {
+
+        window.onpopstate = () => {
+            const params = (new URL(document.location)).searchParams;
+            const searchterm = params.get("query");
+            console.log('here', searchterm);
+            this.props.dispatch(setSearchTerm(searchterm));
+            this.props.dispatch(searchMovie(searchterm));
+        }
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
         console.log('here', searchterm);
