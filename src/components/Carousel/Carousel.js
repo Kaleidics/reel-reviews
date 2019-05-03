@@ -49,11 +49,11 @@ export class Carousel extends React.Component {
         });
 
         return (
-                    <div className="inner-carousel">
-                    <Slider {...settings}>
-                        {carousel}
-                    </Slider>
-                    </div>
+            <div className="inner-carousel">
+                <Slider {...settings}>
+                    {carousel}
+                </Slider>
+            </div>
         )
     }
 }
