@@ -1,23 +1,24 @@
-.outer-carousel {
+/* .outer-carousel {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     /* background: rgb(5, 46, 55); */
-}
+/* } */ 
 
 .outer-carousel:first-of-type {
     /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55), rgb(5, 46, 55)); */
 }
 
-.inner-carousel {
+/* .inner-carousel {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-}
+} */
 
 .section-title {
     color: white;
     /* text-align: center; */
 }
+
