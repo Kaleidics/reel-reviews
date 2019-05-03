@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
 import { setSearchTerm } from './actions/index';
 
+
 export class App extends React.Component {
 
   componentDidMount() {
