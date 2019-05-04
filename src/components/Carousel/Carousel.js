@@ -10,11 +10,10 @@ export class Carousel extends React.Component {
     render(){
 
     let settings = {
-      dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 7,
+      slidesToScroll: 7,
       initialSlide: 0,
       responsive: [
         {
@@ -22,8 +21,7 @@ export class Carousel extends React.Component {
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
-            infinite: true,
-            dots: true
+            infinite: true
           }
         },
         {
@@ -52,6 +50,7 @@ export class Carousel extends React.Component {
 
         return (
             <div className="inner-carousel">
+            <h2>{this.props.title}</h2>
                 <Slider {...settings}>
                     {carousel}
                 </Slider>

@@ -1,8 +1,10 @@
 .movieContainer {
-    /* width: 8%; */
+    width: 70%;
     /* margin-right: 2%; */
     /* margin-top: 30px; */
     cursor: pointer;
+    margin-left: 4%;
+    margin-right: 4%;
   
 }
 
