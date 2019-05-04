@@ -9,7 +9,8 @@
 }
 
 .moviePoster:hover {
-    transform: scale(1.05) translateZ(1px);
+    opacity: 1;
+    transform: scale(1.01) translateZ(1px);
     cursor: pointer;
     border-color: orange;
 }
@@ -21,4 +22,5 @@
     max-height: 100%;
     border: 2px solid transparent;
     transition: all .4s ease-in-out;
+    opacity: 0.6;
 }

@@ -6,13 +6,14 @@
 }
 
 .movieBoardItem:hover {
-    transform: scale(1.05) translateZ(1px);
+    transform: scale(1.01) translateZ(1px);
     cursor: pointer;
     border-color: orange;
+    opacity: 1;
 }
 .inner-movieBoardItem {
     object-fit: cover;
     width: 100%;
-    height: 100%
-    
+    height: 100%;
+    opacity: 0.6;
 }
