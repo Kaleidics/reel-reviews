@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     border: 2px solid transparent;
+    opacity: 0.6;
     transition: all .4s ease-in-out;
 }
 
@@ -15,5 +16,5 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    
 }
