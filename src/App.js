@@ -7,13 +7,14 @@ import SearchPage from './components/SearchPage/SearchPage';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
-import { setSearchTerm } from './actions/index';
+import { setSearchTerm, setGenres } from './actions/index';
 
 
 export class App extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(setSearchTerm(''));
+    this.props.dispatch(setGenres());
   }
 
   render(){
@@ -38,6 +39,7 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
   isLoading: state.app.isLoading,
+  genres: state.app.genres
 });
 
 export default connect(mapStateToProps)(App);

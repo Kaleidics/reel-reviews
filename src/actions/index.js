@@ -10,6 +10,26 @@ export const loaderDecrement = minus => ({
     type: LOADER_DECREMENT,
 });
 
+export const SET_GENRES_SUCCESS = 'SET_GENRES_SUCCESS';
+export const setGenresSuccess = genres => ({
+    type: SET_GENRES_SUCCESS,
+    genres
+});
+
+export const setGenres = () => dispatch => {
+    const url = "https://api.themoviedb.org/3/genre/movie/list?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US";
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(genres => {
+            dispatch(setGenresSuccess(genres.genres));
+        })
+        .catch(err => console.log(err));
+}
 
 export const FETCH_PLAYING_SUCCESS = 'FETCH_PLAYING_SUCCESS';
 export const fetchPlayingSuccess = playing => ({
