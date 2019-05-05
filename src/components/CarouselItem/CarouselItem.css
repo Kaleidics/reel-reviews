@@ -26,3 +26,16 @@
 .movieName {
     color: darkgrey;
 }
+
+.movieName {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.movieGenre {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: darkgray;
+    margin-top: 0;
+}
