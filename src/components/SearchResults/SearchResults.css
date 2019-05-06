@@ -13,7 +13,8 @@
 
 .searchResults-h2 {
     text-align: center;
-    color: white;
+    color: #f0f0f0;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 .searchResults-div hr {
     height: 2px;
@@ -24,7 +25,7 @@
 .searchResults-movies {
     display: flex;
     margin: 0 auto;
-    width: 50%;
-    justify-content: flex-start;
+    width: 80%;
+    justify-content: center;
     flex-wrap: wrap;
 }

@@ -59,6 +59,7 @@ export class Carousel extends React.Component {
                 <Slider {...settings}>
                     {carousel}
                 </Slider>
+                <hr className="carousel-divider"/>
             </div>
         )
     }
