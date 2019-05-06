@@ -16,8 +16,15 @@
     /* margin-top: 75px; */
     margin-left: 6%;
     margin-right: 6%;
-    opacity: 0.6;
+    /* opacity: 0.6; */
     cursor: pointer;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.topMid .movieBoardItem {
+    opacity: 0.6;
 }
 
 .bot {
@@ -42,4 +49,64 @@
     cursor: pointer;
     border-color: orange;
     opacity: 1;
+}
+
+.title-section {
+    
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    margin: 0;
+    padding-left: 8vw;
+    padding-right: 20vw;
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    opacity: 1;
+    background: linear-gradient(to right, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8), rgba(66, 66, 66, 0.0))
+}
+
+.title-section h2 {
+    font-size: 6rem;
+    color: #fff;
+    /* color: rgb(235, 78, 122); */
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: bolder;
+    margin-bottom: 0;
+    margin-top: 5vh;
+}
+
+.title-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    color: rgb(235, 78, 122);
+}
+
+.title-section a {
+    width: 20%;
+}
+
+.title-section button {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 45px;
+    background: rgb(235, 78, 122);
+    border: 3px solid rgb(235, 78, 122);
+    /* border-color: transparent; */
+    border-radius: 20px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.title-section button:hover {
+    cursor: pointer;
+    background: rgba(55, 55, 55, 0.4);
+    color: rgb(235, 78, 122);
+    border-color: rgb(235, 78, 122);
+
 }
