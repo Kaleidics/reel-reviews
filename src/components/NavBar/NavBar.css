@@ -3,7 +3,7 @@ header {
     top:0;
     position: fixed;
     background-color: grey;
-    z-index: 50;
+    z-index: 1001;
     height: 6vh;
 }
 

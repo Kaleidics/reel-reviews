@@ -27,13 +27,20 @@
     opacity: 0.6;
 }
 
+.topMid .movieBoardItem .movieBoard-desc {
+    top: 72%;
+    width: 27%;
+    left: 73%;
+    text-align: left;
+}
 .bot {
-    margin-top: 40px;
-    width: 88%;
+   /* margin-top: 40px;  */
+    /* width: 88%; */
     display: flex;
     justify-content: space-between;
-    margin-left: 6%;
-    margin-right: 6%;
+    /* margin-left: 6%; */
+    /* margin-right: 6%; */
+    flex-direction: column;
 }
 
 .bLeft, .bMid, .bRight {
@@ -45,7 +52,7 @@
 }
 
 .bLeft:hover, .bMid:hover, .bRight:hover {
-    transform: scale(1.01) translateZ(1px);
+    /* transform: scale(1.01) translateZ(1px); */
     cursor: pointer;
     border-color: orange;
     opacity: 1;
