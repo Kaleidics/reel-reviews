@@ -24,7 +24,7 @@
 }
 
 .topMid .movieBoardItem {
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .topMid .movieBoardItem .movieBoard-desc {
@@ -115,7 +115,8 @@
     z-index: 1000;
     cursor: default;
     opacity: 1;
-    background: linear-gradient(to right, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8), rgba(66, 66, 66, 0.0))
+    /* background: linear-gradient(to right, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8), rgba(66, 66, 66, 0.0)); */
+    background: linear-gradient(90deg,rgba(5,5,5,.8),rgba(15,15,15,.8),rgba(15,15,15,.8), rgba(30,30,30,0));
 }
 
 .title-section h2 {
