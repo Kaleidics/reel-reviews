@@ -6,7 +6,7 @@ import './MovieBoard.css';
 export default class MovieBoard extends React.Component {
     render() {
 
-        const movieBoardItems = this.props.movies.slice(4,13).map((item, index ) => {
+        const movieBoardItems = this.props.movies.slice(0,4).map((item, index ) => {
             return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} />
         });
         
@@ -18,12 +18,17 @@ export default class MovieBoard extends React.Component {
                     <p>Browse and rate the latest and greatest movies.</p>
                         <Link to="/search/?query=avengers"><button>Get Started</button></Link>
                 </div>
-                    {movieBoardItems[5]}
+                    {movieBoardItems[0]}
                 </div>
                 <div className="bot">
-                    <div className="bLeft">{movieBoardItems[8]}</div>
-                    <div className="bMid">{movieBoardItems[6]}</div>
-                    <div className="bRight">{movieBoardItems[2]}</div>
+                    <div className="bot-left">
+                        <div className="bLeft">{movieBoardItems[1]}</div>
+                        <div className="bMid">{movieBoardItems[2]}</div>
+                        <div className="bRight">{movieBoardItems[3]}</div>
+                    </div>
+                    <div className="bot-right">
+                        <h2>LATEST REVIEWS HERE</h2>
+                    </div>
                 </div>
                
             </div>
