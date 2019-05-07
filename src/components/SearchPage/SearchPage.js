@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import SearchResults from '../SearchResults/SearchResults'
+import SearchResults from '../SearchResults/SearchResults';
 import { loaderIncrement, loaderDecrement } from '../../actions/index';
+import SearchBar from '../SearchBar/SearchBar';
+import './SearchPage.css';
 export class SearchPage extends React.Component {
 
     componentDidMount() {
@@ -16,6 +18,9 @@ export class SearchPage extends React.Component {
         return (
             <div className="container">
                 {/* <NavBar /> */}
+                <div className="unique-searchBar">
+                    <SearchBar />
+                </div>
                <SearchResults />
             </div>
         )

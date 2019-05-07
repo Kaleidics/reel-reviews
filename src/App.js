@@ -27,7 +27,7 @@ export class App extends React.Component {
       <BrowserRouter>
       <div className="outer-container">
         {loader}
-        <NavBar />
+        <Route path="/" component={NavBar} />
        <Route exact path="/" component={LandingPage} />
        <Route path="/search" component={SearchPage} />
       </div>
