@@ -7,6 +7,7 @@ import './LandingPage.css';
 
 export class LandingPage extends React.Component {
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.dispatch(fetchPlaying());
         this.props.dispatch(fetchUpcoming());
         this.props.dispatch(fetchPopular());

@@ -7,6 +7,7 @@ import './SearchPage.css';
 export class SearchPage extends React.Component {
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.dispatch(loaderIncrement());
         setTimeout(() => {
             this.props.dispatch(loaderDecrement())
