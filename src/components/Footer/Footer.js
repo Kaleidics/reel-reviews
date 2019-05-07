@@ -18,12 +18,12 @@ export default class Footer extends React.Component {
                         <li><Link to="/search/?query=avengers">Profile</Link></li>
                     </ul>
                     <ul className="contact">
-                        <li><span>Website:</span><a href="https://eddiechu.dev/" target="_blank">www.eddiechu.dev</a> </li>
-                        <li><span>Contact:</span><a href="contact@eddiechu.me" target="_top">contact@eddiechu.me</a></li>
+                        <li><span>Website:</span><a href="https://eddiechu.dev/" target="_blank" rel="noopener noreferrer">www.eddiechu.dev</a> </li>
+                        <li><span>Contact:</span><a href="contact@eddiechu.dev" target="_top">contact@eddiechu.dev</a></li>
                     </ul>
                     <ul className="social">
-                        <li><a href="https://www.linkedin.com/in/eddie-chu-982019aa/" target="_blank"><img src={linkedin} /></a></li>
-                        <li><a href="https://github.com/Kaleidics" target="_blank"><img src={github} /> </a></li>
+                        <li><a href="https://www.linkedin.com/in/eddie-chu-982019aa/" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="linkedin"/></a></li>
+                        <li><a href="https://github.com/Kaleidics" target="_blank" rel="noopener noreferrer"><img src={github} alt="github"/> </a></li>
                     </ul>
                     <div className="inner-copyright">
                         <p>Copyright &copy;2019</p>
@@ -32,7 +32,7 @@ export default class Footer extends React.Component {
                 </section>
                 <section className="credits">
                     <div>
-                        <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank"><img src={tmdb_credits} /> </a>
+                        <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank" rel="noopener noreferrer"><img src={tmdb_credits} alt="the movie database" /> </a>
                     </div>
                     
                 </section>
