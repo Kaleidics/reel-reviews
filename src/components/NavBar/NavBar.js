@@ -13,7 +13,7 @@ export default class NavBar extends React.Component {
                <ul className="navBar-ul">
                    <li className="logo"><Link to="/">Home</Link></li>
                     <li>{this.props.location.pathname === "/" ? <SearchBar /> : ""}</li>
-                   <li>Login/Register</li>
+                   <li>Profile</li>
                </ul>
             </header>
         )

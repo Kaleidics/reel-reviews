@@ -142,8 +142,8 @@
 
 .title-section button {
     font-family: 'Roboto', sans-serif;
-    width: 100%;
-    height: 45px;
+    width: 130px;
+    height: 50px;
     background: rgb(235, 78, 122);
     border: 3px solid rgb(235, 78, 122);
     /* border-color: transparent; */

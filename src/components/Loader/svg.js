@@ -14,7 +14,7 @@ export const loader = <div>
     S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922
     S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">
             </path>
-            <path fill="#2AA198" stroke="#2AA198" strokeWidth="0.6027" strokeMiterlimit={10} d="M5.203,20
+      <path fill="#01d277" stroke="#01d277" strokeWidth="0.6027" strokeMiterlimit={10} d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
               <animateTransform attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" calcMode="spline" keySplines="0.4, 0, 0.2, 1" keyTimes="0;1" dur="2s" repeatCount="indefinite" />      
             </path>

@@ -1,9 +1,118 @@
 footer {
+    font-family: "Roboto", sans-serif;
   position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: red;
+  background-color: #131517;
   color: white;
   text-align: center;
+  display: flex;
+  margin-top: 100px;
+  height: 300px;
+}
+
+.copyright {
+  /* background: green; */
+  width: 70%;
+}
+
+.credits {
+  /* background: lightblue; */
+  width: 30%;
+}
+
+.title-block {
+  list-style-type: none;
+  padding: 0;
+  /* width: 30%; */
+  margin-left: 6%;
+  display: flex;
+}
+
+.title-block * {
+  margin-right: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-block h3 {
+  font-family: "Alegreya Sans", sans-serif;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+.title-block li {
+  display: flex;
+  align-items: center;
+}
+
+.title-block *:visited {
+  color: rgb(235, 78, 122);
+}
+
+
+
+.contact {
+  list-style-type: none;
+    padding: 0;
+    /* width: 30%; */
+    margin-left: 6%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.contact li {
+  margin-top: 20px;
+}
+
+.contact li span {
+  margin-right: 15px;
+}
+
+.contact li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact li a:visited {
+  color: #fff
+}
+
+.social {
+   list-style-type: none;
+    padding: 0;
+    /* width: 30%; */
+    margin-left: 6%;
+    display: flex;
+    font-size: 1rem;
+    text-align: left;
+    display: flex;
+}
+
+.social li {
+  margin-right: 15px;
+}
+
+.social li a img {
+  width: 40px;
+}
+.inner-copyright {
+  display: flex;
+  margin-left: 6%;
+}
+
+.inner-copyright p {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.credits div {
+  margin: 20px;
+}
+
+.credits a img {
+  max-width: 100%;
 }
