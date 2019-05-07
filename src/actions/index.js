@@ -126,6 +126,34 @@ export const fetchTop = () => dispatch => {
         .catch(err => console.log(err));
 }
 
+
+export const FETCH_RECON_SUCCESS = 'FETCH_RECON_SUCCESS';
+export const fetchReconSuccess = recon => ({
+    type: FETCH_RECON_SUCCESS,
+    recon
+});
+
+export const fetchRecon = (id) => dispatch => {
+    dispatch(loaderIncrement());
+    const url = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1`;
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(
+            sleeper(2500)
+        )
+        .then(recon => {
+            dispatch(loaderDecrement());
+            dispatch(fetchReconSuccess(recon.results));
+        })
+        .catch(err => console.log(err));
+}
+
+
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
 export const searchMovieSuccess = results => ({
     type: SEARCH_MOVIE_SUCCESS,

@@ -1,4 +1,4 @@
-import { SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS } from "../actions";
+import { SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS } from "../actions";
 
 const initialState = {
     isLoading: 0,
@@ -8,10 +8,17 @@ const initialState = {
     moviesUpcoming: [],
     moviesTop: [],
     movieSearch:[],
-    searchTerm: ""
+    searchTerm: "",
+    moviesRecon: []
 };
 
 export const Reducer = (state=initialState, action) => {
+
+    if (action.type === FETCH_RECON_SUCCESS) {
+        return Object.assign({}, state, {
+            moviesRecon: action.recon
+        });
+    }
 
     if (action.type === SET_SEARCH_TERM) {
         return Object.assign({}, state, {

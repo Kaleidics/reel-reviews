@@ -8,6 +8,7 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
 import { setSearchTerm, setGenres } from './actions/index';
+import { MovieDetailPage } from './components/MovieDetailPage/MovieDetailPage';
 
 
 export class App extends React.Component {
@@ -30,6 +31,7 @@ export class App extends React.Component {
         <Route path="/" component={NavBar} />
        <Route exact path="/" component={LandingPage} />
        <Route path="/search" component={SearchPage} />
+       <Route path="/movie-detail" component={MovieDetailPage} />
       </div>
       <Footer />
       </BrowserRouter>

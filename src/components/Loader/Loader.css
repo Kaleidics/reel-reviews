@@ -31,7 +31,7 @@
 
 html body a, html body a:visited {
   text-decoration: none;
-  color: #ff805f;
+  /* color: #ff805f; */
 }
 html body h4 {
   margin: 0;

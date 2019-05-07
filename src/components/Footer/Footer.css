@@ -33,6 +33,7 @@ footer {
 .title-block * {
   margin-right: 15px;
   font-family: 'Roboto', sans-serif;
+  color: rgb(235, 78, 122);
 }
 
 .title-block h3 {

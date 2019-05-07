@@ -49,7 +49,7 @@ export class Carousel extends React.Component {
 
         const carousel = this.props.movies.map((item, index) => {
             return (
-                <CarouselItem data={item} index={index} key={this.props.movies[index].id} />
+                <CarouselItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
             );
         });
 

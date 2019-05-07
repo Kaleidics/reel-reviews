@@ -12,7 +12,7 @@ export class SearchBar extends React.Component {
         e.preventDefault();
         let searchTerm = this.refs.search.value;
         console.log(searchTerm);
-        this.props.history.push(`/search/?query=${searchTerm}`);
+        this.props.history.push(`/search?query=${searchTerm}`);
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
         console.log('here',searchterm);

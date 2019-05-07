@@ -14,12 +14,9 @@ export class LandingPage extends React.Component {
         this.props.dispatch(fetchTop());
     }
 
-
     render() {
-
         return (
             <div className="container">
-                {/* <NavBar /> */}
                 <MovieBoard movies={this.props.moviesPopular} />
                 <div className="carousels">
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
