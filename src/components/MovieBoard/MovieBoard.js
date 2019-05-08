@@ -16,7 +16,7 @@ export default class MovieBoard extends React.Component {
                 <div className="title-section">
                     <h2>Reel Reviews</h2>
                     <p>Browse and rate the latest and greatest movies.</p>
-                        <Link to="/search/?query=avengers"><button>Get Started</button></Link>
+                        <Link to="/search?query=avengers"><button>Get Started</button></Link>
                 </div>
                     {movieBoardItems[0]}
                 </div>

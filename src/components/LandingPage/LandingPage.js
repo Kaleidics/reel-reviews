@@ -12,8 +12,6 @@ export class LandingPage extends React.Component {
         this.props.dispatch(fetchUpcoming());
         this.props.dispatch(fetchPopular());
         this.props.dispatch(fetchTop());
-        this.props.dispatch(fetchRecon(299534));
-
     }
 
     render() {

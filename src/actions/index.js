@@ -47,6 +47,7 @@ export const fetchPlaying = () => dispatch => {
             }
             return res.json()
         })
+       
         .then(playing => {
             dispatch(loaderDecrement());
             dispatch(fetchPlayingSuccess(playing.results));

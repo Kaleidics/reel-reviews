@@ -12,7 +12,7 @@ export default class NavBar extends React.Component {
             <header className="navBar">
                <ul className="navBar-ul">
                    <li className="logo"><Link to="/">Home</Link></li>
-                    <li>{this.props.location.pathname === "/" ? <SearchBar /> : ""}</li>
+                    <li>{this.props.location.pathname !== "/search" ? <SearchBar /> : ""}</li>
                    <li>Profile</li>
                </ul>
             </header>

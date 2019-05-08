@@ -1,0 +1,26 @@
+.movieDetail {
+    width: 90%;
+    margin: 0 auto;
+    /* margin-top: 6vh; */
+    overflow: hidden;
+}
+
+.movieDetail-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /* margin-top: 6vh; */
+}
+.movieDetail-bg {
+    width: 100%;
+    filter: blur(15px);
+
+    /* height: 100%; */
+    opacity: 0.3;
+}
+
+.main-details {
+    margin-top: 6vh;
+}

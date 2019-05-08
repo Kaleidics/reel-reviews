@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import { withRouter } from 'react-router-dom';
 import {fetchRecon} from '../../actions/index';
-
+import { recommended } from './mock';
+import { movieDetails } from './mockdetails';
+import './MovieDetailPage.css';
 
 export class MovieDetailPage extends React.Component {
 
@@ -26,8 +28,20 @@ export class MovieDetailPage extends React.Component {
     render() {
         console.log('movie detail', this.props.moviesRecon)
         return (
-            <div>
-                <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
+            <div className="movieDetail">
+                <div className="movieDetail-container">
+                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg`} />
+                </div>
+                <div className="main-details">
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} />
+                </div>
+                
             </div>
         );
     }
@@ -35,9 +49,7 @@ export class MovieDetailPage extends React.Component {
 
 const mapStateToProps = state => ({
     isLoading: state.app.isLoading,
-    moviesRecon: state.app.recon
-    
+    moviesRecon: state.app.moviesRecon
 });
 
-export default connect(mapStateToProps)(withRouter(MovieDetailPage));
-
+export default connect(mapStateToProps)(MovieDetailPage);
