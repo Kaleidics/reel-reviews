@@ -14,6 +14,7 @@ import { MovieDetailPage } from './components/MovieDetailPage/MovieDetailPage';
 export class App extends React.Component {
 
   componentDidMount() {
+    // window.scrollTo(0, 0);
     this.props.dispatch(setSearchTerm(''));
     this.props.dispatch(setGenres());
   }

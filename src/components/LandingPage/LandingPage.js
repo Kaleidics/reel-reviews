@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import MovieBoard from '../MovieBoard/MovieBoard';
-import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from '../../actions/index';
+import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop, fetchRecon } from '../../actions/index';
 import './LandingPage.css';
 
 export class LandingPage extends React.Component {
@@ -12,6 +12,8 @@ export class LandingPage extends React.Component {
         this.props.dispatch(fetchUpcoming());
         this.props.dispatch(fetchPopular());
         this.props.dispatch(fetchTop());
+        this.props.dispatch(fetchRecon(299534));
+
     }
 
     render() {

@@ -8,8 +8,9 @@ const initialState = {
     moviesUpcoming: [],
     moviesTop: [],
     movieSearch:[],
-    searchTerm: "",
-    moviesRecon: []
+    moviesRecon: [],
+    searchTerm: ""
+    
 };
 
 export const Reducer = (state=initialState, action) => {

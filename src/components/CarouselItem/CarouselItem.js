@@ -11,13 +11,14 @@ export class CarouselItem extends React.Component{
 
     
     handleId = e => {
-        let movieId = this.refs.movie.value
-        console.log(movieId); //this is returning undefined
-        // this.props.history.push(`/movie-details?query=${movieId}`);
+        let movieId = this.props.id
+        console.log("carousel item", movieId); //this is returning undefined
+        this.props.dispatch(fetchRecon(movieId));
+        this.props.history.push(`/movie-detail?query=${movieId}`);
         // const params = (new URL(document.location)).searchParams;
         // const searchterm = params.get("query");
         // console.log('here', searchterm);
-        // this.props.dispatch(fetchRecon(movieId));
+        
     }
 
     render() {
@@ -34,15 +35,16 @@ export class CarouselItem extends React.Component{
         }
 
 
-        // this component looks like this in devtools <CarouselItem index={0} id={299534} />
-        return (
-            <div className="movieContainer" value={this.props.id} ref="movie" onClick={this.handleId}>
-                <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} />
-                <h3 className="movieName">{this.props.data.original_title}</h3>
-                <p className="movieGenre">{getGenreText(this.props.data.genre_ids[0])}</p>
-            </div>
+        if (this.props.data) {
+            return (
+                <div className="movieContainer" onClick={this.handleId}>
+                    <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} />
+                    <h3 className="movieName">{this.props.data.original_title}</h3>
+                    <p className="movieGenre">{getGenreText(this.props.data.genre_ids[0])}</p>
+                </div>
 
-        );
+            );
+        }   
     }
 }
 
@@ -50,4 +52,4 @@ const mapStateToProps = state => ({
     genres: state.app.genres
 });
 
-export default connect(mapStateToProps)(CarouselItem);
+export default connect(mapStateToProps)(withRouter(CarouselItem));

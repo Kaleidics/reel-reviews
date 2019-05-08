@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRecon } from '../../actions/index'
+import { Carousel } from '../Carousel/Carousel';
+import { withRouter } from 'react-router-dom';
+import {fetchRecon} from '../../actions/index';
+
 
 export class MovieDetailPage extends React.Component {
+
     componentDidMount() {
         window.scrollTo(0, 0);
 
@@ -14,15 +18,16 @@ export class MovieDetailPage extends React.Component {
         const params = (new URL(document.location)).searchParams;
         const movieId = params.get("query");
         console.log('here', movieId);
-        // this.props.dispatch(fetchRecon());
+        
+        // this.props.dispatch(fetchRecon(movieId));
     }
 
 
     render() {
-
+        console.log('movie detail', this.props.moviesRecon)
         return (
             <div>
-           
+                <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
             </div>
         );
     }
@@ -30,9 +35,9 @@ export class MovieDetailPage extends React.Component {
 
 const mapStateToProps = state => ({
     isLoading: state.app.isLoading,
-    moviesRecon: state.app.moviesRecon
+    moviesRecon: state.app.recon
     
 });
 
-export default connect(mapStateToProps)(MovieDetailPage);
+export default connect(mapStateToProps)(withRouter(MovieDetailPage));
 

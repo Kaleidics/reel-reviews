@@ -135,7 +135,9 @@ export const fetchReconSuccess = recon => ({
 
 export const fetchRecon = (id) => dispatch => {
     dispatch(loaderIncrement());
-    const url = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1`;
+    let iD = encodeURIComponent(id);
+    const url = `https://api.themoviedb.org/3/movie/${iD}/recommendations?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1`;
+    console.log(url);
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -148,7 +150,9 @@ export const fetchRecon = (id) => dispatch => {
         )
         .then(recon => {
             dispatch(loaderDecrement());
+            console.log('reconsults', recon.results);
             dispatch(fetchReconSuccess(recon.results));
+            
         })
         .catch(err => console.log(err));
 }
