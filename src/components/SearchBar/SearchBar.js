@@ -25,7 +25,8 @@ export class SearchBar extends React.Component {
         return (
             <div className="searchBar" >
                 <form className="searchForm" onSubmit={this.handleSearchinput} >
-                    <input type="text" placeholder="Search for a movie" ref="search" required />
+                    <label htmlFor="search">Search</label>
+                    <input type="text" name="search" placeholder="Search for a movie" ref="search" required />
                             <button className="search-btn" type="submit">Search</button>
                     </form>
                 
