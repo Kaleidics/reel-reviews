@@ -6,7 +6,7 @@ export default function MovieBoardItem(props) {
         <div className="movieBoardItem">
             <div className="movieBoard-desc">
                 <div className="inner-desc">
-                    <h4>{props.data.original_title}</h4>
+                    <h4>{props.data.title}</h4>
                     <p>{props.data.overview}</p>
                 </div>
               

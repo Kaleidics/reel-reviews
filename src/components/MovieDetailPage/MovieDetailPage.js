@@ -26,7 +26,7 @@ export class MovieDetailPage extends React.Component {
 
 
     render() {
-        console.log('movie detail', this.props.moviesRecon)
+        console.log('movie detail', this.props.moviesRecon, this.props)
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">
