@@ -16,12 +16,13 @@ export class MovieDetailPage extends React.Component {
             const params = (new URL(document.location)).searchParams;
             const clickedMovie = params.get("query");
             console.log('here', clickedMovie);
+            this.props.dispatch(fetchRecon(movieId));
         }
         const params = (new URL(document.location)).searchParams;
         const movieId = params.get("query");
         console.log('here', movieId);
         
-        // this.props.dispatch(fetchRecon(movieId));
+        this.props.dispatch(fetchRecon(movieId));
     }
 
 
