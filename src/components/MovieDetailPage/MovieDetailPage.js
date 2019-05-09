@@ -33,12 +33,12 @@ export class MovieDetailPage extends React.Component {
                     <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg`} />
                 </div>
                 <div className="main-details">
+                    {/* <Carousel title={"Recommended"} movies={recommended} />
                     <Carousel title={"Recommended"} movies={recommended} />
                     <Carousel title={"Recommended"} movies={recommended} />
                     <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
+                    <Carousel title={"Recommended"} movies={recommended} /> */}
+                    <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
                 </div>
                 
             </div>
