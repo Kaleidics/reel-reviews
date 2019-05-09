@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom';
 import { fetchRecon } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
 
-
-
 export class CarouselItem extends React.Component{
 
-    
     handleId = e => {
         let movieId = this.props.id
         console.log("carousel item", movieId); //this is returning undefined
@@ -33,7 +30,6 @@ export class CarouselItem extends React.Component{
                 }
             }
         }
-
 
         if (this.props.data) {
             return (

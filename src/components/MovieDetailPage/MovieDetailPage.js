@@ -39,7 +39,6 @@ export class MovieDetailPage extends React.Component {
                     <Carousel title={"Recommended"} movies={recommended} />
                     <Carousel title={"Recommended"} movies={recommended} />
                     <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
                 </div>
                 
             </div>
@@ -52,4 +51,4 @@ const mapStateToProps = state => ({
     moviesRecon: state.app.moviesRecon
 });
 
-export default connect(mapStateToProps)(MovieDetailPage);
+export default connect(mapStateToProps)(withRouter(MovieDetailPage));
