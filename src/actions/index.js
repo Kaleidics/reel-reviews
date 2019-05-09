@@ -150,9 +150,10 @@ export const fetchRecon = (id) => dispatch => {
             sleeper(2500)
         )
         .then(recon => {
-            dispatch(loaderDecrement());
+            
             console.log('reconsults', recon.results);
             dispatch(fetchReconSuccess(recon.results));
+            dispatch(loaderDecrement());
             
         })
         .catch(err => console.log(err));
