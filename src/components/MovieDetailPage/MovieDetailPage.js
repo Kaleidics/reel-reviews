@@ -24,14 +24,17 @@ export class MovieDetailPage extends React.Component {
         const params = (new URL(document.location)).searchParams;
         const clickedMovie = params.get("query");
         console.log('here', clickedMovie);
-        this.props.dispatch(setReconId(clickedMovie));
-        this.props.dispatch(fetchMovieDetails(clickedMovie));
-        this.props.dispatch(fetchRecon(clickedMovie));
+
+        if(clickedMovie) {
+            this.props.dispatch(setReconId(clickedMovie));
+            this.props.dispatch(fetchMovieDetails(clickedMovie));
+            this.props.dispatch(fetchRecon(clickedMovie));
+        }
+       
     }
 
 
     render() {
-        console.log('movie detail', this.props.moviesRecon, this.props)
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">

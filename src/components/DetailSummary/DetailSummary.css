@@ -3,17 +3,24 @@
     display: flex;
     height: 400px;
     width: 98%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .summary-details {
     display: flex;
+}
+
+.summary-title h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 .summary-details-left {
     padding: 0;
     list-style-type: none;
     min-width: 50%;
     max-width: 50%;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .original-lang span {
@@ -53,8 +60,16 @@
     padding-left: 1%;
     padding-right: 1%;
 }
+
+.summary-container h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 .summary-paragraph-container p {
     line-height: 1.4;
+    font-size: 1.1rem;
+    font-family: "Alegreya Sans", sans-serif;
 }
 
 .summary-inner-right {

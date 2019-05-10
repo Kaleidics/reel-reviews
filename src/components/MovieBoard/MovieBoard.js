@@ -7,7 +7,7 @@ export default class MovieBoard extends React.Component {
     render() {
 
         const movieBoardItems = this.props.movies.slice(0,4).map((item, index ) => {
-            return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} />
+            return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
         });
         
         return (

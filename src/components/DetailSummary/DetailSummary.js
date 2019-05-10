@@ -21,6 +21,7 @@ export default class DetailSummary extends React.Component {
                         </ul>
                     </div>
                     <div className="summary-paragraph-container">
+                    <h3>Summary</h3>
                         <p>{this.props.data.overview}</p>
                     </div>
                 </div>
