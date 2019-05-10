@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import { withRouter } from 'react-router-dom';
-import {fetchRecon} from '../../actions/index';
+import {fetchRecon, setReconId} from '../../actions/index';
 import { recommended } from './mock';
 import { movieDetails } from './mockdetails';
 import './MovieDetailPage.css';
@@ -16,13 +16,14 @@ export class MovieDetailPage extends React.Component {
             const params = (new URL(document.location)).searchParams;
             const clickedMovie = params.get("query");
             console.log('here', clickedMovie);
-            this.props.dispatch(fetchRecon(movieId));
+            this.props.dispatch(setReconId(clickedMovie));
+            this.props.dispatch(fetchRecon(clickedMovie));
         }
         const params = (new URL(document.location)).searchParams;
-        const movieId = params.get("query");
-        console.log('here', movieId);
-        
-        this.props.dispatch(fetchRecon(movieId));
+        const clickedMovie = params.get("query");
+        console.log('here', clickedMovie);
+        this.props.dispatch(setReconId(clickedMovie));
+        this.props.dispatch(fetchRecon(clickedMovie));
     }
 
 

@@ -198,3 +198,9 @@ export const setSearchTerm = (searchTerm) => ({
     type: SET_SEARCH_TERM,
     searchTerm
 });
+
+export const SET_RECON_ID = 'SET_RECON_ID';
+export const setReconId = (reconId) => ({
+    type: SET_RECON_ID,
+    reconId
+})
