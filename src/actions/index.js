@@ -146,9 +146,6 @@ export const fetchRecon = (id) => dispatch => {
             }
             return res.json()
         })
-        .then(
-            sleeper(2500)
-        )
         .then(recon => {
             
             console.log('reconsults', recon.results);
@@ -159,6 +156,32 @@ export const fetchRecon = (id) => dispatch => {
         .catch(err => console.log(err));
 }
 
+export const FETCH_MOVIE_DETAILS_SUCCESS = 'FETCH_MOVIE_DETAILS_SUCCESS';
+export const fetchMovieDetailsSuccess = details => ({
+    type: FETCH_MOVIE_DETAILS_SUCCESS,
+    details
+});
+
+export const fetchMovieDetails = (id) => dispatch => {
+    dispatch(loaderIncrement());
+    let iD = encodeURIComponent(id);
+    const url = `https://api.themoviedb.org/3/movie/${iD}?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US`;
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.status.Text);
+            }
+            return res.json()
+        })
+        .then(
+            sleeper(2500)
+        )
+        .then (details => {
+            dispatch(fetchMovieDetailsSuccess(details));
+            dispatch(loaderDecrement());
+        })
+        .catch(err => console.log(err));
+}
 
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
 export const searchMovieSuccess = results => ({

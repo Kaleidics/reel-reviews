@@ -11,16 +11,17 @@
     top: 0;
     left: 0;
     height: 100%;
+    z-index:-1;
     /* margin-top: 6vh; */
 }
 .movieDetail-bg {
     width: 100%;
-    filter: blur(15px);
+    filter: blur(10px);
 
     /* height: 100%; */
     opacity: 0.3;
 }
 
 .main-details {
-    margin-top: 6vh;
+    margin-top: 10vh;
 }

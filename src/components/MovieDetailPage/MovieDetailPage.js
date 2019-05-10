@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import { withRouter } from 'react-router-dom';
-import {fetchRecon, setReconId} from '../../actions/index';
-import { recommended } from './mock';
-import { movieDetails } from './mockdetails';
+import { setReconId, fetchRecon, fetchMovieDetails } from '../../actions/index';
+
+import DetailSummary from '../DetailSummary/DetailSummary';
 import './MovieDetailPage.css';
 
 export class MovieDetailPage extends React.Component {
@@ -17,12 +17,15 @@ export class MovieDetailPage extends React.Component {
             const clickedMovie = params.get("query");
             console.log('here', clickedMovie);
             this.props.dispatch(setReconId(clickedMovie));
+            this.props.dispatch(fetchMovieDetails(clickedMovie));
             this.props.dispatch(fetchRecon(clickedMovie));
+            
         }
         const params = (new URL(document.location)).searchParams;
         const clickedMovie = params.get("query");
         console.log('here', clickedMovie);
         this.props.dispatch(setReconId(clickedMovie));
+        this.props.dispatch(fetchMovieDetails(clickedMovie));
         this.props.dispatch(fetchRecon(clickedMovie));
     }
 
@@ -32,14 +35,10 @@ export class MovieDetailPage extends React.Component {
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">
-                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg`} />
+                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.poster_path}`} />
                 </div>
                 <div className="main-details">
-                    {/* <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} />
-                    <Carousel title={"Recommended"} movies={recommended} /> */}
+                    <DetailSummary data={this.props.movieDetails} />
                     <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
                 </div>
                 
@@ -50,7 +49,8 @@ export class MovieDetailPage extends React.Component {
 
 const mapStateToProps = state => ({
     isLoading: state.app.isLoading,
-    moviesRecon: state.app.moviesRecon
+    moviesRecon: state.app.moviesRecon,
+    movieDetails: state.app.movieDetails
 });
 
 export default connect(mapStateToProps)(withRouter(MovieDetailPage));
