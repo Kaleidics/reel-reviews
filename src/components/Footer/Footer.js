@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
                     </ul>
                     <ul className="contact">
                         <li><span>Website:</span><a href="https://eddiechu.dev/" target="_blank" rel="noopener noreferrer" aria-label="www.eddiechu.dev">www.eddiechu.dev</a> </li>
-                        <li><span>Contact:</span><a href="contact@eddiechu.dev" target="_top" aria-label="contact@eddiechu.dev">contact@eddiechu.dev</a></li>
+                        <li><span>Contact:</span><a href="mailto:contact@eddiechu.dev" target="_top" aria-label="contact@eddiechu.dev">contact@eddiechu.dev</a></li>
                     </ul>
                     <ul className="social">
                         <li><a href="https://www.linkedin.com/in/eddie-chu-982019aa/" target="_blank" rel="noopener noreferrer" aria-label="Eddie Chu Linkedin"><img src={linkedin} alt="linkedin"/></a></li>
