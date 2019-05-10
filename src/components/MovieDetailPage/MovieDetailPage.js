@@ -11,14 +11,18 @@ export class MovieDetailPage extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-
+        console.log('moviedetailpage had mounted')
         window.onpopstate = () => {
             const params = (new URL(document.location)).searchParams;
             const clickedMovie = params.get("query");
             console.log('here', clickedMovie);
-            this.props.dispatch(setReconId(clickedMovie));
-            this.props.dispatch(fetchMovieDetails(clickedMovie));
-            this.props.dispatch(fetchRecon(clickedMovie));
+
+            if(clickedMovie) {
+                this.props.dispatch(setReconId(clickedMovie));
+                this.props.dispatch(fetchMovieDetails(clickedMovie));
+                this.props.dispatch(fetchRecon(clickedMovie));
+            }
+           
             
         }
         const params = (new URL(document.location)).searchParams;
@@ -38,7 +42,7 @@ export class MovieDetailPage extends React.Component {
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">
-                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.poster_path}`} />
+                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.poster_path}`} alt={this.props.movieDetails.title}/>
                 </div>
                 <div className="main-details">
                     <DetailSummary data={this.props.movieDetails} />

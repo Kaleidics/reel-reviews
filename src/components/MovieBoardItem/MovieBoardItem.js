@@ -2,7 +2,7 @@ import React from 'react';
 import './MovieBoardItem.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchRecon, fetchMovieDetails } from '../../actions/index';
+// import { fetchRecon, fetchMovieDetails } from '../../actions/index';
 
 export class MovieBoardItem extends React.Component {
 

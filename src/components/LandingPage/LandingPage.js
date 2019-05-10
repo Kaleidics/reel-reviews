@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import MovieBoard from '../MovieBoard/MovieBoard';
-import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop, fetchRecon } from '../../actions/index';
+import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop } from '../../actions/index';
 import './LandingPage.css';
 
 export class LandingPage extends React.Component {

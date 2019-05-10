@@ -1,6 +1,6 @@
 import React from 'react';
 import './DetailSummary.css';
-import { Carousel } from '../Carousel/Carousel'
+// import { Carousel } from '../Carousel/Carousel';
 
 export default class DetailSummary extends React.Component {
 

@@ -9,7 +9,10 @@
 .summary-details {
     display: flex;
 }
-
+.summary-title {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 .summary-title h2 {
     font-weight: normal;
     text-transform: uppercase;
