@@ -154,6 +154,9 @@ export const fetchRecon = (id) => dispatch => {
             }
             return res.json()
         })
+        .then(
+            sleeper(1000)
+        )
         .then(recon => {
             
             dispatch(fetchReconSuccess(recon.results));
@@ -183,12 +186,19 @@ export const fetchMovieDetails = (id) => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(2500)
+            sleeper(1500)
         )
         .then (details => {
             dispatch(fetchMovieDetailsSuccess(details));
-            dispatch(loaderDecrement());
+            // dispatch(loaderDecrement());
             console.log('details is unset')
+        })
+        .then(
+            sleeper(1000)
+        )
+        .then ( () => {
+            dispatch(loaderDecrement())
+            console.log('loader is unset');
         })
         .catch(err => console.log(err));
 }
