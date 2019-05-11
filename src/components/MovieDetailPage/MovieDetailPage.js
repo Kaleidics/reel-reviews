@@ -42,10 +42,12 @@ export class MovieDetailPage extends React.Component {
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">
-                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.poster_path}`} alt={this.props.movieDetails.title}/>
+                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.backdrop_path}`} alt={this.props.movieDetails.title}/>
                 </div>
                 <div className="main-details">
                     <DetailSummary data={this.props.movieDetails} />
+                    <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
+                    <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
                     <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
                 </div>
                 
