@@ -203,6 +203,37 @@ export const fetchMovieDetails = (id) => dispatch => {
         .catch(err => console.log(err));
 }
 
+export const FETCH_ACTORS_SUCCESS = 'FETCH_ACTORS_SUCCESS';
+export const fetchActorsSucces = actors => ({
+    type: FETCH_ACTORS_SUCCESS,
+    actors
+});
+
+export const fetchActors = (id) => dispatch => {
+    dispatch(loaderIncrement());
+    console.log('actors is set');
+    let iD = encodeURIComponent(id);
+
+    const url = `https://api.themoviedb.org/3/movie/${iD}/credits?api_key=20ab5eea604d1925caf8b70508fb639b`;
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.status.Text);
+            }
+            return res.json()
+        })
+        .then (
+            sleeper(1000)
+        )
+        .then(actors => {
+            dispatch(fetchActorsSucces(actors.cast));
+            dispatch(loaderDecrement());
+        })
+        .catch( err => console.log(err))
+}
+
+
+
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
 export const searchMovieSuccess = results => ({
     type: SEARCH_MOVIE_SUCCESS,

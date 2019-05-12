@@ -1,4 +1,4 @@
-import {SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS } from "../actions";
+import {FETCH_ACTORS_SUCCESS, SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS } from "../actions";
 
 const initialState = {
     isLoading: 0,
@@ -10,6 +10,7 @@ const initialState = {
     movieSearch:[],
     movieDetails: {},
     moviesRecon: [],
+    movieActors: [],
     reconId: "",
     searchTerm: ""
     
@@ -17,10 +18,16 @@ const initialState = {
 
 export const Reducer = (state=initialState, action) => {
 
+    if(action.type === FETCH_ACTORS_SUCCESS) {
+        return Object.assign({}, state, {
+            movieActors: action.actors
+        });
+    }
+
     if (action.type === FETCH_MOVIE_DETAILS_SUCCESS) {
         return Object.assign({}, state, {
             movieDetails: action.details
-        })
+        });
     }
 
     if (action.type === FETCH_RECON_SUCCESS) {
@@ -56,12 +63,13 @@ export const Reducer = (state=initialState, action) => {
     if (action.type === SET_GENRES_SUCCESS) {
         return Object.assign({}, state, {
             genres: action.genres
-        })
+        });
     }
+
     if (action.type === FETCH_PLAYING_SUCCESS) {
         return Object.assign({}, state, {
             moviesPlaying: action.playing
-        })
+        });
     }
 
     if (action.type === FETCH_UPCOMING_SUCCESS) {
@@ -87,5 +95,6 @@ export const Reducer = (state=initialState, action) => {
             movieSearch: action.results
         });
     }
+    
     return state;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import './DetailSummary.css';
-// import { Carousel } from '../Carousel/Carousel';
-
+import { Cast } from '../Cast/Cast'
 export default class DetailSummary extends React.Component {
 
     render() {
@@ -23,7 +22,8 @@ export default class DetailSummary extends React.Component {
                     <div className="summary-paragraph-container">
                     <h3>Summary</h3>
                         <p>{this.props.data.overview}</p>
-                    </div>
+                    </div>   
+                    <Cast title={"Starring"} cast={this.props.castdata} />
                 </div>
                 <div className="summary-inner-right">
                     <iframe className="movie-video" width="100%" height="100%"
@@ -31,6 +31,7 @@ export default class DetailSummary extends React.Component {
                     </iframe>
                 </div>
                 
+
             </div>
         )
     }
