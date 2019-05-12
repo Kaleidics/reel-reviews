@@ -10,12 +10,11 @@ export class MovieDetailPage extends React.Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
-        console.log('movie detail mounted');
+
         window.onpopstate = () => {
-            console.log('popstate trigged')
             const params = (new URL(document.location)).searchParams;
             const clickedMovie = params.get("query");
-            console.log(`clicked movie${clickedMovie}`)
+
             if (clickedMovie) {
                 console.log('triggered popstate')
                 this.props.dispatch(setReconId(clickedMovie));
@@ -29,8 +28,7 @@ export class MovieDetailPage extends React.Component {
         const params = (new URL(document.location)).searchParams;
         const clickedMovie = params.get("query");
 
-        if(clickedMovie) {
-            console.log('not popstate')
+        if (clickedMovie) {
             this.props.dispatch(setReconId(clickedMovie));
             this.props.dispatch(fetchMovieDetails(clickedMovie));
             this.props.dispatch(fetchRecon(clickedMovie));

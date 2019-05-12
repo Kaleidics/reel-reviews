@@ -1,15 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { searchMovie, setSearchTerm } from '../../actions/index';
 import SearchResultsItem from '../SearchResultsItem/SearchResultsItem';
-import { searchMovie } from '../../actions/index';
-import { setSearchTerm } from '../../actions/index';
 
 import './SearchResults.css'
 
 export class SearchResults extends React.Component {
 
     componentDidMount() {
-
         window.onpopstate = () => {
             const params = (new URL(document.location)).searchParams;
             const searchterm = params.get("query");
@@ -17,6 +15,7 @@ export class SearchResults extends React.Component {
             this.props.dispatch(setSearchTerm(searchterm));
             this.props.dispatch(searchMovie(searchterm));
         }
+
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
         console.log('here', searchterm);
@@ -42,7 +41,7 @@ export class SearchResults extends React.Component {
                     {searchResults}
                 </div>
             </div>
-        )
+        );
     }
 }
 

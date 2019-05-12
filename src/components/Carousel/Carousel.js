@@ -1,6 +1,8 @@
 import React from 'react';
 import CarouselItem from '../CarouselItem/CarouselItem';
+import { settings } from './Settings';
 import './Carousel.css';
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,39 +15,9 @@ export class Carousel extends React.Component {
       this.forceUpdate();
     }, 50);
   }
+
     render(){
 
-    let settings = {
-      infinite: false,
-      speed: 500,
-      slidesToShow: 7,
-      slidesToScroll: 7,
-      initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 5,
-            slidesToScroll: 5
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            initialSlide: 7
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-          }
-        }
-      ]
-    };
         const carousel = this.props.movies.map((item, index) => {
             return (
                 <CarouselItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
@@ -60,7 +32,7 @@ export class Carousel extends React.Component {
                 </Slider>
                 <hr className="carousel-divider"/>
             </div>
-        )
+        );
     }
 }
 

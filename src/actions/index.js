@@ -1,5 +1,6 @@
 import sleeper from '../sleeper';
 
+//Synchronous Actions List
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';
 export const loaderIncrement = add => ({
     type: LOADER_INCREMENT,
@@ -10,6 +11,19 @@ export const loaderDecrement = minus => ({
     type: LOADER_DECREMENT,
 });
 
+export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
+export const setSearchTerm = (searchTerm) => ({
+    type: SET_SEARCH_TERM,
+    searchTerm
+});
+
+export const SET_RECON_ID = 'SET_RECON_ID';
+export const setReconId = (reconId) => ({
+    type: SET_RECON_ID,
+    reconId
+});
+
+//Asynchronous Actions List
 export const SET_GENRES_SUCCESS = 'SET_GENRES_SUCCESS';
 export const setGenresSuccess = genres => ({
     type: SET_GENRES_SUCCESS,
@@ -18,6 +32,7 @@ export const setGenresSuccess = genres => ({
 
 export const setGenres = () => dispatch => {
     const url = "https://api.themoviedb.org/3/genre/movie/list?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US";
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -38,9 +53,10 @@ export const fetchPlayingSuccess = playing => ({
 });
 
 export const fetchPlaying = () => dispatch => {
-    console.log('fetchplaying is set');
     dispatch(loaderIncrement());
+
     const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -48,10 +64,8 @@ export const fetchPlaying = () => dispatch => {
             }
             return res.json()
         })
-       
         .then(playing => {
             dispatch(loaderDecrement());
-            console.log('fetchplaying unset')
             dispatch(fetchPlayingSuccess(playing.results));
         })
         .catch(err => console.log(err));
@@ -64,9 +78,10 @@ export const fetchUpcomingSuccess = upcoming => ({
 });
 
 export const fetchUpcoming = () => dispatch => {
-    console.log('fetchupcoming is set');
     dispatch(loaderIncrement());
+
     const url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -76,7 +91,6 @@ export const fetchUpcoming = () => dispatch => {
         })
         .then(upcoming => {
             dispatch(loaderDecrement());
-            console.log('fetchupcoming is unset')
             dispatch(fetchUpcomingSuccess(upcoming.results));
         })
         .catch(err => console.log(err));
@@ -90,8 +104,9 @@ export const fetchPopularSuccess = popular => ({
 
 export const fetchPopular = () => dispatch => {
     dispatch(loaderIncrement());
-    console.log('fetchpopular is set')
+
     const url = "https://api.themoviedb.org/3/movie/popular?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1";
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -101,7 +116,6 @@ export const fetchPopular = () => dispatch => {
         })
         .then(popular => {
             dispatch(loaderDecrement());
-            console.log('fetchpopular is unset')
             dispatch(fetchPopularSuccess(popular.results));
         })
         .catch(err => console.log(err));
@@ -115,8 +129,9 @@ export const fetchTopSuccess = top => ({
 
 export const fetchTop = () => dispatch => {
     dispatch(loaderIncrement());
-    console.log('top is set')
+
     const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -129,12 +144,10 @@ export const fetchTop = () => dispatch => {
         )
         .then(top => {
             dispatch(loaderDecrement());
-            console.log('top is unset')
             dispatch(fetchTopSuccess(top.results));
         })
         .catch(err => console.log(err));
 }
-
 
 export const FETCH_RECON_SUCCESS = 'FETCH_RECON_SUCCESS';
 export const fetchReconSuccess = recon => ({
@@ -144,9 +157,10 @@ export const fetchReconSuccess = recon => ({
 
 export const fetchRecon = (id) => dispatch => {
     dispatch(loaderIncrement());
-    console.log('recon is set')
+
     let iD = encodeURIComponent(id);
     const url = `https://api.themoviedb.org/3/movie/${iD}/recommendations?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1`;
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -158,11 +172,8 @@ export const fetchRecon = (id) => dispatch => {
             sleeper(1000)
         )
         .then(recon => {
-            
             dispatch(fetchReconSuccess(recon.results));
-            dispatch(loaderDecrement());
-            console.log('recon is unset')
-            
+            dispatch(loaderDecrement());            
         })
         .catch(err => console.log(err));
 }
@@ -175,9 +186,10 @@ export const fetchMovieDetailsSuccess = details => ({
 
 export const fetchMovieDetails = (id) => dispatch => {
     dispatch(loaderIncrement());
-    console.log('details is set')
+
     let iD = encodeURIComponent(id);
     const url = `https://api.themoviedb.org/3/movie/${iD}?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US`;
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -190,16 +202,13 @@ export const fetchMovieDetails = (id) => dispatch => {
         )
         .then (details => {
             dispatch(fetchMovieDetailsSuccess(details));
-            // dispatch(loaderDecrement());
-            console.log('details is unset')
         })
         .then(
             sleeper(1000)
         )
-        .then ( () => {
+        .then(
             dispatch(loaderDecrement())
-            console.log('loader is unset');
-        })
+        )
         .catch(err => console.log(err));
 }
 
@@ -211,10 +220,10 @@ export const fetchActorsSucces = actors => ({
 
 export const fetchActors = (id) => dispatch => {
     dispatch(loaderIncrement());
-    console.log('actors is set');
-    let iD = encodeURIComponent(id);
 
+    let iD = encodeURIComponent(id);
     const url = `https://api.themoviedb.org/3/movie/${iD}/credits?api_key=20ab5eea604d1925caf8b70508fb639b`;
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -240,9 +249,8 @@ export const fetchTrailerSuccess = trailer => ({
 
 export const fetchMovieTrailer = (id) => dispatch => {
     dispatch(loaderIncrement());
-    console.log('trailers is set');
-    let iD = encodeURIComponent(id);
 
+    let iD = encodeURIComponent(id);
     const url = `https://api.themoviedb.org/3/movie/${iD}/videos?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US
 `;
     return fetch(url)
@@ -270,10 +278,10 @@ export const searchMovieSuccess = results => ({
 
 export const searchMovie = (searchTerm) => (dispatch) => {
     dispatch(loaderIncrement());
-    console.log('searchmovie is set')
-    let search = encodeURIComponent(searchTerm);
 
+    let search = encodeURIComponent(searchTerm);
     const url = `https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=${search}`;
+    
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -297,14 +305,3 @@ export const loaderHandler = () => dispatch => {
     dispatch(loaderDecrement());    
 };
 
-export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
-export const setSearchTerm = (searchTerm) => ({
-    type: SET_SEARCH_TERM,
-    searchTerm
-});
-
-export const SET_RECON_ID = 'SET_RECON_ID';
-export const setReconId = (reconId) => ({
-    type: SET_RECON_ID,
-    reconId
-})

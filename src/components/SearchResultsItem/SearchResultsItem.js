@@ -9,17 +9,13 @@ export class SearchResultsItem extends React.Component{
 
     handleId = e => {
         let movieId = this.props.id
-        console.log("carousel item", movieId); //this is returning undefined
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.history.push(`/movie-detail?query=${movieId}`);
-        // const params = (new URL(document.location)).searchParams;
-        // const searchterm = params.get("query");
-        // console.log('here', searchterm);
-
     }
 
     render() {
+        
         let genres = this.props.genres;
         let genreList = this.props.genres.length;
 

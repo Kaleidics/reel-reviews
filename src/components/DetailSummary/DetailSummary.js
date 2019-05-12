@@ -1,6 +1,7 @@
 import React from 'react';
+import { Cast } from '../Cast/Cast';
 import './DetailSummary.css';
-import { Cast } from '../Cast/Cast'
+
 export default class DetailSummary extends React.Component {
 
     render() {
@@ -38,8 +39,7 @@ export default class DetailSummary extends React.Component {
                 <div className="summary-inner-right">
                     {splash}
                 </div>
-               
             </div>
-        )
+        );
     }
 }

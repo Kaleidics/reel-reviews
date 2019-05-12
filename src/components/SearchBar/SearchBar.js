@@ -1,21 +1,17 @@
 import React from 'react';
-import './SearchBar.css'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { searchMovie } from '../../actions/index';
-
-
-import { setSearchTerm } from '../../actions/index';
+import { searchMovie, setSearchTerm } from '../../actions/index';
+import './SearchBar.css'
 
 export class SearchBar extends React.Component {
+
     handleSearchinput = e => {
         e.preventDefault();
         let searchTerm = this.refs.search.value;
-        console.log(searchTerm);
         this.props.history.push(`/search?query=${searchTerm}`);
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
-        console.log('here',searchterm);
         this.props.dispatch(setSearchTerm(searchterm));
         this.props.dispatch(searchMovie(searchterm));
         this.refs.search.value ='';
@@ -29,7 +25,6 @@ export class SearchBar extends React.Component {
                     <input type="text" name="search" placeholder="Search for a movie" ref="search" required />
                             <button className="search-btn" type="submit">Search</button>
                     </form>
-                
             </div>
         );
     }

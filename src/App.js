@@ -14,12 +14,12 @@ import  MovieDetailPage  from './components/MovieDetailPage/MovieDetailPage';
 export class App extends React.Component {
 
   componentDidMount() {
-    // window.scrollTo(0, 0);
     this.props.dispatch(setSearchTerm(''));
     this.props.dispatch(setGenres());
   }
 
-  render(){
+  render() {
+
     let loader;
     if (this.props.isLoading > 0) {
       loader = <Loader />
@@ -30,9 +30,9 @@ export class App extends React.Component {
       <div className="outer-container">
         {loader}
         <Route path="/" component={NavBar} />
-       <Route exact path="/" component={LandingPage} />
-       <Route path="/search" component={SearchPage} />
-       <Route path="/movie-detail" component={MovieDetailPage} />
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/search" component={SearchPage} />
+        <Route path="/movie-detail" component={MovieDetailPage} />
       </div>
       <Footer />
       </BrowserRouter>

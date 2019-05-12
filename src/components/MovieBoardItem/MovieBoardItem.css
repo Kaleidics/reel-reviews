@@ -1,55 +1,32 @@
 .movieBoardItem {
     width: 100%;
     height: 100%;
-    /* border: 2px solid transparent;
-    opacity: 0.6;
-    transition: all .4s ease-in-out; */
-    /* opacity: 0.6; */
 }
 
-
-/* .movieBoardItem:hover {
-    transform: scale(1.01) translateZ(1px);
-    cursor: pointer;
-    border-color: orange;
-    opacity: 1;
-} */
 .inner-movieBoardItem {
-    object-fit: cover;
     width: 100%;
     height: 100%;
-    /* opacity: 0.6; */
+    object-fit: cover;
 }
 
 .movieBoard-desc {
-    /* top: 5%; */
-    /* left: 50%; */
-    /* right: 0px; */
-    position: relative;
-    /* left: 2%; */
-    /* text-align: center; */
-    color: #fff;
     max-width: 100%;
-    /* margin-left: 5%; */
     min-height: 0%;
-    /* background: rgba(55, 55, 55, 0.6); */
+    position: relative;
     font-family: 'Roboto', sans-serif;
-
+    color: #f0f0f0;
 }
 
 .inner-desc h4 {
-    font-size: 1.5rem;
     font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1.5rem;
     color: #fff;
     line-height: 1.4;
-
 }
+
 .inner-desc {
-    /* text-align: right; */
-    padding-left: 15px;
-    /* margin: 0; */
     position: absolute;
     background: linear-gradient(to bottom, rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.7), rgba(15, 15, 15, 0.7), rgba(55, 55, 55, 0.1));
+    padding-left: 15px;
     line-height: 1.4;
-
 }

@@ -1,28 +1,20 @@
 import React from 'react';
-import './CarouselItem.css';
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom';
-import { fetchRecon, fetchMovieDetails, fetchActors, fetchMovieTrailer } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
+import { fetchRecon, fetchMovieDetails, fetchActors, fetchMovieTrailer } from '../../actions/index';
+import './CarouselItem.css';
 
 export class CarouselItem extends React.Component{
 
     handleId = e => {
         window.scrollTo(0, 0);
         let movieId = this.props.id
-        console.log("carousel item", movieId); //this is returning undefined
+        //move trailer breaking navigation for some reason replaced with poster for now
         // this.props.dispatch(fetchMovieTrailer(movieId));
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.dispatch(fetchActors(movieId));
-       
-        
-        this.props.history.push(`/movie-detail?query=${movieId}`);
-        console.log(`set history to ${movieId}`);
-        // const params = (new URL(document.location)).searchParams;
-        // const searchterm = params.get("query");
-        // console.log('here', searchterm);
-        
+        this.props.history.push(`/movie-detail?query=${movieId}`);       
     }
 
     render() {

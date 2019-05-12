@@ -1,6 +1,7 @@
 import React from 'react';
-import './Loader.css';
 import { loader } from './svg';
+import './Loader.css';
+
 
 export default function Loader() {
 
@@ -8,6 +9,6 @@ export default function Loader() {
         <div className='loader'>
             {loader}
         </div>
-    )
+    );
 }
 
