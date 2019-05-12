@@ -79,9 +79,13 @@
 .summary-inner-right {
     width: 40%;
     max-width: 40%;
-    height: 100%;
+    max-height: 500px;
 }
 
+.splash {
+    height: 100%;
+    width: 40%;
+}
 .movie-video {
     border: none;
     height: 100%;
