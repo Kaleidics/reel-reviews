@@ -19,11 +19,12 @@ export class MovieDetailPage extends React.Component {
             console.log('here', clickedMovie);
 
             if(clickedMovie) {
+                this.props.dispatch(fetchMovieTrailer(clickedMovie));
                 this.props.dispatch(setReconId(clickedMovie));
                 this.props.dispatch(fetchMovieDetails(clickedMovie));
                 this.props.dispatch(fetchRecon(clickedMovie));
                 this.props.dispatch(fetchActors(clickedMovie));
-                this.props.dispatch(fetchMovieTrailer(clickedMovie));
+                
             }
            
             
@@ -33,11 +34,12 @@ export class MovieDetailPage extends React.Component {
         console.log('here', clickedMovie);
 
         if(clickedMovie) {
+            this.props.dispatch(fetchMovieTrailer(clickedMovie));
             this.props.dispatch(setReconId(clickedMovie));
             this.props.dispatch(fetchMovieDetails(clickedMovie));
             this.props.dispatch(fetchRecon(clickedMovie));
             this.props.dispatch(fetchActors(clickedMovie));
-            this.props.dispatch(fetchMovieTrailer(clickedMovie));
+            
         }
        
     }

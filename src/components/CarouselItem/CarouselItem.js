@@ -2,7 +2,7 @@ import React from 'react';
 import './CarouselItem.css';
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { fetchRecon, fetchMovieDetails, fetchActors } from '../../actions/index';
+import { fetchRecon, fetchMovieDetails, fetchActors, fetchMovieTrailer } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
 
 export class CarouselItem extends React.Component{
@@ -10,9 +10,12 @@ export class CarouselItem extends React.Component{
     handleId = e => {
         let movieId = this.props.id
         console.log("carousel item", movieId); //this is returning undefined
+        this.props.dispatch(fetchMovieTrailer(movieId));
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.dispatch(fetchActors(movieId));
+       
+
         this.props.history.push(`/movie-detail?query=${movieId}`);
         // const params = (new URL(document.location)).searchParams;
         // const searchterm = params.get("query");
