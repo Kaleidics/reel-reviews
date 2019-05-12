@@ -12,7 +12,7 @@ export default class Footer extends React.Component {
             <footer>
                 <section className="copyright">
                     <ul className="title-block">
-                        <h3><Link to="/">Reel Reviews</Link></h3>
+                        <li><h3><Link to="/">Reel Reviews</Link></h3></li>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/search">Search</Link></li>
                         <li><Link to="/search">Profile</Link></li>
