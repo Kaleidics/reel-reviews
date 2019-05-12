@@ -1,9 +1,11 @@
 .summary-container {
     color: white;
-    display: flex;
     height: 100%;
     width: 95%;
     font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
 }
 
 .summary-details {
@@ -58,8 +60,8 @@
     
 }
 .summary-inner-left {
-    width: 60%;
-    max-width: 60%;
+    width: 76%;
+    max-width: 76%;
     padding-left: 1%;
     padding-right: 1%;
 }
@@ -79,12 +81,12 @@
 .summary-inner-right {
     width: 40%;
     max-width: 40%;
-    max-height: 500px;
+    max-height: 100%;
 }
 
 .splash {
     height: 100%;
-    width: 40%;
+    width: 100%;
 }
 .movie-video {
     border: none;

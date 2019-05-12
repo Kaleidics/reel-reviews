@@ -9,9 +9,9 @@ export class Cast extends React.Component {
 
   componentDidMount() {
     // the trick
-    setTimeout(() => {
-      this.forceUpdate();
-    }, 50);
+    // setTimeout(() => {
+    //   this.forceUpdate();
+    // }, 50);
   }
     render(){
 
@@ -59,7 +59,7 @@ export class Cast extends React.Component {
                 <Slider {...settings}>
                     {cast}
                 </Slider>
-                <hr className="carousel-divider"/>
+                <hr className="cast-carousel-divider"/>
             </div>
         )
     }

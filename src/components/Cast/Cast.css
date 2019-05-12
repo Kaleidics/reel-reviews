@@ -8,12 +8,12 @@
     
 }
 
-.carousel-divider {
+.cast-carousel-divider {
     height: 2px;
     background-image: linear-gradient(90deg, transparent, #666, transparent);
     border: 0;
 }
 
-hr {
-    width: 200%;
+.cast-carousel-divider {
+    width: 166%;
 }

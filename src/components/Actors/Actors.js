@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRecon, fetchMovieDetails } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
 import './Actors.css'
 
@@ -8,7 +7,7 @@ export class Actors extends React.Component {
 
     handleId = e => {
         let actorId = this.props.id
-        console.log("carousel item", actorId); //this is returning undefined
+        console.log("carousel item", actorId);
 
     }
 

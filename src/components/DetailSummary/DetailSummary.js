@@ -7,11 +7,11 @@ export default class DetailSummary extends React.Component {
 
         let splash = <img className="splash"  src={`https://image.tmdb.org/t/p/original/${this.props.data.poster_path}`} alt={this.props.data.title} />
 
-        if (this.props.trailerdata) {
-            splash = <iframe className="movie-video" width="100%" height="100%"
-                src={`https://www.youtube.com/embed/${this.props.trailerdata.key}?modestbranding=1`}>
-            </iframe>
-        }
+        // if (this.props.trailerdata) {
+        //     splash = <iframe className="movie-video" width="100%" height="100%"
+        //         src={`https://www.youtube.com/embed/${this.props.trailerdata.key}?modestbranding=1`}>
+        //     </iframe>
+        // }
 
         return (
             <div className="summary-container">
@@ -37,6 +37,7 @@ export default class DetailSummary extends React.Component {
                 <div className="summary-inner-right">
                     {splash}
                 </div>
+               
             </div>
         )
     }

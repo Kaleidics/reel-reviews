@@ -10,13 +10,14 @@ export class CarouselItem extends React.Component{
     handleId = e => {
         let movieId = this.props.id
         console.log("carousel item", movieId); //this is returning undefined
-        this.props.dispatch(fetchMovieTrailer(movieId));
+        // this.props.dispatch(fetchMovieTrailer(movieId));
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.dispatch(fetchActors(movieId));
        
-
+        
         this.props.history.push(`/movie-detail?query=${movieId}`);
+        console.log(`set history to ${movieId}`);
         // const params = (new URL(document.location)).searchParams;
         // const searchterm = params.get("query");
         // console.log('here', searchterm);
