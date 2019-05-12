@@ -8,6 +8,7 @@ import { withRouter } from 'react-router-dom';
 export class CarouselItem extends React.Component{
 
     handleId = e => {
+        window.scrollTo(0, 0);
         let movieId = this.props.id
         console.log("carousel item", movieId); //this is returning undefined
         // this.props.dispatch(fetchMovieTrailer(movieId));

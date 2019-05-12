@@ -24,7 +24,7 @@ export class MovieBoardItem extends React.Component {
                 <div className="movieBoard-desc">
                     <div className="inner-desc">
                         <h4>{this.props.data.title}</h4>
-                        <p>{this.props.data.overview}</p>
+                        <p>{`${(this.props.data.overview).substring(0, 200)} . . .`}</p>
                     </div>
 
                 </div>
