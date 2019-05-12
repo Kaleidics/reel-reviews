@@ -10,10 +10,12 @@
 
 .summary-details {
     display: flex;
+    margin-left: 5%;
 }
 .summary-title {
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-left: 5%;
 }
 .summary-title h2 {
     font-weight: normal;
@@ -71,6 +73,11 @@
     text-transform: uppercase;
     letter-spacing: 3px;
 }
+
+.summary-paragraph-container {
+    margin-left: 5%;
+}
+
 .summary-paragraph-container p {
     line-height: 1.4;
     font-size: 1.1rem;

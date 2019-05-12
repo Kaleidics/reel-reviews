@@ -17,7 +17,7 @@ export class Cast extends React.Component {
 
     let settings = {
       infinite: false,
-      arrows: false,
+      // arrows: false,
       speed: 500,
       slidesToShow: 7,
       slidesToScroll: 7,
@@ -54,7 +54,7 @@ export class Cast extends React.Component {
         });
 
         return (
-            <div className="inner-carousel">
+            <div className="cast-inner-carousel">
             <h3>{this.props.title}</h3>
                 <Slider {...settings}>
                     {cast}
