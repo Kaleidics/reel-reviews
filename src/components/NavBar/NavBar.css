@@ -24,6 +24,10 @@ header {
     align-items: center;
 }
 
-.logo a:visited {
-    color: #fff;
+.profile {
+    color: #f0f0f0;
+}
+
+.logo a:visited, .profile a:visited {
+    color: #f0f0f0;
 }

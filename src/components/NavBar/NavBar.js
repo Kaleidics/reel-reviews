@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
                <ul className="navBar-ul">
                    <li className="logo"><Link to="/">Home</Link></li>
                     <li>{this.props.location.pathname !== "/search" ? <SearchBar /> : ""}</li>
-                   <li>Profile</li>
+                   <li className="profile"><Link to="/profile">Profile</Link></li>
                </ul>
             </header>
         )

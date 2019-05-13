@@ -31,7 +31,7 @@ export const setGenresSuccess = genres => ({
 });
 
 export const setGenres = () => dispatch => {
-    const url = "https://reel-reviews-backend.herokuapp.com/3api/genres";
+    const url = "http://localhost:8080/3api/genres";
 
     return fetch(url)
         .then(res => {
@@ -55,7 +55,7 @@ export const fetchPlayingSuccess = playing => ({
 export const fetchPlaying = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://reel-reviews-backend.herokuapp.com/3api/playing';
+    const url = 'http://localhost:8080/3api/playing';
 
     return fetch(url)
         .then(res => {
@@ -80,7 +80,7 @@ export const fetchUpcomingSuccess = upcoming => ({
 export const fetchUpcoming = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://reel-reviews-backend.herokuapp.com/3api/upcoming';
+    const url = 'http://localhost:8080/3api/upcoming';
 
     return fetch(url)
         .then(res => {
@@ -105,7 +105,7 @@ export const fetchPopularSuccess = popular => ({
 export const fetchPopular = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = "https://reel-reviews-backend.herokuapp.com/3api/popular";
+    const url = "http://localhost:8080/3api/popular";
 
     return fetch(url)
         .then(res => {
@@ -130,7 +130,7 @@ export const fetchTopSuccess = top => ({
 export const fetchTop = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://reel-reviews-backend.herokuapp.com/3api/top';
+    const url = 'http://localhost:8080/3api/top';
 
     return fetch(url)
         .then(res => {
@@ -159,7 +159,7 @@ export const fetchRecon = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://reel-reviews-backend.herokuapp.com/3api/recon/${iD}`;
+    const url = `http://localhost:8080/3api/recon/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -188,7 +188,7 @@ export const fetchMovieDetails = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://reel-reviews-backend.herokuapp.com/3api/movie/${iD}`;
+    const url = `http://localhost:8080/3api/movie/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -219,7 +219,7 @@ export const fetchActors = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://reel-reviews-backend.herokuapp.com/3api/cast/${iD}`;
+    const url = `http://localhost:8080/3api/cast/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -248,7 +248,7 @@ export const fetchMovieTrailer = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://reel-reviews-backend.herokuapp.com/3api/trailer/${iD}`;
+    const url = `http://localhost:8080/3api/trailer/${iD}`;
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -276,7 +276,7 @@ export const searchMovie = searchTerm => dispatch => {
     // dispatch(loaderIncrement());
 
     let search = encodeURIComponent(searchTerm);
-    const url = `https://reel-reviews-backend.herokuapp.com/3api/search/${search}`;
+    const url = `http://localhost:8080/3api/search/${search}`;
     
     return fetch(url)
         .then(res => {

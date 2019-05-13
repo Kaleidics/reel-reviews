@@ -9,6 +9,7 @@ import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
 import { setSearchTerm, setGenres } from './actions/index';
 import  MovieDetailPage  from './components/MovieDetailPage/MovieDetailPage';
+import AuthPage from './components/Auth/AuthPage';
 
 
 export class App extends React.Component {
@@ -33,6 +34,7 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route path="/search" component={SearchPage} />
         <Route path="/movie-detail" component={MovieDetailPage} />
+        <Route path="/profile" component={AuthPage} />
       </div>
       <Footer />
       </BrowserRouter>

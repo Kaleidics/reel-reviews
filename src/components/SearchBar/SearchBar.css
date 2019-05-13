@@ -24,6 +24,12 @@
     cursor: pointer;
     opacity: 0.8;
     outline-width: 0;
+    transition: transform 80ms ease-in;
+
+}
+
+.search-btn:active {
+    transform: scale(0.95);
 }
 
 .search-btn:hover {
