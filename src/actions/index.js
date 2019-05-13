@@ -31,7 +31,7 @@ export const setGenresSuccess = genres => ({
 });
 
 export const setGenres = () => dispatch => {
-    const url = "https://api.themoviedb.org/3/genre/movie/list?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US";
+    const url = "https://reel-reviews-backend.herokuapp.com/3api/genres";
 
     return fetch(url)
         .then(res => {
@@ -41,7 +41,7 @@ export const setGenres = () => dispatch => {
             return res.json()
         })
         .then(genres => {
-            dispatch(setGenresSuccess(genres.genres));
+            dispatch(setGenresSuccess(genres));
         })
         .catch(err => console.log(err));
 }
@@ -55,7 +55,7 @@ export const fetchPlayingSuccess = playing => ({
 export const fetchPlaying = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+    const url = 'https://reel-reviews-backend.herokuapp.com/3api/playing';
 
     return fetch(url)
         .then(res => {
@@ -66,7 +66,7 @@ export const fetchPlaying = () => dispatch => {
         })
         .then(playing => {
             dispatch(loaderDecrement());
-            dispatch(fetchPlayingSuccess(playing.results));
+            dispatch(fetchPlayingSuccess(playing));
         })
         .catch(err => console.log(err));
 }
@@ -80,7 +80,7 @@ export const fetchUpcomingSuccess = upcoming => ({
 export const fetchUpcoming = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+    const url = 'https://reel-reviews-backend.herokuapp.com/3api/upcoming';
 
     return fetch(url)
         .then(res => {
@@ -91,7 +91,7 @@ export const fetchUpcoming = () => dispatch => {
         })
         .then(upcoming => {
             dispatch(loaderDecrement());
-            dispatch(fetchUpcomingSuccess(upcoming.results));
+            dispatch(fetchUpcomingSuccess(upcoming));
         })
         .catch(err => console.log(err));
 }
@@ -105,7 +105,7 @@ export const fetchPopularSuccess = popular => ({
 export const fetchPopular = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = "https://api.themoviedb.org/3/movie/popular?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1";
+    const url = "https://reel-reviews-backend.herokuapp.com/3api/popular";
 
     return fetch(url)
         .then(res => {
@@ -116,7 +116,7 @@ export const fetchPopular = () => dispatch => {
         })
         .then(popular => {
             dispatch(loaderDecrement());
-            dispatch(fetchPopularSuccess(popular.results));
+            dispatch(fetchPopularSuccess(popular));
         })
         .catch(err => console.log(err));
 }
@@ -130,7 +130,7 @@ export const fetchTopSuccess = top => ({
 export const fetchTop = () => dispatch => {
     dispatch(loaderIncrement());
 
-    const url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1';
+    const url = 'https://reel-reviews-backend.herokuapp.com/3api/top';
 
     return fetch(url)
         .then(res => {
@@ -144,7 +144,7 @@ export const fetchTop = () => dispatch => {
         )
         .then(top => {
             dispatch(loaderDecrement());
-            dispatch(fetchTopSuccess(top.results));
+            dispatch(fetchTopSuccess(top));
         })
         .catch(err => console.log(err));
 }
@@ -155,11 +155,11 @@ export const fetchReconSuccess = recon => ({
     recon
 });
 
-export const fetchRecon = (id) => dispatch => {
+export const fetchRecon = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://api.themoviedb.org/3/movie/${iD}/recommendations?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US&page=1`;
+    const url = `https://reel-reviews-backend.herokuapp.com/3api/recon/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -172,7 +172,7 @@ export const fetchRecon = (id) => dispatch => {
             sleeper(1000)
         )
         .then(recon => {
-            dispatch(fetchReconSuccess(recon.results));
+            dispatch(fetchReconSuccess(recon));
             dispatch(loaderDecrement());            
         })
         .catch(err => console.log(err));
@@ -184,11 +184,11 @@ export const fetchMovieDetailsSuccess = details => ({
     details
 });
 
-export const fetchMovieDetails = (id) => dispatch => {
+export const fetchMovieDetails = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://api.themoviedb.org/3/movie/${iD}?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US`;
+    const url = `https://reel-reviews-backend.herokuapp.com/3api/movie/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -197,14 +197,11 @@ export const fetchMovieDetails = (id) => dispatch => {
             }
             return res.json()
         })
-        .then(
-            sleeper(1500)
-        )
         .then (details => {
             dispatch(fetchMovieDetailsSuccess(details));
         })
         .then(
-            sleeper(1000)
+            sleeper(3000)
         )
         .then(
             dispatch(loaderDecrement())
@@ -218,11 +215,11 @@ export const fetchActorsSucces = actors => ({
     actors
 });
 
-export const fetchActors = (id) => dispatch => {
+export const fetchActors = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://api.themoviedb.org/3/movie/${iD}/credits?api_key=20ab5eea604d1925caf8b70508fb639b`;
+    const url = `https://reel-reviews-backend.herokuapp.com/3api/cast/${iD}`;
 
     return fetch(url)
         .then(res => {
@@ -235,10 +232,10 @@ export const fetchActors = (id) => dispatch => {
             sleeper(1000)
         )
         .then(actors => {
-            dispatch(fetchActorsSucces(actors.cast));
+            dispatch(fetchActorsSucces(actors));
             dispatch(loaderDecrement());
         })
-        .catch( err => console.log(err))
+        .catch( err => console.log(err));
 }
 
 export const FETCH_TRAILER_SUCCESS = 'FETCH_TRAILER_SUCCESS';
@@ -247,12 +244,11 @@ export const fetchTrailerSuccess = trailer => ({
     trailer
 });
 
-export const fetchMovieTrailer = (id) => dispatch => {
+export const fetchMovieTrailer = id => dispatch => {
     dispatch(loaderIncrement());
 
     let iD = encodeURIComponent(id);
-    const url = `https://api.themoviedb.org/3/movie/${iD}/videos?api_key=20ab5eea604d1925caf8b70508fb639b&language=en-US
-`;
+    const url = `https://reel-reviews-backend.herokuapp.com/3api/trailer/${iD}`;
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -264,10 +260,10 @@ export const fetchMovieTrailer = (id) => dispatch => {
             sleeper(1000)
         )
         .then(trailer => {
-            dispatch(fetchTrailerSuccess(trailer.results[0]));
+            dispatch(fetchTrailerSuccess(trailer));
             dispatch(loaderDecrement());
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 }
 
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
@@ -276,11 +272,11 @@ export const searchMovieSuccess = results => ({
     results
 });
 
-export const searchMovie = (searchTerm) => (dispatch) => {
-    dispatch(loaderIncrement());
+export const searchMovie = searchTerm => dispatch => {
+    // dispatch(loaderIncrement());
 
     let search = encodeURIComponent(searchTerm);
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=20ab5eea604d1925caf8b70508fb639b&query=${search}`;
+    const url = `https://reel-reviews-backend.herokuapp.com/3api/search/${search}`;
     
     return fetch(url)
         .then(res => {
@@ -291,10 +287,10 @@ export const searchMovie = (searchTerm) => (dispatch) => {
         })
         .then(results => {
             console.log('loader');
-            dispatch(searchMovieSuccess(results.results));
+            dispatch(searchMovieSuccess(results));
         })
         .then(() => {
-            dispatch(loaderDecrement())
+            // dispatch(loaderDecrement());
             console.log('searchmovie is unset')
         }
         )
