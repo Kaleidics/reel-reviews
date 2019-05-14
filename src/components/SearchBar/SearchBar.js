@@ -9,9 +9,11 @@ export class SearchBar extends React.Component {
     handleSearchinput = e => {
         e.preventDefault();
         let searchTerm = this.refs.search.value;
+        console.log(this.props, '1')
         this.props.history.push(`/search?query=${searchTerm}`);
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
+        console.log(this.props,'2')
         this.props.dispatch(setSearchTerm(searchterm));
         this.props.dispatch(searchMovie(searchterm));
         this.refs.search.value ='';

@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Signup from '../Signup/Signup';
+import Login from '../Login/Login';
 import './Auth.css';
 
 export class AuthPage extends React.Component {
@@ -22,29 +24,13 @@ export class AuthPage extends React.Component {
             toggle: "inner-container"
         });
     }
-
+    
     render() {
         return (
             <div className="auth-container">
                 <div className={this.state.toggle} id="container">
-                    <div className="form-container sign-up-container">
-                        <form className="sign-up-form">
-                            <h2>Create Account</h2>
-                            <input type="text" placeholder="Display Name" />
-                            <input type="text" placeholder="Username" />
-                            <input type="password" placeholder="Password" />
-                            <button className="toggle-btn">Sign Up</button>
-                        </form>
-                    </div>
-                    <div className="form-container login-container">
-                        <form className="login-form">
-                            <h2>Login in</h2>
-                            <input type="text" placeholder="Username" />
-                            <input type="password" placeholder="Password" />
-                            <button className="toggle-btn">Log In</button>
-                            <button className="guest-toggle-btn">Guest Log In</button>
-                        </form>
-                    </div>
+                    <Signup />
+                    <Login />
                     <div className="overlay-container">
                         <div className="overlay">
                             <div className="overlay-panel overlay-left">

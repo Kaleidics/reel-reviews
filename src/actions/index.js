@@ -301,3 +301,56 @@ export const loaderHandler = () => dispatch => {
     dispatch(loaderDecrement());    
 };
 
+//needs a success handler for reducer
+export const registerUser = credentials => dispatch => {
+    const url = `http://localhost:8080/users/profile`;
+
+    return fetch(url , {
+        method: 'POST',
+        body: JSON.stringify(credentials),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.status === 201) {
+            
+        }
+
+        else {
+            return response.json()
+            .then(response => {
+                alert(`${(response.location).toUpperCase()} ${(response.message).toUpperCase()}`)
+            })
+            .catch(err => console.log(err));
+        }
+        return response.json()
+    })
+    .catch(err => console.log(err));
+}
+
+export const loginUser = credentials => dispatch => {
+    const url = `http://localhost:8080/auth/login`;
+
+    return fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(credentials),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(response => {
+        const authToken = response.authtoken;
+        localStorage.setItem('localtoken', authToken);
+    })
+    .then(response => {
+        if (localStorage.getItem('localtoken')) {
+            console.log('we got:', localStorage.getItem('localtoken'))
+            //dispatch the success to the trigger a reducer
+        }
+    })
+    .catch(err => {
+        alert('USERNAME OR PASSWORD DO NOT MATCH!');
+    });
+}
