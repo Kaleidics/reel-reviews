@@ -298,6 +298,11 @@ export const loaderHandler = () => dispatch => {
     dispatch(loaderDecrement());    
 };
 
+export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
+export const registerUserSuccess = success => ({
+    type: REGISTER_USER_SUCCESS,
+    success
+});
 //needs a success handler for reducer
 export const registerUser = credentials => dispatch => {
     const url = `http://localhost:8080/users/profile`;
@@ -325,6 +330,12 @@ export const registerUser = credentials => dispatch => {
     })
     .catch(err => console.log(err));
 }
+
+export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
+export const loginUserSuccess = success => ({
+    type: LOGIN_USER_SUCCESS,
+    success
+});
 
 export const loginUser = credentials => dispatch => {
     const url = `http://localhost:8080/auth/login`;

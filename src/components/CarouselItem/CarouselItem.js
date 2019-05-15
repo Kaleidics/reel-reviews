@@ -33,9 +33,9 @@ export class CarouselItem extends React.Component{
         if (this.props.data) {
             return (
                 <div className="movieContainer" onClick={this.handleId}>
-                    <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} />
+                    <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${this.props.data.poster_path}`} alt={this.props.data.title} />
                     <h3 className="movieName">{this.props.data.title}</h3>
-                    <p className="movieGenre">{getGenreText(this.props.data.genre_ids[0])}</p>
+                    <p className="movieGenre">{getGenreText(this.props.data.genre_ids[0])}/{getGenreText(this.props.data.genre_ids[1])}</p>
                 </div>
 
             );

@@ -34,7 +34,7 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route path="/search" component={SearchPage} />
         <Route path="/movie-detail" component={MovieDetailPage} />
-        <Route path="/profile" component={AuthPage} />
+        <Route path="/login" component={AuthPage} />
       </div>
       <Footer />
       </BrowserRouter>

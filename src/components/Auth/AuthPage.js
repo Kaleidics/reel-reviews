@@ -5,6 +5,10 @@ import Login from '../Login/Login';
 import './Auth.css';
 
 export class AuthPage extends React.Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     constructor(props) {
         super(props)
 
