@@ -24,10 +24,16 @@ header {
     align-items: center;
 }
 
+.search-bar {
+    margin: 0 10% 0 20%;
+}
 .profile {
     color: #f0f0f0;
 }
 
-.logo a:visited, .profile a:visited {
+.logo a, .logo img {
+    height: 100%;
+}
+.home a:visited, .profile a:visited {
     color: #f0f0f0;
 }
