@@ -22,6 +22,7 @@ export class Login extends React.Component {
     }
 
     guestLogin = e => {
+        e.preventDefault();
         console.log('triggered')
         this.setState({
             username: "Guest",
