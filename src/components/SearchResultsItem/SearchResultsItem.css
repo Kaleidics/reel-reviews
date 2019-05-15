@@ -11,10 +11,10 @@
 }
 
 .movieResultsPoster {
-    min-height: 75%;
+    min-height: 350px;
     min-width: 100%;
     max-width: 100%;
-    max-height: 75%;
+    max-height: 350px;
     border-radius: 10px;
     background: black;
     
