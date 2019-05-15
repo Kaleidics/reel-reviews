@@ -140,7 +140,7 @@ export const fetchTop = () => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(2500)
+            sleeper(1500)
         )
         .then(top => {
             dispatch(loaderDecrement());
@@ -169,7 +169,7 @@ export const fetchRecon = id => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(1000)
+            sleeper(1500)
         )
         .then(recon => {
             dispatch(fetchReconSuccess(recon));
@@ -201,7 +201,7 @@ export const fetchMovieDetails = id => dispatch => {
             dispatch(fetchMovieDetailsSuccess(details));
         })
         .then(
-            sleeper(3000)
+            sleeper(1500)
         )
         .then(
             dispatch(loaderDecrement())
@@ -228,9 +228,6 @@ export const fetchActors = id => dispatch => {
             }
             return res.json()
         })
-        .then (
-            sleeper(1000)
-        )
         .then(actors => {
             dispatch(fetchActorsSucces(actors));
             dispatch(loaderDecrement());
@@ -257,7 +254,7 @@ export const fetchMovieTrailer = id => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(1000)
+            sleeper(1500)
         )
         .then(trailer => {
             dispatch(fetchTrailerSuccess(trailer));
