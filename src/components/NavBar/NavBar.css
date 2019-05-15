@@ -34,6 +34,11 @@ header {
 .logo a, .logo img {
     height: 100%;
 }
+
+.profile a {
+    color: #f0f0f0;
+}
+
 .home a:visited, .profile a:visited {
     color: #f0f0f0;
 }
