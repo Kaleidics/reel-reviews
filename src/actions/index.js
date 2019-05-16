@@ -1,5 +1,4 @@
 import sleeper from '../sleeper';
-import { browserHistory } from 'react-router';
 
 //Synchronous Actions List
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';

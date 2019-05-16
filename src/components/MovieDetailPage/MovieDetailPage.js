@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import { withRouter } from 'react-router-dom';
-import { setReconId, fetchRecon, fetchMovieDetails, fetchActors, fetchMovieTrailer } from '../../actions/index';
+import { setReconId, fetchRecon, fetchMovieDetails, fetchActors } from '../../actions/index';
 import DetailSummary from '../DetailSummary/DetailSummary';
 import './MovieDetailPage.css';
+
+//fetchMovieTrailer is a breaking feature needs a revisit
+// import { fetchMovieTrailer } from '../../actions/index';
 
 export class MovieDetailPage extends React.Component {
 
@@ -74,7 +77,6 @@ export class MovieDetailPage extends React.Component {
                     <h2>REVIEW</h2>
                     <h2>REVIEW</h2>
                     <h2>REVIEW</h2>
-                    {/* <Carousel title={"Recommended"} movies={this.props.moviesRecon} /> */}
                 </div>
                 <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
             </div>

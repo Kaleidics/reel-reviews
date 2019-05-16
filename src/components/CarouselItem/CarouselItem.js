@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchRecon, fetchMovieDetails, fetchActors, fetchMovieTrailer } from '../../actions/index';
+import { fetchRecon, fetchMovieDetails, fetchActors} from '../../actions/index';
+//fetchMovieTrailer is a breaking feature needs a revisit
+// import { fetchMovieTrailer } from '../../actions/index';
+
 import './CarouselItem.css';
 
 export class CarouselItem extends React.Component{
@@ -24,6 +27,7 @@ export class CarouselItem extends React.Component{
 
         function getGenreText(id) {
             for (let i = 0; i < genreList; i++) {
+                // eslint-disable-next-line
                 if (genres[i].id == id) {
                     return genres[i].name;
                 }

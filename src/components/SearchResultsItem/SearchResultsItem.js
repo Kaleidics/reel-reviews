@@ -21,6 +21,7 @@ export class SearchResultsItem extends React.Component{
 
         function getGenreText(id) {
             for (let i = 0; i < genreList; i++) {
+                // eslint-disable-next-line
                 if (genres[i].id == id) {
                     return genres[i].name;
                 }
