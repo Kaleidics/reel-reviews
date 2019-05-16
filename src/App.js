@@ -10,6 +10,9 @@ import Footer from './components/Footer/Footer'
 import { setSearchTerm, setGenres } from './actions/index';
 import  MovieDetailPage  from './components/MovieDetailPage/MovieDetailPage';
 import AuthPage from './components/Auth/AuthPage';
+import PrivateRoute from './components/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard';
+import AuthTrue from './components/AuthTrue';
 
 
 export class App extends React.Component {
@@ -34,7 +37,9 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route path="/search" component={SearchPage} />
         <Route path="/movie-detail" component={MovieDetailPage} />
-        <Route path="/login" component={AuthPage} />
+        {/* <Route path="/login" component={AuthPage} /> */}
+        <PrivateRoute authed={this.props.authState} path="/dashboard" component={Dashboard} />
+        <AuthTrue authed={this.props.authState} path="/login" component={AuthPage} />
       </div>
       <Footer />
       </BrowserRouter>
@@ -44,7 +49,8 @@ export class App extends React.Component {
 
 const mapStateToProps = state => ({
   isLoading: state.app.isLoading,
-  genres: state.app.genres
+  genres: state.app.genres,
+  authState: state.app.authState
 });
 
 export default connect(mapStateToProps)(App);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../actions/index';
 
 
@@ -37,7 +38,11 @@ export class Login extends React.Component {
         
     }
 
-    render(){
+    render() {
+        if (this.props.authState === true) {
+           return <Redirect to="/dashboard" />
+        }
+
         return (
             <div className="form-container login-container">
                 <form className="login-form" onSubmit={this.handleLogin} >
@@ -52,6 +57,10 @@ export class Login extends React.Component {
     }
 }
 
+const mapStateToProps = state => ({
+    authState: state.app.authState
+});
+
 const mapDispatchToProps = (dispatch) => {
     return {
         loginUser: (userInfo) => {
@@ -60,4 +69,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

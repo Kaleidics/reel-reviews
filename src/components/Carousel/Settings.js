@@ -23,23 +23,24 @@ export const settings = {
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 5,
+                slidesToShow: 5.3,
                 slidesToScroll: 5
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 700,
             settings: {
                 slidesToShow: 3.3,
                 slidesToScroll: 3,
-                initialSlide: 7
+                arrows: false
             }
         },
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 3.3,
-                slidesToScroll: 3
+                slidesToShow: 2.3,
+                slidesToScroll: 2,
+                arrows: false
             }
         }
     ]

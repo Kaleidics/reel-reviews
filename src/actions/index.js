@@ -1,4 +1,5 @@
 import sleeper from '../sleeper';
+import { browserHistory } from 'react-router';
 
 //Synchronous Actions List
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';
@@ -173,7 +174,7 @@ export const fetchRecon = id => dispatch => {
         )
         .then(recon => {
             dispatch(fetchReconSuccess(recon));
-            dispatch(loaderDecrement());            
+            dispatch(loaderDecrement());
         })
         .catch(err => console.log(err));
 }
@@ -197,7 +198,7 @@ export const fetchMovieDetails = id => dispatch => {
             }
             return res.json()
         })
-        .then (details => {
+        .then(details => {
             dispatch(fetchMovieDetailsSuccess(details));
         })
         .then(
@@ -232,7 +233,7 @@ export const fetchActors = id => dispatch => {
             dispatch(fetchActorsSucces(actors));
             dispatch(loaderDecrement());
         })
-        .catch( err => console.log(err));
+        .catch(err => console.log(err));
 }
 
 export const FETCH_TRAILER_SUCCESS = 'FETCH_TRAILER_SUCCESS';
@@ -274,7 +275,7 @@ export const searchMovie = searchTerm => dispatch => {
 
     let search = encodeURIComponent(searchTerm);
     const url = `http://localhost:8080/3api/search/${search}`;
-    
+
     return fetch(url)
         .then(res => {
             if (!res.ok) {
@@ -295,7 +296,7 @@ export const searchMovie = searchTerm => dispatch => {
 };
 
 export const loaderHandler = () => dispatch => {
-    dispatch(loaderDecrement());    
+    dispatch(loaderDecrement());
 };
 
 export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
@@ -307,28 +308,28 @@ export const registerUserSuccess = success => ({
 export const registerUser = credentials => dispatch => {
     const url = `http://localhost:8080/users/profile`;
 
-    return fetch(url , {
+    return fetch(url, {
         method: 'POST',
         body: JSON.stringify(credentials),
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => {
-        if (response.status === 201) {
-            
-        }
+        .then(response => {
+            if (response.status === 201) {
 
-        else {
+            }
+
+            else {
+                return response.json()
+                    .then(response => {
+                        alert(`${(response.location).toUpperCase()} ${(response.message).toUpperCase()}`)
+                    })
+                    .catch(err => console.log(err));
+            }
             return response.json()
-            .then(response => {
-                alert(`${(response.location).toUpperCase()} ${(response.message).toUpperCase()}`)
-            })
-            .catch(err => console.log(err));
-        }
-        return response.json()
-    })
-    .catch(err => console.log(err));
+        })
+        .catch(err => console.log(err));
 }
 
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
@@ -347,18 +348,20 @@ export const loginUser = credentials => dispatch => {
             'Content-Type': 'application/json'
         }
     })
-    .then(res => res.json())
-    .then(response => {
-        const authToken = response.authtoken;
-        localStorage.setItem('localtoken', authToken);
-    })
-    .then(response => {
-        if (localStorage.getItem('localtoken')) {
-            console.log('we got:', localStorage.getItem('localtoken'))
-            //dispatch the success to the trigger a reducer
-        }
-    })
-    .catch(err => {
-        alert('USERNAME OR PASSWORD DO NOT MATCH!');
-    });
+        .then(res => res.json())
+        .then(response => {
+            const authToken = response.authtoken;
+            localStorage.setItem('localtoken', authToken);
+        })
+        .then(response => {
+            if (localStorage.getItem('localtoken')) {
+                console.log('we got:', localStorage.getItem('localtoken'));
+                // browserHistory.push('/dashboard');
+                //dispatch the success to the trigger a reducer
+                dispatch(loginUserSuccess(true));
+            }
+        })
+        .catch(err => {
+            alert('USERNAME OR PASSWORD DO NOT MATCH!');
+        });
 }

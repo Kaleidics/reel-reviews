@@ -74,9 +74,9 @@ export class MovieDetailPage extends React.Component {
                     <h2>REVIEW</h2>
                     <h2>REVIEW</h2>
                     <h2>REVIEW</h2>
-                    <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
+                    {/* <Carousel title={"Recommended"} movies={this.props.moviesRecon} /> */}
                 </div>
-                
+                <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
             </div>
         );
     }

@@ -1,4 +1,4 @@
-import {FETCH_ACTORS_SUCCESS, SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS,FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS, FETCH_TRAILER_SUCCESS } from "../actions";
+import { LOGIN_USER_SUCCESS, FETCH_ACTORS_SUCCESS, SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS, FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS, FETCH_TRAILER_SUCCESS } from "../actions";
 
 const initialState = {
     isLoading: 0,
@@ -7,17 +7,19 @@ const initialState = {
     moviesPopular: [],
     moviesUpcoming: [],
     moviesTop: [],
-    movieSearch:[],
+    movieSearch: [],
     movieDetails: {},
     moviesRecon: [],
     movieActors: [],
     movieTrailer: [],
     reconId: "",
-    searchTerm: ""
-    
+    searchTerm: "",
+    authState: false
+
+
 };
 
-export const Reducer = (state=initialState, action) => {
+export const Reducer = (state = initialState, action) => {
 
     if (action.type === FETCH_TRAILER_SUCCESS) {
         return Object.assign({}, state, {
@@ -55,7 +57,7 @@ export const Reducer = (state=initialState, action) => {
         });
     }
 
-    if (action.type === LOADER_INCREMENT ) {
+    if (action.type === LOADER_INCREMENT) {
         return Object.assign({}, state, {
             isLoading: state.isLoading + 1
         });
@@ -63,7 +65,7 @@ export const Reducer = (state=initialState, action) => {
 
     if (action.type === LOADER_DECREMENT) {
         return Object.assign({}, state, {
-            isLoading: state.isLoading -1
+            isLoading: state.isLoading - 1
         });
     }
 
@@ -102,6 +104,12 @@ export const Reducer = (state=initialState, action) => {
             movieSearch: action.results
         });
     }
-    
+
+    if (action.type === LOGIN_USER_SUCCESS) {
+        return Object.assign({}, state, {
+            authState: action.success
+        });
+    }
+
     return state;
 }

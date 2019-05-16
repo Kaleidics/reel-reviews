@@ -14,7 +14,7 @@ function NextArrow(props) {
 export const settings = {
       infinite: false,
       speed: 500,
-      slidesToShow: 7,
+      slidesToShow: 7.3,
       slidesToScroll: 7,
       nextArrow: <NextArrow />,
       prevArrow: <NextArrow />,
@@ -23,14 +23,14 @@ export const settings = {
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 5,
+            slidesToShow: 5.3,
             slidesToScroll: 5
           }
         },
         {
           breakpoint: 600,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 3.3,
             slidesToScroll: 3,
             initialSlide: 7
           }
@@ -38,8 +38,8 @@ export const settings = {
         {
           breakpoint: 480,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToShow: 2.3,
+            slidesToScroll: 2
           }
         }
       ]
