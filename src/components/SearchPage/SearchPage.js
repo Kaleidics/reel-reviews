@@ -20,9 +20,9 @@ export class SearchPage extends React.Component {
         return (
             <div className="container">
                 {/* <NavBar /> */}
-                <div className="unique-searchBar">
+                {/* <div className="unique-searchBar">
                     <SearchBar />
-                </div>
+                </div> */}
                <SearchResults />
             </div>
         );

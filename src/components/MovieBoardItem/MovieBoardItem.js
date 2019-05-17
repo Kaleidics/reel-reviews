@@ -30,7 +30,7 @@ export class MovieBoardItem extends React.Component {
                 <div className="movieBoard-desc">
                     <div className="inner-desc">
                         <h4>{this.props.data.title}</h4>
-                        <p>{getGenreText(this.props.data.genre_ids[0])}/{getGenreText(this.props.data.genre_ids[1])}</p>
+                        <p>{getGenreText(this.props.data.genre_ids[0])} {this.props.data.genre_ids[1] ? `| ${getGenreText(this.props.data.genre_ids[1])}` : ''}</p>
                         <p>{`${(this.props.data.overview).substring(0, 200)}...`}</p>
                     </div>
                 </div>
