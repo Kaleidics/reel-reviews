@@ -13,9 +13,11 @@ export default class Footer extends React.Component {
                 <section className="copyright">
                     <ul className="title-block">
                         <li><h3><Link to="/">Reel Reviews</Link></h3></li>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/search">Search</Link></li>
-                        <li><Link to="/search">Profile</Link></li>
+                        <ul className="title-block-nav">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/search">Search</Link></li>
+                            <li><Link to="/search">Profile</Link></li>
+                        </ul>
                     </ul>
                     <ul className="contact">
                         <li><span>Website:</span><a href="https://eddiechu.dev/" target="_blank" rel="noopener noreferrer" aria-label="www.eddiechu.dev">www.eddiechu.dev</a> </li>
