@@ -20,14 +20,16 @@ export default class DetailSummary extends React.Component {
                     <h2 className="summary-title">{this.props.data.title}</h2>
                     <div className="summary-details">
                         <ul className="summary-details-left">
+                            
                             <li className="release">Original Title: {this.props.data.original_title}</li>
-                            <li className="release">Release Date: {this.props.data.release_date}</li>
-                            <li className="original-lang">Original Language: <span>{this.props.data.original_language}</span></li>
+                            <li className="original-lang">Original Language: <span>{this.props.data.original_language}</span></li> 
+                            <br />
                             <li className="runtime">Runtime: {this.props.data.runtime}mins</li>
+                            <li className="release">Release Date: {this.props.data.release_date}</li>
                         </ul>
                         <ul className="summary-details-right">
                             <li className="rr-score"><span>RR Score:</span><span>N/A</span></li>
-                            <li className="imdb-score"><span>TMDB Score:</span><span>{this.props.data.vote_average}</span></li>
+                            <li className="imdb-score"><span>TMDB Score:</span><span>{this.props.data.vote_average}/10</span></li>
                         </ul>
                     </div>
                     <div className="summary-paragraph-container">

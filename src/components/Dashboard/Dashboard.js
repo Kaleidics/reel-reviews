@@ -17,7 +17,14 @@ export default function Dashboard() {
 
     return (
         <div className="dash-div">
-           {myReviews}
+            <div>
+
+            </div>
+            <div className="dash-review-container">
+                <h2 className="reviews-h2">Your Latest Reviews</h2>
+                {myReviews}
+            </div>
+           
         </div>
     )
 
