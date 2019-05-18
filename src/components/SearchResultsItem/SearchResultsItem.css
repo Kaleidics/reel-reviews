@@ -11,10 +11,14 @@
 }
 
 .movieResultsPoster {
-    min-height: 400px;
+    /* min-height: 400px;
     min-width: 100%;
     max-width: 100%;
-    max-height: 400px;
+    max-height: 400px; */
+    min-width: 170px;
+    min-height: 250px;
+    max-width: 170px;
+    max-height: 250px;
     border: 2px solid transparent;
     background: transparent;
     transition: all .4s ease-in-out;

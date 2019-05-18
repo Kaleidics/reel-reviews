@@ -49,3 +49,7 @@
     opacity: 0.8;
     outline-width: 0;
 }
+
+.searchForm input:focus {
+    background: transparent;
+}

@@ -8,8 +8,10 @@
 }
 
 .actor-picture {
-    max-width: 100%;
-    max-height: 100%;
+   min-width: 107px;
+    min-height: 161px;
+    max-width: 107px;
+    max-height: 161px;
     border: 2px solid transparent;
     opacity: 0.6;
     transition: all .4s ease-in-out;
