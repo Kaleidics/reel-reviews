@@ -32,7 +32,7 @@
 }
 
 .review-text {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
     margin: 0;
     margin-bottom: 10px;
@@ -53,4 +53,41 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.score-options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.score-option {
+    width: 100px;
+    height: 37px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    outline-width: 0;
+    transition: transform 80ms ease-in;
+    margin-bottom: 10px;
+}
+
+.score-option.update {
+    background: none;
+    border: 3px solid rgb(235, 78, 122);
+}
+
+.score-option.delete {
+    background: none;
+    border: 3px solid rgb(235, 78, 122);
+}
+
+.score-option:hover {
+    color: rgb(235, 78, 122);
+    background: none;
 }

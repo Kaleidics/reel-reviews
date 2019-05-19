@@ -13,6 +13,7 @@
     max-width: 107px;
     max-height: 161px;
     border: 2px solid transparent;
+    border-radius: 5px;
     opacity: 0.6;
     transition: all .4s ease-in-out;
     

@@ -12,6 +12,7 @@ import { ReviewItem } from '../ReviewItem/ReviewItem';
 export class Dashboard extends React.Component {
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.dispatch(checkAuthState());
         this.props.dispatch(fetchUserReviews());
     }
@@ -21,7 +22,7 @@ export class Dashboard extends React.Component {
 
         const myReviews = this.props.userReviews.map((item, index) => {
             return (
-                <ReviewItem data={item} index={index} key={this.props.userReviews[index].movieId} id={this.props.userReviews[index].movieId} />
+                <ReviewItem data={item} index={index} key={this.props.userReviews[index].movieId} id={this.props.userReviews[index]._id} />
             );
         });
 

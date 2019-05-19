@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import MovieBoardItem from '../MovieBoardItem/MovieBoardItem';
 import './MovieBoard.css';
 
-export default class MovieBoard extends React.Component {
+export class MovieBoard extends React.Component {
     render() {
 
         const movieBoardItems = this.props.movies.slice(0,4).map((item, index ) => {
@@ -16,7 +17,7 @@ export default class MovieBoard extends React.Component {
                 <div className="title-section">
                     <h2>Reel Reviews</h2>
                     <p>Browse and rate the latest and greatest movies.</p>
-                    <Link to="/login"><button>Get Started</button></Link>
+                        <Link to="/login"><button>{this.props.authState === true ? 'Welcome Back!' : 'Get Started'}</button></Link>
                 </div>
                     {movieBoardItems[0]}
                 </div>
@@ -35,3 +36,8 @@ export default class MovieBoard extends React.Component {
         )
     }
 }
+const mapStateToProps = state => ({
+    authState: state.app.authState
+});
+
+export default connect(mapStateToProps)(MovieBoard);

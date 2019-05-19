@@ -1,12 +1,14 @@
 .movieBoardItem {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
 
 .inner-movieBoardItem {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .movieBoard-desc {
@@ -24,7 +26,7 @@
     line-height: 1.4;
 }
 
-.inner-desc h4, p {
+.inner-desc h4, .inner-desc p {
     padding-left: 2%;
 }
 

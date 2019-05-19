@@ -19,6 +19,7 @@
     min-height: 250px;
     max-width: 170px;
     max-height: 250px;
+    border-radius: 5px;
     border: 2px solid transparent;
     background: transparent;
     transition: all .4s ease-in-out;

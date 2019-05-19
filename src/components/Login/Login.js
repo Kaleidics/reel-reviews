@@ -47,8 +47,8 @@ export class Login extends React.Component {
             <div className="form-container login-container">
                 <form className="login-form" onSubmit={this.handleLogin} >
                     <h2>Login in</h2>
-                    <input type="text" placeholder="Username" onChange={e => this.setState({ username: e.target.value })}/>
-                    <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })}/>
+                    <input type="text" placeholder="Username" onChange={e => this.setState({ username: e.target.value })} required/>
+                    <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} required/>
                     <button className="toggle-btn">Log In</button>
                     <button className="guest-toggle-btn" onClick={this.guestLogin}>Guest Log In</button>
                 </form>

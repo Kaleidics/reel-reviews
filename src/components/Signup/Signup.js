@@ -26,9 +26,9 @@ export class Signup extends React.Component {
             <div className="form-container sign-up-container">
                 <form className="sign-up-form" onSubmit={this.handleRegister}>
                     <h2>Create Account</h2>
-                    <input type="text" placeholder="Display Name" onChange={e => this.setState({ displayname: e.target.value })} />
-                    <input type="text" placeholder="Username" onChange={e => this.setState({ username: e.target.value })} />
-                    <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} />
+                    <input type="text" placeholder="Display Name" onChange={e => this.setState({ displayname: e.target.value })} required />
+                    <input type="text" placeholder="Username" onChange={e => this.setState({ username: e.target.value })} required />
+                    <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} required />
                     <button className="toggle-btn">Sign Up</button>
                 </form>
             </div>

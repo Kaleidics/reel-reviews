@@ -32,6 +32,7 @@
 
 .dash-review-container {
     width: 90%;
+    min-height: 70vh;
     margin-left: 10%;
 }
 
