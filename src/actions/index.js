@@ -319,7 +319,12 @@ export const registerUser = credentials => dispatch => {
     })
         .then(response => {
             if (response.status === 201) {
+                const loginCreds = {
+                    username: credentials.username,
+                    password: credentials.password
+                }
 
+                dispatch(loginUser(loginCreds));
             }
 
             else {
