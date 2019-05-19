@@ -25,7 +25,7 @@ export class ReviewItem extends React.Component {
         return (
             <div className="review-container" id={this.props.id}>
                <div className="review-origin">
-                   <CarouselItem data={this.props.data} id={this.props.id}/>
+                   <CarouselItem data={this.props.data} id={this.props.data.movieId}/>
                </div>
                <div className="review-main">
                    <h3 className="review-title">"{this.props.data.reviewTitle}"</h3>
