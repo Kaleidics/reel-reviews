@@ -1,31 +1,47 @@
 import React from 'react';
 import './Dashboard.css';
-import { mockdata } from './mockdata';
+import { connect } from 'react-redux';
+import { fetchUserReviews, checkAuthState } from '../../actions/index';
+// import { mockdata } from './mockdata';
 
 
-import { ReviewItem } from '../ReviewItem/ReviewItem'
+import { ReviewItem } from '../ReviewItem/ReviewItem';
 
 
 
-export default function Dashboard() {
+export class Dashboard extends React.Component {
 
-    const myReviews = mockdata.map((item, index) => {
+    componentDidMount() {
+        this.props.dispatch(checkAuthState());
+        this.props.dispatch(fetchUserReviews());
+    }
+
+
+    render() {
+
+        const myReviews = this.props.userReviews.map((item, index) => {
+            return (
+                <ReviewItem data={item} index={index} key={this.props.userReviews[index].movieId} id={this.props.userReviews[index].movieId} />
+            );
+        });
+
         return (
-            <ReviewItem data={item} index={index} key={mockdata[index].movieId} id={mockdata[index].movieId} />
-        );
-    });
-
-    return (
-        <div className="dash-div">
-            <div>
+            <div className="dash-div">
+                {/* <div className="dash-nav">
+                    <button className="logout-btn">Log Out</button>
+                </div> */}
+                <div className="dash-review-container">
+                    <h2 className="reviews-h2">Your Latest Reviews</h2>
+                    {myReviews}
+                </div>
 
             </div>
-            <div className="dash-review-container">
-                <h2 className="reviews-h2">Your Latest Reviews</h2>
-                {myReviews}
-            </div>
-           
-        </div>
-    )
-
+        )
+    }
 }
+
+const mapStateToProps = state => ({
+    userReviews: state.app.userReviews
+});
+
+export default connect(mapStateToProps)(Dashboard);

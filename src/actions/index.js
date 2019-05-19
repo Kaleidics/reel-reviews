@@ -353,7 +353,9 @@ export const loginUser = credentials => dispatch => {
         .then(res => res.json())
         .then(response => {
             const authToken = response.authtoken;
+            const userId = response.userid;
             localStorage.setItem('localtoken', authToken);
+            localStorage.setItem('authedUser', userId);
         })
         .then(response => {
             if (localStorage.getItem('localtoken')) {
@@ -366,4 +368,44 @@ export const loginUser = credentials => dispatch => {
         .catch(err => {
             alert('USERNAME OR PASSWORD DO NOT MATCH!');
         });
+}
+
+export const checkAuthState = credientials => dispatch => {
+    if (localStorage.getItem('localtoken')) {
+        dispatch(loginUserSuccess(true));
+    } else {
+        dispatch(loginUserSuccess(false));
+    }
+}
+
+export const logoutUser = credentials => dispatch => {
+    if (localStorage.getItem('localtoken')) {
+        localStorage.removeItem('localtoken');
+        localStorage.removeItem('currentUser');
+        dispatch(loginUserSuccess(false));
+    }
+}
+
+export const FETCH_USER_REVIEW_SUCCESS = 'FETCH_USER_REVIEW_SUCCESS';
+export const fetchUserReviewSuccess = reviews => ({
+    type: FETCH_USER_REVIEW_SUCCESS,
+    reviews
+});
+
+export const fetchUserReviews = reviews => dispatch => {
+    const userId = localStorage.getItem('authedUser');
+    const url = API + `/review/user/${userId}`;
+
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(reviews => {
+            console.log(reviews);
+            dispatch(fetchUserReviewSuccess(reviews));
+        })
+        .catch(err => console.log(err));
 }

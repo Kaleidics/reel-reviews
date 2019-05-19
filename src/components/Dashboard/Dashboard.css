@@ -1,9 +1,10 @@
 .dash-div {
     color: white;
     font-size: 3rem;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 10vh;
+    display: flex;
 }
 
 .reviews-h2 {
@@ -12,4 +13,49 @@
     font-size: 0.8em;
     font-family: 'Roboto', sans-serif;
     opacity: 0.9;
+}
+
+.dash-nav {
+    position: fixed;
+    top: 125px;
+    width: 10%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    background: #131517;
+    border-radius: 5px;
+}
+
+.dash-review-container {
+    width: 90%;
+    margin-left: 10%;
+}
+
+.logout-btn {
+    width: 100px;
+    height: 37px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1rem;
+    background: rgb(235, 78, 122);
+    border: 3px solid rgb(235, 78, 122);
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    outline-width: 0;
+    transition: transform 80ms ease-in;
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
+}
+
+.logout-btn:hover {
+    color: rgb(235, 78, 122);
+    background: none;
 }

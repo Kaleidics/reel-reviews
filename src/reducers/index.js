@@ -1,4 +1,20 @@
-import { LOGIN_USER_SUCCESS, FETCH_ACTORS_SUCCESS, SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS, FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS, FETCH_TRAILER_SUCCESS } from "../actions";
+import { LOGIN_USER_SUCCESS,
+         FETCH_ACTORS_SUCCESS, 
+         SET_RECON_ID, 
+         SET_SEARCH_TERM, 
+         LOADER_INCREMENT, 
+         LOADER_DECREMENT, 
+         FETCH_PLAYING_SUCCESS, 
+         FETCH_POPULAR_SUCCESS, 
+         FETCH_UPCOMING_SUCCESS, 
+         FETCH_TOP_SUCCESS, 
+         SEARCH_MOVIE_SUCCESS, 
+         SET_GENRES_SUCCESS, 
+         FETCH_RECON_SUCCESS, 
+         FETCH_MOVIE_DETAILS_SUCCESS, 
+         FETCH_TRAILER_SUCCESS,
+         FETCH_USER_REVIEW_SUCCESS
+         } from "../actions";
 
 const initialState = {
     isLoading: 0,
@@ -14,7 +30,8 @@ const initialState = {
     movieTrailer: [],
     reconId: "",
     searchTerm: "",
-    authState: false
+    authState: false,
+    userReviews: []
 
 
 };
@@ -108,6 +125,12 @@ export const Reducer = (state = initialState, action) => {
     if (action.type === LOGIN_USER_SUCCESS) {
         return Object.assign({}, state, {
             authState: action.success
+        });
+    }
+
+    if (action.type === FETCH_USER_REVIEW_SUCCESS) {
+        return Object.assign({}, state, {
+            userReviews: action.reviews
         });
     }
 

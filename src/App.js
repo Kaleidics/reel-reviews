@@ -7,7 +7,7 @@ import SearchPage from './components/SearchPage/SearchPage';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer'
-import { setSearchTerm, setGenres } from './actions/index';
+import { setSearchTerm, setGenres, checkAuthState } from './actions/index';
 import  MovieDetailPage  from './components/MovieDetailPage/MovieDetailPage';
 import AuthPage from './components/Auth/AuthPage';
 import PrivateRoute from './components/PrivateRoute';
@@ -18,6 +18,7 @@ import AuthTrue from './components/AuthTrue';
 export class App extends React.Component {
 
   componentDidMount() {
+    this.props.dispatch(checkAuthState());
     this.props.dispatch(setSearchTerm(''));
     this.props.dispatch(setGenres());
   }
