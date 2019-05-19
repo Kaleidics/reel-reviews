@@ -143,7 +143,7 @@ export const fetchTop = () => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(1500)
+            sleeper(1000)
         )
         .then(top => {
             dispatch(loaderDecrement());
@@ -172,7 +172,7 @@ export const fetchRecon = id => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(1500)
+            sleeper(1000)
         )
         .then(recon => {
             dispatch(fetchReconSuccess(recon));
@@ -204,7 +204,7 @@ export const fetchMovieDetails = id => dispatch => {
             dispatch(fetchMovieDetailsSuccess(details));
         })
         .then(
-            sleeper(1500)
+            sleeper(1000)
         )
         .then(
             dispatch(loaderDecrement())
@@ -257,7 +257,7 @@ export const fetchMovieTrailer = id => dispatch => {
             return res.json()
         })
         .then(
-            sleeper(1500)
+            sleeper(1000)
         )
         .then(trailer => {
             dispatch(fetchTrailerSuccess(trailer));
@@ -408,4 +408,35 @@ export const fetchUserReviews = reviews => dispatch => {
             dispatch(fetchUserReviewSuccess(reviews));
         })
         .catch(err => console.log(err));
+}
+
+export const DELETE_REVIEW_SUCCESS = 'DELETE_REVIEW_SUCCESS';
+export const deleteReviewSuccess = deleted => ({
+    type: DELETE_REVIEW_SUCCESS,
+    deleted
+});
+
+export const deleteReview = review => dispatch => {
+    const localtoken = localStorage.getItem('localtoken');
+    const url = API + `/review/delete/${review}`;
+
+    return fetch(url, {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${localtoken}`
+        },
+        method: 'DELETE'
+    })
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return 
+        })
+        .then(response => {
+            dispatch(deleteReviewSuccess(review))
+        })
+        .catch(err => {
+            console.error(err);
+        });
 }

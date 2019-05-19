@@ -91,3 +91,21 @@
     color: rgb(235, 78, 122);
     background: none;
 }
+
+.delete-confirmation {
+    font-size: 12px;
+    text-align: center;
+    display: none;
+}
+
+.delete-confirmation p {
+    cursor: pointer;
+}
+
+.delete-confirmation-yes, .delete-confirmation-no {
+    margin-top: 20px;
+}
+
+.delete-unhide {
+    display: block;
+}
