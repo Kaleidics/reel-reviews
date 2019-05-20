@@ -44,16 +44,6 @@ export class ReviewItem extends React.Component {
                </div>
                <div className="review-score-container">
                     <p className="review-score" style={{ background: (this.props.data.reviewScore >= 4) ? '#7AC27A' : (this.props.data.reviewScore <= 2) ? '#FF6060' : '#666' }} ><span className="review-editable">{this.props.data.reviewScore}</span>/5</p>
-                    {/* <div className="score-options">
-                        <button className="score-option update">Edit</button>
-                        <button className="score-option delete" onClick={() => this.setState({deleteVisibility: "delete-confirmation delete-unhide"})}>Delete</button>
-                        <div className={this.state.deleteVisibility}>
-                            <p>Are you sure?</p>
-                            <p className="delete-confirmation-yes" onClick={this.handleDelete}>Yes</p>
-                            <p className="delete-confirmation-no" onClick={() => this.setState({ deleteVisibility: "delete-confirmation" })}>No</p>
-                        </div>
-                    </div> */}
-                    {/* <ScoreOptions deleteFn={this.handleDelete} id={this.props.id}/> */}
                     {scoreOptions}
                </div>
             </div>

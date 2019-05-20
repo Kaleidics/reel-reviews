@@ -15,7 +15,8 @@ import { LOGIN_USER_SUCCESS,
          FETCH_TRAILER_SUCCESS,
          FETCH_USER_REVIEW_SUCCESS,
          FETCH_REVIEW_DATA_SUCCESS,
-         DELETE_REVIEW_SUCCESS
+         DELETE_REVIEW_SUCCESS,
+         DELETE_REVIEW_MAIN_SUCCESS
          } from "../actions";
 
 const initialState = {
@@ -146,6 +147,14 @@ export const Reducer = (state = initialState, action) => {
 
         return Object.assign({}, state, {
             userReviews: updatedReviews
+        });
+    }
+
+    if (action.type === DELETE_REVIEW_MAIN_SUCCESS) {
+        const updatedReviews = state.reviewData.filter(review => review._id !== action.deleted);
+        console.log('updated reviews', updatedReviews);
+        return Object.assign({}, state, {
+            reviewData: updatedReviews
         });
     }
 

@@ -1,7 +1,7 @@
 import sleeper from '../sleeper';
 import { deployAPI, localAPI } from '../config';
 
-const API = deployAPI;
+const API = localAPI;
 
 //Synchronous Actions List
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';
@@ -421,6 +421,12 @@ export const deleteReviewSuccess = deleted => ({
     deleted
 });
 
+export const DELETE_REVIEW_MAIN_SUCCESS = 'DELETE_REVIEW_MAIN_SUCCESS';
+export const deleteReviewMainSuccess = deleted => ({
+    type: DELETE_REVIEW_MAIN_SUCCESS,
+    deleted
+});
+
 export const deleteReview = review => dispatch => {
     const localtoken = localStorage.getItem('localtoken');
     const url = API + `/review/delete/${review}`;
@@ -439,7 +445,8 @@ export const deleteReview = review => dispatch => {
             return 
         })
         .then(response => {
-            dispatch(deleteReviewSuccess(review))
+            dispatch(deleteReviewSuccess(review));
+            dispatch(deleteReviewMainSuccess(review));
         })
         .catch(err => {
             console.error(err);
