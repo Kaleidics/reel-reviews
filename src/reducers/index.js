@@ -16,7 +16,8 @@ import { LOGIN_USER_SUCCESS,
          FETCH_USER_REVIEW_SUCCESS,
          FETCH_REVIEW_DATA_SUCCESS,
          DELETE_REVIEW_SUCCESS,
-         DELETE_REVIEW_MAIN_SUCCESS
+         DELETE_REVIEW_MAIN_SUCCESS,
+         FETCH_ALL_REVIEWS_SUCCESS
          } from "../actions";
 
 const initialState = {
@@ -35,7 +36,8 @@ const initialState = {
     searchTerm: "",
     authState: false,
     userReviews: [],
-    reviewData: []
+    reviewData: [],
+    allReviews:[]
 };
 
 export const Reducer = (state = initialState, action) => {
@@ -139,6 +141,12 @@ export const Reducer = (state = initialState, action) => {
     if (action.type === FETCH_REVIEW_DATA_SUCCESS) {
         return Object.assign({}, state, {
             reviewData: action.reviews
+        });
+    }
+
+    if (action.type === FETCH_ALL_REVIEWS_SUCCESS) {
+        return Object.assign({}, state, {
+            allReviews: action.reviews
         });
     }
 

@@ -475,3 +475,26 @@ export const fetchReviewData = movieId => dispatch => {
         })
         .catch(err => console.log(err));
 }
+
+export const FETCH_ALL_REVIEWS_SUCCESS = 'FETCH_ALL_REVIEWS_SUCCESS';
+export const fetchAllReviewsSuccess = reviews => ({
+    type: FETCH_ALL_REVIEWS_SUCCESS,
+    reviews
+});
+
+export const fetchAllReviews = () => dispatch => {
+    const url = API + `/review/all`;
+
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(reviews => {
+            console.log(reviews);
+            dispatch(fetchAllReviewsSuccess(reviews));
+        })
+        .catch(err => console.log(err));
+}
