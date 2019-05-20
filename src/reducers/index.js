@@ -17,7 +17,8 @@ import { LOGIN_USER_SUCCESS,
          FETCH_REVIEW_DATA_SUCCESS,
          DELETE_REVIEW_SUCCESS,
          DELETE_REVIEW_MAIN_SUCCESS,
-         FETCH_ALL_REVIEWS_SUCCESS
+         FETCH_ALL_REVIEWS_SUCCESS,
+         CREATE_POST_SUCCESS
          } from "../actions";
 
 const initialState = {
@@ -163,6 +164,13 @@ export const Reducer = (state = initialState, action) => {
         console.log('updated reviews', updatedReviews);
         return Object.assign({}, state, {
             reviewData: updatedReviews
+        });
+    }
+
+    if (action.type === CREATE_POST_SUCCESS) {
+        
+        return Object.assign({}, state, {
+            reviewData: [...state.reviewData, action.review]
         });
     }
 

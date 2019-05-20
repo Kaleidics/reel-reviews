@@ -62,7 +62,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .enableTrue {
@@ -81,7 +81,7 @@
     opacity: 0.8;
     outline-width: 0;
     transition: transform 80ms ease-in;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .score-option.update {
@@ -110,7 +110,7 @@
 }
 
 .delete-confirmation-yes, .delete-confirmation-no {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .delete-unhide {

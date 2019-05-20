@@ -8,14 +8,14 @@ import './MovieBoard.css';
 export class MovieBoard extends React.Component {
     render() {
 
+
         const movieBoardItems = this.props.movies.slice(0,4).map((item, index ) => {
             return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
         });
 
-        console.log('data',this.props.reviews);
         const allReviews = this.props.reviews.slice(0,2).map((item, index) => {
             return (
-                <ReviewItem data={item} index={index} key={this.props.reviews[index].movieId} id={this.props.reviews[index]._id} />
+                <ReviewItem data={item} index={index} key={this.props.reviews[index].movieId}  id={this.props.reviews[index]._id} />
             );
         });
         

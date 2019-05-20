@@ -27,11 +27,15 @@ export class ReviewItem extends React.Component {
 
         let scoreOptions = '';
         let currentUser = localStorage.getItem('authedUser');
-        if (this.props.authState === true && this.props.data.reviewer._id === currentUser) {
-            scoreOptions = <ScoreOptions deleteFn={this.handleDelete} id={this.props.id} />;
-        }
 
-        console.log(this.props.id);
+        if (this.props.data.reviewer) {
+            if (this.props.authState === true && this.props.data.reviewer._id === currentUser) {
+                scoreOptions = <ScoreOptions deleteFn={this.handleDelete} id={this.props.id} />;
+            }
+        }
+      
+
+        console.log('333', this.props.data);
         return (
             <div className="review-container" id={this.props.id}>
                <div className="review-origin">

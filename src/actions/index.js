@@ -493,8 +493,40 @@ export const fetchAllReviews = () => dispatch => {
             return res.json()
         })
         .then(reviews => {
-            console.log(reviews);
+            console.log('123',reviews);
             dispatch(fetchAllReviewsSuccess(reviews));
+        })
+        .catch(err => console.log(err));
+}
+
+export const CREATE_POST_SUCCESS = 'CREATE_POST_SUCCESS';
+export const createPostSuccess = review => ({
+    type: CREATE_POST_SUCCESS,
+    review
+});
+
+export const createPost = (review) => dispatch => {
+    const movieId = review.movieId
+    const url = API + `/review/${movieId}`;
+    const localtoken = localStorage.getItem('localtoken');
+
+    return fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(review),
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${localtoken}`
+        }
+    })
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(review => {
+            console.log(review);
+            dispatch(createPostSuccess(review));
         })
         .catch(err => console.log(err));
 }

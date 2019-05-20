@@ -1,0 +1,70 @@
+.review-form-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 33%;
+}
+
+.submit-create {
+    width: 100px;
+    height: 37px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1rem;
+    background: transparent;
+    border: 3px solid rgb(235, 78, 122);
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    outline-width: 0;
+    transition: transform 80ms ease-in;
+    align-self: center;
+}
+
+.submit-create:hover {
+    color: rgb(235, 78, 122);
+}
+
+label {
+    color: #f0f0f0;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+input, textarea {
+    color: #f0f0f0;
+}
+.input-width {
+    font-size: 16px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+}
+
+.input-width::placeholder {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+}
+
+.score-input {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+}

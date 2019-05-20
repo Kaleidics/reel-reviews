@@ -5,12 +5,20 @@ import { withRouter } from 'react-router-dom';
 import { setReconId, fetchRecon, fetchMovieDetails, fetchActors, fetchReviewData } from '../../actions/index';
 import ReviewContainer from '../ReviewContainer/ReviewContainer';
 import DetailSummary from '../DetailSummary/DetailSummary';
+import CreatePost from '../CreatePost/CreatePost';
 import './MovieDetailPage.css';
 
 //fetchMovieTrailer is a breaking feature needs a revisit
 // import { fetchMovieTrailer } from '../../actions/index';
 
 export class MovieDetailPage extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            modalVisibility: false
+        }
+    }
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -43,8 +51,34 @@ export class MovieDetailPage extends React.Component {
         }
     }
 
+    handleModal = () => {
+        console.log('triggered modal');
+
+        if (this.props.authState) {
+            if (this.state.modalVisibility === false) {
+                this.setState({
+                    modalVisibility: true
+                });
+            } else if (this.state.modalVisibility === true) {
+                this.setState({
+                    modalVisibility: false
+                });
+            }
+        } 
+        else {
+            alert('Please log in to use this feature.')
+        }
+    }
+
+
 
     render() {
+
+        let reviewPost;
+        if (this.state.modalVisibility === true) {
+            reviewPost = <CreatePost data={this.props.movieDetails} handleFn={this.handleModal} />
+        }
+
         return (
             <div className="movieDetail">
                 <div className="movieDetail-container">
@@ -56,9 +90,10 @@ export class MovieDetailPage extends React.Component {
                 </div>
                 <div className="review-header">
                     <h3 className="reviews-title">{this.props.reviewData.length !== 0 ? "Reviews" : "No Reviews"}</h3>
-                    <button className="add-review">Rate It</button>
+                    <button className="add-review" onClick={this.handleModal}>Rate It</button>
+                    {reviewPost}
                 </div>
-                <ReviewContainer data={this.props.reviewData} />
+                <ReviewContainer />
                 <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
             </div>
         );
@@ -66,6 +101,7 @@ export class MovieDetailPage extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    authState: state.app.authState,
     isLoading: state.app.isLoading,
     moviesRecon: state.app.moviesRecon,
     movieDetails: state.app.movieDetails,

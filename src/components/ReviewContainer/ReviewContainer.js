@@ -1,13 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 
 
-export default class ReviewContainer extends React.Component {
+export class ReviewContainer extends React.Component {
 
     render() {
 
-        const movieReviews = this.props.data.map((item, index) => {
+        console.log('reviewonctainer', this.props.reviewData);
+
+        const movieReviews = this.props.reviewData.map((item, index) => {
             return (
                 <ReviewItem data={item} index={index} key={item._id} id={item._id} />
             );
@@ -20,3 +23,10 @@ export default class ReviewContainer extends React.Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    authState: state.app.authState,
+    reviewData: state.app.reviewData
+});
+
+export default connect(mapStateToProps)(ReviewContainer);
