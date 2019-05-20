@@ -1,7 +1,7 @@
 import sleeper from '../sleeper';
 import { deployAPI, localAPI } from '../config';
 
-const API = localAPI;
+const API = deployAPI;
 
 //Synchronous Actions List
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';
