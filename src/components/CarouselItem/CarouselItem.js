@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchRecon, fetchMovieDetails, fetchActors} from '../../actions/index';
+import { fetchRecon, fetchMovieDetails, fetchActors, fetchReviewData} from '../../actions/index';
 //fetchMovieTrailer is a breaking feature needs a revisit
 // import { fetchMovieTrailer } from '../../actions/index';
 
@@ -17,6 +17,7 @@ export class CarouselItem extends React.Component{
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.dispatch(fetchActors(movieId));
+        this.props.dispatch(fetchReviewData(movieId));
         this.props.history.push(`/movie-detail?query=${movieId}`);       
     }
 
