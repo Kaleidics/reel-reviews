@@ -25,6 +25,12 @@ export class ReviewItem extends React.Component {
 
     render() {
 
+        let scoreOptions = '';
+        let currentUser = localStorage.getItem('authedUser');
+        if (this.props.authState === true && this.props.data.reviewer._id === currentUser) {
+            scoreOptions = <ScoreOptions deleteFn={this.handleDelete} id={this.props.id} />;
+        }
+
         console.log(this.props.id);
         return (
             <div className="review-container" id={this.props.id}>
@@ -47,7 +53,8 @@ export class ReviewItem extends React.Component {
                             <p className="delete-confirmation-no" onClick={() => this.setState({ deleteVisibility: "delete-confirmation" })}>No</p>
                         </div>
                     </div> */}
-                    <ScoreOptions deleteFn={this.handleDelete} id={this.props.id}/>
+                    {/* <ScoreOptions deleteFn={this.handleDelete} id={this.props.id}/> */}
+                    {scoreOptions}
                </div>
             </div>
         )

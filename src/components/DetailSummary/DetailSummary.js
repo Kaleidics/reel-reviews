@@ -17,13 +17,8 @@ export default class DetailSummary extends React.Component {
             
              let score = 0;
              for (let i=0; i <this.props.reviewData.length; i++) {
-                 console.log('1', this.props.reviewData);
-                 console.log('2', this.props.reviewData[i]);
-                 console.log('3', this.props.reviewData[i].reviewScore);
                 score = score + this.props.reviewData[i].reviewScore;
              }
-             console.log(score);
-
              let avgScore = score/this.props.reviewData.length;
 
         return (
