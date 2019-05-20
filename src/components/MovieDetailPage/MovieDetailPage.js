@@ -51,7 +51,7 @@ export class MovieDetailPage extends React.Component {
                     <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.backdrop_path}`} alt={this.props.movieDetails.title}/>
                 </div>
                 <div className="main-details">
-                    <DetailSummary data={this.props.movieDetails} castdata={this.props.movieActors} trailerdata={this.props.movieTrailer}/>
+                    <DetailSummary data={this.props.movieDetails} castdata={this.props.movieActors} reviewData={this.props.reviewData} trailerdata={this.props.movieTrailer}/>
                     <hr className="main-details-divider" />
                 </div>
                 <div className="review-header">

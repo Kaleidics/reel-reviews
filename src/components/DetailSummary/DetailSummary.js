@@ -13,6 +13,18 @@ export default class DetailSummary extends React.Component {
         //         src={`https://www.youtube.com/embed/${this.props.trailerdata.key}?modestbranding=1`}>
         //     </iframe>
         // }
+            
+            
+             let score = 0;
+             for (let i=0; i <this.props.reviewData.length; i++) {
+                 console.log('1', this.props.reviewData);
+                 console.log('2', this.props.reviewData[i]);
+                 console.log('3', this.props.reviewData[i].reviewScore);
+                score = score + this.props.reviewData[i].reviewScore;
+             }
+             console.log(score);
+
+             let avgScore = score/this.props.reviewData.length;
 
         return (
             <div className="summary-container">
@@ -28,8 +40,8 @@ export default class DetailSummary extends React.Component {
                             <li className="release">Release Date: {this.props.data.release_date}</li>
                         </ul>
                         <ul className="summary-details-right">
-                            <li className="rr-score"><span>RR Score:</span><span>N/A</span></li>
-                            <li className="imdb-score"><span>TMDB Score:</span><span>{this.props.data.vote_average}/10</span></li>
+                            <li className="rr-score"><span>RR Score:</span><span>{avgScore.toFixed(1)} / 5</span></li>
+                            <li className="imdb-score"><span>TMDB Score:</span><span>{this.props.data.vote_average} / 10</span></li>
                         </ul>
                     </div>
                     <div className="summary-paragraph-container">

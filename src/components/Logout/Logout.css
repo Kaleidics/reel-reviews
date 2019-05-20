@@ -1,0 +1,23 @@
+.logout-btn {
+    width: 100px;
+    height: 37px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1rem;
+    background: transparent;
+    border: 3px solid rgb(235, 78, 122);
+    border-radius: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    outline-width: 0;
+    transition: transform 80ms ease-in;
+}
+
+.logout-btn:hover {
+    color: rgb(235, 78, 122);
+}
+
+.logout-btn:active {
+    transform: scale(0.95);
+}

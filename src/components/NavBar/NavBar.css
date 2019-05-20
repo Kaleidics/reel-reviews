@@ -42,3 +42,7 @@ header {
 .home a:visited, .profile a:visited {
     color: #f0f0f0;
 }
+
+.profile a:hover, .home a:hover {
+    color: rgb(235, 78, 122);
+}
