@@ -17,6 +17,9 @@ export class ReviewItem extends React.Component {
     handleDelete = () => {
         console.log('here',this.props.id)
         console.log(this.props);
+        this.setState({
+            deleteVisibility: "delete-confirmation"
+        });
         this.props.deleteReview(this.props.id);
     }
 
@@ -33,7 +36,7 @@ export class ReviewItem extends React.Component {
                     <p className="review-owner">- {this.props.data.reviewer.displayname}</p>
                </div>
                <div className="review-score-container">
-                    <p className="review-score" style={{ background: (this.props.data.reviewScore >= 4) ? '#7AC27A' : (this.props.data.reviewScore <= 2) ? '#FF6060' : '#666' }} >{this.props.data.reviewScore}/5</p>
+                    <p className="review-score" style={{ background: (this.props.data.reviewScore >= 4) ? '#7AC27A' : (this.props.data.reviewScore <= 2) ? '#FF6060' : '#666' }} ><span className="review-editable">{this.props.data.reviewScore}</span>/5</p>
                     <div className="score-options">
                         <button className="score-option update">Edit</button>
                         <button className="score-option delete" onClick={() => this.setState({deleteVisibility: "delete-confirmation delete-unhide"})}>Delete</button>
@@ -49,6 +52,13 @@ export class ReviewItem extends React.Component {
     }
 }
 
+
+const mapStateToProps = state => ({
+    authState: state.app.authState
+});
+
+
+
 const mapDispatchToProps = (dispatch) => {
     return {
         deleteReview: (review) => {
@@ -57,4 +67,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(ReviewItem);
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewItem);

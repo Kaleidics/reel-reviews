@@ -445,3 +445,26 @@ export const deleteReview = review => dispatch => {
             console.error(err);
         });
 }
+
+export const FETCH_REVIEW_DATA_SUCCESS = 'FETCH_REVIEW_DATA_SUCCESS';
+export const fetchReviewDataSuccess = reviews => ({
+    type: FETCH_REVIEW_DATA_SUCCESS,
+    reviews
+});
+
+export const fetchReviewData = movieId => dispatch => {
+    const url = API + `/review/movie/${movieId}`;
+
+    return fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return Promise.reject(res.statusText);
+            }
+            return res.json()
+        })
+        .then(reviews => {
+            console.log(reviews);
+            dispatch(fetchReviewDataSuccess(reviews));
+        })
+        .catch(err => console.log(err));
+}

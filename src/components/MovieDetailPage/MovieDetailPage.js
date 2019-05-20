@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Carousel } from '../Carousel/Carousel';
 import { withRouter } from 'react-router-dom';
-import { setReconId, fetchRecon, fetchMovieDetails, fetchActors } from '../../actions/index';
+import { setReconId, fetchRecon, fetchMovieDetails, fetchActors, fetchReviewData } from '../../actions/index';
+import ReviewContainer from '../ReviewContainer/ReviewContainer';
 import DetailSummary from '../DetailSummary/DetailSummary';
 import './MovieDetailPage.css';
 
@@ -24,6 +25,7 @@ export class MovieDetailPage extends React.Component {
                 this.props.dispatch(fetchMovieDetails(clickedMovie));
                 this.props.dispatch(fetchRecon(clickedMovie));
                 this.props.dispatch(fetchActors(clickedMovie));
+                this.props.dispatch(fetchReviewData(clickedMovie));
                 // this.props.dispatch(fetchMovieTrailer(clickedMovie));
             }
         }
@@ -36,9 +38,9 @@ export class MovieDetailPage extends React.Component {
             this.props.dispatch(fetchMovieDetails(clickedMovie));
             this.props.dispatch(fetchRecon(clickedMovie));
             this.props.dispatch(fetchActors(clickedMovie));
+            this.props.dispatch(fetchReviewData(clickedMovie));
             // this.props.dispatch(fetchMovieTrailer(clickedMovie));
         }
-       
     }
 
 
@@ -51,33 +53,12 @@ export class MovieDetailPage extends React.Component {
                 <div className="main-details">
                     <DetailSummary data={this.props.movieDetails} castdata={this.props.movieActors} trailerdata={this.props.movieTrailer}/>
                     <hr className="main-details-divider" />
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
-                    <h2>REVIEW</h2>
                 </div>
+                <div className="review-header">
+                    <h3 className="reviews-title">{this.props.reviewData.length !== 0 ? "Reviews" : "No Reviews"}</h3>
+                    <button className="add-review">Rate It</button>
+                </div>
+                <ReviewContainer data={this.props.reviewData} />
                 <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
             </div>
         );
@@ -89,7 +70,8 @@ const mapStateToProps = state => ({
     moviesRecon: state.app.moviesRecon,
     movieDetails: state.app.movieDetails,
     movieActors: state.app.movieActors,
-    movieTrailer: state.app.movieTrailer
+    movieTrailer: state.app.movieTrailer,
+    reviewData: state.app.reviewData
 });
 
 export default connect(mapStateToProps)(withRouter(MovieDetailPage));

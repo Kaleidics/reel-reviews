@@ -20,12 +20,14 @@
 }
 
 .review-title {
+    font-size: 24px;
     letter-spacing: 3px;
     margin: 0;
     margin-bottom: 20px;
 }
 
 .review-owner {
+    font-size: 20px;
     margin: 0;
     margin-left: 20px;
     
@@ -45,6 +47,7 @@
     height: 100px;
 }
 .review-score {
+    font-size: 24px;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -52,7 +55,7 @@
     vertical-align: middle;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
 }
 
 .score-options {
@@ -60,6 +63,10 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 20px;
+}
+
+.enableTrue {
+    
 }
 
 .score-option {
