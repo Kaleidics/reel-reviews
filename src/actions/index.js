@@ -3,7 +3,8 @@ import { deployAPI, localAPI } from '../config';
 
 const API = deployAPI;
 
-//Synchronous Actions List
+//Local Actions List
+//LOADERS +1 and -1 if there are active async actions, while >0 render loader, while 0 do not render
 export const LOADER_INCREMENT = 'LOADER_INCREMENT';
 export const loaderIncrement = add => ({
     type: LOADER_INCREMENT,
@@ -26,7 +27,7 @@ export const setReconId = (reconId) => ({
     reconId
 });
 
-//Asynchronous Actions List
+//API Actions List
 export const SET_GENRES_SUCCESS = 'SET_GENRES_SUCCESS';
 export const setGenresSuccess = genres => ({
     type: SET_GENRES_SUCCESS,
@@ -41,7 +42,7 @@ export const setGenres = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(genres => {
             dispatch(setGenresSuccess(genres));
@@ -65,7 +66,7 @@ export const fetchPlaying = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(playing => {
             dispatch(loaderDecrement());
@@ -90,7 +91,7 @@ export const fetchUpcoming = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(upcoming => {
             dispatch(loaderDecrement());
@@ -115,7 +116,7 @@ export const fetchPopular = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(popular => {
             dispatch(loaderDecrement());
@@ -140,11 +141,9 @@ export const fetchTop = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
-        .then(
-            sleeper(1000)
-        )
+        .then(sleeper(1000))
         .then(top => {
             dispatch(loaderDecrement());
             dispatch(fetchTopSuccess(top));
@@ -169,11 +168,9 @@ export const fetchRecon = id => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
-        .then(
-            sleeper(1000)
-        )
+        .then(sleeper(1000))
         .then(recon => {
             dispatch(fetchReconSuccess(recon));
             dispatch(loaderDecrement());
@@ -198,14 +195,12 @@ export const fetchMovieDetails = id => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.status.Text);
             }
-            return res.json()
+            return res.json();
         })
         .then(details => {
             dispatch(fetchMovieDetailsSuccess(details));
         })
-        .then(
-            sleeper(1000)
-        )
+        .then(sleeper(1000))
         .then(
             dispatch(loaderDecrement())
         )
@@ -229,7 +224,7 @@ export const fetchActors = id => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.status.Text);
             }
-            return res.json()
+            return res.json();
         })
         .then(actors => {
             dispatch(fetchActorsSucces(actors));
@@ -254,11 +249,9 @@ export const fetchMovieTrailer = id => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.status.Text);
             }
-            return res.json()
+            return res.json();
         })
-        .then(
-            sleeper(1000)
-        )
+        .then(sleeper(1000))
         .then(trailer => {
             dispatch(fetchTrailerSuccess(trailer));
             dispatch(loaderDecrement());
@@ -273,7 +266,6 @@ export const searchMovieSuccess = results => ({
 });
 
 export const searchMovie = searchTerm => dispatch => {
-    // dispatch(loaderIncrement());
 
     let search = encodeURIComponent(searchTerm);
     const url = API + `/3api/search/${search}`;
@@ -283,22 +275,13 @@ export const searchMovie = searchTerm => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(results => {
             console.log('loader');
             dispatch(searchMovieSuccess(results));
         })
-        .then(() => {
-            // dispatch(loaderDecrement());
-            console.log('searchmovie is unset')
-        }
-        )
         .catch(err => console.log(err));
-};
-
-export const loaderHandler = () => dispatch => {
-    dispatch(loaderDecrement());
 };
 
 export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
@@ -317,6 +300,7 @@ export const registerUser = credentials => dispatch => {
             'Content-Type': 'application/json'
         }
     })
+        //if succussful User persist to DB, automatically login the new User
         .then(response => {
             if (response.status === 201) {
                 const loginCreds = {
@@ -325,7 +309,7 @@ export const registerUser = credentials => dispatch => {
                 }
                 dispatch(loginUser(loginCreds));
             }
-
+        // if no successful response return server response
             else {
                 return response.json()
                     .then(response => {
@@ -333,7 +317,7 @@ export const registerUser = credentials => dispatch => {
                     })
                     .catch(err => console.log(err));
             }
-            return response.json()
+            return response.json();
         })
         .catch(err => console.log(err));
 }
@@ -363,7 +347,6 @@ export const loginUser = credentials => dispatch => {
         })
         .then(response => {
             if (localStorage.getItem('localtoken')) {
-                console.log('we got:', localStorage.getItem('localtoken'));
                 dispatch(loginUserSuccess(true));
             }
         })
@@ -412,18 +395,21 @@ export const fetchUserReviews = reviews => dispatch => {
         .catch(err => console.log(err));
 }
 
+//Handle dashboard rendering if user deletes a review 
 export const DELETE_REVIEW_SUCCESS = 'DELETE_REVIEW_SUCCESS';
 export const deleteReviewSuccess = deleted => ({
     type: DELETE_REVIEW_SUCCESS,
     deleted
 });
 
+//Handle movie page rendering if user deletes a review 
 export const DELETE_REVIEW_MAIN_SUCCESS = 'DELETE_REVIEW_MAIN_SUCCESS';
 export const deleteReviewMainSuccess = deleted => ({
     type: DELETE_REVIEW_MAIN_SUCCESS,
     deleted
 });
 
+//Handle landing page rendering if user deletes a review 
 export const DELETE_REVIEW_ALL_SUCCESS = 'DELETE_REVIEW_ALL_SUCCESS';
 export const deleteReviewAllSuccess = deleted => ({
     type: DELETE_REVIEW_ALL_SUCCESS,
@@ -463,6 +449,7 @@ export const fetchReviewDataSuccess = reviews => ({
     reviews
 });
 
+//Fetch reviews for a single movie
 export const fetchReviewData = movieId => dispatch => {
     const url = API + `/review/movie/${movieId}`;
 
@@ -471,15 +458,15 @@ export const fetchReviewData = movieId => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(reviews => {
-            console.log(reviews);
             dispatch(fetchReviewDataSuccess(reviews));
         })
         .catch(err => console.log(err));
 }
 
+//Fetch all reviews used mainly by landing page's latest reviews
 export const FETCH_ALL_REVIEWS_SUCCESS = 'FETCH_ALL_REVIEWS_SUCCESS';
 export const fetchAllReviewsSuccess = reviews => ({
     type: FETCH_ALL_REVIEWS_SUCCESS,
@@ -494,10 +481,9 @@ export const fetchAllReviews = () => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(reviews => {
-            console.log('123',reviews);
             dispatch(fetchAllReviewsSuccess(reviews));
         })
         .catch(err => console.log(err));
@@ -526,10 +512,9 @@ export const createPost = (review) => dispatch => {
             if (!res.ok) {
                 return Promise.reject(res.statusText);
             }
-            return res.json()
+            return res.json();
         })
         .then(review => {
-            console.log(review);
             dispatch(createPostSuccess(review));
         })
         .catch(err => console.log(err));
