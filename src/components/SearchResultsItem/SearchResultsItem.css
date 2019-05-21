@@ -42,3 +42,40 @@
     color: darkgray;
     margin-top: 0;
 }
+
+@media(max-width:1440px) {
+     .movieResultsContainer {
+        width: 14%;
+    }
+    
+}
+
+@media(max-width:1280px) {
+     .movieResultsContainer {
+        width: 20%;
+    } 
+   
+}
+
+@media(max-width:1024px) {
+     .movieResultsContainer {
+        width: 30%;
+    }
+
+}
+
+@media(max-width:720px) {
+
+    .movieResultsContainer {
+        width: 40%;
+    }
+    
+}
+
+@media(max-width:568px) {
+
+     .movieResultsContainer {
+        width: 50%;
+    }
+   
+}
