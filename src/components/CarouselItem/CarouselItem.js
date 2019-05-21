@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchRecon, fetchMovieDetails, fetchActors, fetchReviewData} from '../../actions/index';
-//fetchMovieTrailer is a breaking feature needs a revisit
-// import { fetchMovieTrailer } from '../../actions/index';
+
 
 import './CarouselItem.css';
 
@@ -12,8 +11,6 @@ export class CarouselItem extends React.Component{
     handleId = e => {
         window.scrollTo(0, 0);
         let movieId = this.props.id
-        //move trailer breaking navigation for some reason replaced with poster for now
-        // this.props.dispatch(fetchMovieTrailer(movieId));
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.dispatch(fetchActors(movieId));

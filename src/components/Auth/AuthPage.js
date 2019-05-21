@@ -1,20 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import './Auth.css';
 
-export class AuthPage extends React.Component {
-
-    componentDidMount() {
-        window.scrollTo(0, 0);
-    }
+export default class AuthPage extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
             toggle: "inner-container"
         }
+    }
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
 
     addClass() {
@@ -54,10 +53,4 @@ export class AuthPage extends React.Component {
         );
     }
 }
-
-const mapStateToProps = state => ({
-    
-});
-
-export default connect(mapStateToProps)(AuthPage);
 

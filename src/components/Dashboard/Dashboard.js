@@ -2,9 +2,6 @@ import React from 'react';
 import './Dashboard.css';
 import { connect } from 'react-redux';
 import { fetchUserReviews, checkAuthState } from '../../actions/index';
-// import { mockdata } from './mockdata';
-
-
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 
@@ -28,9 +25,6 @@ export class Dashboard extends React.Component {
 
         return (
             <div className="dash-div">
-                {/* <div className="dash-nav">
-                    <button className="logout-btn">Log Out</button>
-                </div> */}
                 <div className="dash-review-container">
                     <h2 className="reviews-h2">Your Latest Reviews</h2>
                     {myReviews}

@@ -12,7 +12,6 @@ export class Actors extends React.Component {
     }
 
     render() {
-
         if (this.props.data) {
             return (
                 <div className="actor-Container" onClick={this.handleId}>
@@ -20,7 +19,6 @@ export class Actors extends React.Component {
                     <h4 className="character-name">{this.props.data.character}</h4>
                     <p className="actor-name">{this.props.data.name}</p>
                 </div>
-
             );
         }
     }
