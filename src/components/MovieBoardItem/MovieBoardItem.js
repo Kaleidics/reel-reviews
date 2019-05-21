@@ -11,8 +11,7 @@ export class MovieBoardItem extends React.Component {
     }
 
     render() {
-
-
+        
         let genres = this.props.genres;
         let genreList = this.props.genres.length;
 

@@ -6,7 +6,6 @@ import './Logout.css';
 export class Logout extends React.Component {
 
     handleLogout = () => {
-        console.log(this);
         this.props.logout();
     }
 

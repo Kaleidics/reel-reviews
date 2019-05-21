@@ -8,18 +8,18 @@ import './MovieBoard.css';
 export class MovieBoard extends React.Component {
     render() {
 
-
+        //Picking on the top 4 movies to display
         const movieBoardItems = this.props.movies.slice(0,4).map((item, index ) => {
             return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
         });
 
+        //Only showing the newest two reviews
         const allReviews = this.props.allReviews.slice(0,2).map((item, index) => {
             return (
                 <ReviewItem data={item} index={index} key={this.props.allReviews[index].movieId}  id={this.props.allReviews[index]._id} />
             );
         });
         
-        console.log('all', allReviews);
         return (
             <div className="outer-MovieBoard">
                 <div className="topMid">
@@ -41,7 +41,6 @@ export class MovieBoard extends React.Component {
                         {allReviews}
                     </div>
                 </div>
-               
             </div>
         )
     }

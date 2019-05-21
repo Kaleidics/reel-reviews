@@ -16,26 +16,17 @@ export class Login extends React.Component {
 
     handleLogin = e => {
         e.preventDefault();
-        console.log('triggered handle register');
-        console.log(this.state);
-        console.log(this);
         this.props.loginUser(this.state);
     }
 
     guestLogin = e => {
         e.preventDefault();
-        console.log('triggered')
         this.setState({
             username: "Guest",
             password:"123123"
         }, () => {
-                console.log('triggered login');
-                console.log(this.state);
-                console.log(this);
-                this.props.loginUser(this.state);
-                console.log('after')
+                this.props.loginUser(this.state);  
         });
-        
     }
 
     render() {

@@ -36,9 +36,7 @@ export default class Footer extends React.Component {
                     <div>
                         <a href="https://developers.themoviedb.org/3/getting-started/introduction" target="_blank" rel="noopener noreferrer" aria-label="The Movie Database API Docs"><img src={tmdb_credits} alt="the movie database" /> </a>
                     </div>
-                    
                 </section>
-
             </footer>
         )
     }
