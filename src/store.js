@@ -1,13 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { Reducer } from './reducers';
 
-// export default createStore(Reducer, applyMiddleware(thunk));
-
+//orginally combining state when using redux-forms, but decided to use React's native form handling
+//possible need for combine Reducers when refactoring reducers module into respective component modules
 const store = createStore(
     combineReducers({
-        form: formReducer,
         app: Reducer
     }),
     applyMiddleware(thunk)  // ajax handling
