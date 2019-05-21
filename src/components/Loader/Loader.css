@@ -10,7 +10,7 @@
 .loader {
   overflow: hidden;
   animation: fadeOut;
-  animation-duration: 2s;
+  animation-duration: 2.5s;
   animation-timing-function: ease-in;
   animation-fill-mode: forwards;
 }

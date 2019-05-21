@@ -216,3 +216,18 @@ button.movement:hover {
 	transform: translateX(20%);
 }
 
+@media(max-width:720px) {
+	.auth-container {
+		background-size: cover;
+	}
+	.form-container form {
+		padding: 0 20px;
+	}
+	.toggle-btn {
+		padding: 12px 25px;
+	}
+
+	.guest-toggle-btn {
+		padding: 12px 9px;
+	}
+}
