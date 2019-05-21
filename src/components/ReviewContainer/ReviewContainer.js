@@ -2,13 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
-
-
 export class ReviewContainer extends React.Component {
 
     render() {
-
-        console.log('reviewonctainer', this.props.reviewData);
 
         const movieReviews = this.props.reviewData.map((item, index) => {
             return (
@@ -20,7 +16,7 @@ export class ReviewContainer extends React.Component {
             <div>
                 {movieReviews}
             </div>
-        )
+        );
     }
 }
 

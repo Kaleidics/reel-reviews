@@ -23,18 +23,18 @@ export class MovieDetailPage extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
 
+        //Tricky way to handle router history/navigation
+        //Listens to native browser navigation and url parameters to use as the arguments for routing to a specific page
         window.onpopstate = () => {
             const params = (new URL(document.location)).searchParams;
             const clickedMovie = params.get("query");
 
             if (clickedMovie) {
-                console.log('triggered popstate')
                 this.props.dispatch(setReconId(clickedMovie));
                 this.props.dispatch(fetchMovieDetails(clickedMovie));
                 this.props.dispatch(fetchRecon(clickedMovie));
                 this.props.dispatch(fetchActors(clickedMovie));
                 this.props.dispatch(fetchReviewData(clickedMovie));
-                // this.props.dispatch(fetchMovieTrailer(clickedMovie));
             }
         }
 
@@ -47,7 +47,6 @@ export class MovieDetailPage extends React.Component {
             this.props.dispatch(fetchRecon(clickedMovie));
             this.props.dispatch(fetchActors(clickedMovie));
             this.props.dispatch(fetchReviewData(clickedMovie));
-            // this.props.dispatch(fetchMovieTrailer(clickedMovie));
         }
     }
 

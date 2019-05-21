@@ -4,19 +4,10 @@ import './ReviewItem.css';
 import { deleteReview } from '../../actions/index';
 import CarouselItem from '../CarouselItem/CarouselItem';
 import ScoreOptions from '../ScoreOptions/ScoreOptions';
+
 export class ReviewItem extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-    //     this.state = {
-    //         deleteVisibility: "delete-confirmation",
-    //     }
-
-    // }
 
     handleDelete = () => {
-        console.log('here',this.props.id)
-        console.log(this.props);
         this.setState({
             deleteVisibility: "delete-confirmation"
         });
@@ -25,6 +16,7 @@ export class ReviewItem extends React.Component {
 
     render() {
 
+        //Conditionals to handle render of a ScoreOption Component, which lets a user delete their own review
         let scoreOptions = '';
         let currentUser = localStorage.getItem('authedUser');
 
@@ -34,8 +26,6 @@ export class ReviewItem extends React.Component {
             }
         }
       
-
-        console.log('333', this.props.data);
         return (
             <div className="review-container" id={this.props.id}>
                <div className="review-origin">
@@ -51,7 +41,7 @@ export class ReviewItem extends React.Component {
                     {scoreOptions}
                </div>
             </div>
-        )
+        );
     }
 }
 

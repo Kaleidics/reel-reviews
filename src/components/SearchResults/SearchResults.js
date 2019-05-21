@@ -8,17 +8,19 @@ import './SearchResults.css'
 export class SearchResults extends React.Component {
 
     componentDidMount() {
+        //Tricky way to handle navigation/routing forwards/backwards between movie clicks/history
+        //Not optimal, currently it makes two requests, which is necessary for app to work.
+        //One for native browser event and the second for app feature functionality
+        //without the second repeated dispatch calls, the app will not dispatch the action
         window.onpopstate = () => {
             const params = (new URL(document.location)).searchParams;
             const searchterm = params.get("query");
-            console.log('here', searchterm);
             this.props.dispatch(setSearchTerm(searchterm));
             this.props.dispatch(searchMovie(searchterm));
         }
 
         const params = (new URL(document.location)).searchParams;
         const searchterm = params.get("query");
-        console.log('here', searchterm);
         this.props.dispatch(setSearchTerm(searchterm));
         this.props.dispatch(searchMovie(searchterm));
     }

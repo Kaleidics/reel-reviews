@@ -14,10 +14,7 @@ export class Signup extends React.Component {
     }
 
     handleRegister = e => {
-        e.preventDefault();
-        console.log('triggered handle register'); 
-        console.log(this.state);                  
-        console.log(this);                  
+        e.preventDefault();                 
         this.props.registerUser(this.state);
     }
 

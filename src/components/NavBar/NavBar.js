@@ -22,7 +22,7 @@ export class NavBar extends React.Component {
                     <li className="profile">{this.props.authState === true ? <Logout /> : '' }</li>
                </ul>
             </header>
-        )
+        );
     }
 }
 

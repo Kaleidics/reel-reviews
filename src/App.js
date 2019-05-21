@@ -38,7 +38,6 @@ export class App extends React.Component {
         <Route exact path="/" component={LandingPage} />
         <Route path="/search" component={SearchPage} />
         <Route path="/movie-detail" component={MovieDetailPage} />
-        {/* <Route path="/login" component={AuthPage} /> */}
         <PrivateRoute authed={this.props.authState} path="/dashboard" component={Dashboard} />
         <AuthTrue authed={this.props.authState} path="/login" component={AuthPage} />
       </div>

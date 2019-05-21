@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default class ScoreOptions extends React.Component {
 
     constructor(props) {
@@ -13,8 +12,6 @@ export default class ScoreOptions extends React.Component {
     }
 
     handleDeleteFn = () => {
-        console.log('here', this.props.id)
-        console.log(this.props);
         this.setState({
             deleteVisibility: "delete-confirmation"
         });
