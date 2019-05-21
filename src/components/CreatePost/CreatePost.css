@@ -41,7 +41,7 @@ label {
 
 }
 
-input, textarea {
+.review-form input, .review-form textarea {
     color: #f0f0f0;
 }
 .input-width {

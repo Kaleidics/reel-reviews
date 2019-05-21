@@ -27,16 +27,12 @@ header {
 .search-bar {
     margin: 0 10% 0 27%;
 }
-.profile {
+.home, .home a, .profile, .profile a {
     color: #f0f0f0;
 }
 
 .logo a, .logo img {
     height: 50px;
-}
-
-.profile a {
-    color: #f0f0f0;
 }
 
 .home a:visited, .profile a:visited {

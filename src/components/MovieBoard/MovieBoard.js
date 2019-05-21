@@ -13,9 +13,9 @@ export class MovieBoard extends React.Component {
             return <MovieBoardItem data={item} index={index} key={this.props.movies[index].id} id={this.props.movies[index].id} />
         });
 
-        const allReviews = this.props.reviews.slice(0,2).map((item, index) => {
+        const allReviews = this.props.allReviews.slice(0,2).map((item, index) => {
             return (
-                <ReviewItem data={item} index={index} key={this.props.reviews[index].movieId}  id={this.props.reviews[index]._id} />
+                <ReviewItem data={item} index={index} key={this.props.allReviews[index].movieId}  id={this.props.allReviews[index]._id} />
             );
         });
         
@@ -47,7 +47,8 @@ export class MovieBoard extends React.Component {
     }
 }
 const mapStateToProps = state => ({
-    authState: state.app.authState
+    authState: state.app.authState,
+    allReviews: state.app.allReviews
 });
 
 export default connect(mapStateToProps)(MovieBoard);

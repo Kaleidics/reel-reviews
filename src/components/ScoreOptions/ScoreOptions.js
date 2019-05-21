@@ -25,7 +25,8 @@ export default class ScoreOptions extends React.Component {
 
         return(
             <div className="score-options">
-                <button className="score-option update">Edit</button>
+                {/* revisit PUT operation when I have time */}
+                {/* <button className="score-option update">Edit</button> */}
                 <button className="score-option delete" onClick={() => this.setState({ deleteVisibility: "delete-confirmation delete-unhide" })}>Delete</button>
                 <div className={this.state.deleteVisibility}>
                     <p>Are you sure?</p>

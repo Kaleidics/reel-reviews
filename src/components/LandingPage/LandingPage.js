@@ -18,7 +18,7 @@ export class LandingPage extends React.Component {
     render() {
         return (
             <div className="container">
-                <MovieBoard movies={this.props.moviesUpcoming} reviews={this.props.allReviews} />
+                <MovieBoard movies={this.props.moviesUpcoming} />
                 <div className="carousels">
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
                     <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
@@ -35,8 +35,7 @@ const mapStateToProps = state => ({
     moviesPlaying: state.app.moviesPlaying,
     moviesUpcoming: state.app.moviesUpcoming,
     moviesPopular: state.app.moviesPopular,
-    moviesTop: state.app.moviesTop,
-    allReviews: state.app.allReviews
+    moviesTop: state.app.moviesTop
 });
 
 export default connect(mapStateToProps)(LandingPage);

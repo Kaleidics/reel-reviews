@@ -306,7 +306,7 @@ export const registerUserSuccess = success => ({
     type: REGISTER_USER_SUCCESS,
     success
 });
-//needs a success handler for reducer
+
 export const registerUser = credentials => dispatch => {
     const url = API + `/users/profile`;
 
@@ -323,7 +323,6 @@ export const registerUser = credentials => dispatch => {
                     username: credentials.username,
                     password: credentials.password
                 }
-
                 dispatch(loginUser(loginCreds));
             }
 
@@ -365,8 +364,6 @@ export const loginUser = credentials => dispatch => {
         .then(response => {
             if (localStorage.getItem('localtoken')) {
                 console.log('we got:', localStorage.getItem('localtoken'));
-                // browserHistory.push('/dashboard');
-                //dispatch the success to the trigger a reducer
                 dispatch(loginUserSuccess(true));
             }
         })
@@ -376,7 +373,7 @@ export const loginUser = credentials => dispatch => {
 }
 
 export const checkAuthState = credientials => dispatch => {
-    if (localStorage.getItem('localtoken')) {
+    if (localStorage.getItem('localtoken') && localStorage.getItem('authedUser')) {
         dispatch(loginUserSuccess(true));
     } else {
         dispatch(loginUserSuccess(false));
@@ -386,7 +383,7 @@ export const checkAuthState = credientials => dispatch => {
 export const logoutUser = credentials => dispatch => {
     if (localStorage.getItem('localtoken')) {
         localStorage.removeItem('localtoken');
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('authedUser');
         dispatch(loginUserSuccess(false));
     }
 }
@@ -427,6 +424,12 @@ export const deleteReviewMainSuccess = deleted => ({
     deleted
 });
 
+export const DELETE_REVIEW_ALL_SUCCESS = 'DELETE_REVIEW_ALL_SUCCESS';
+export const deleteReviewAllSuccess = deleted => ({
+    type: DELETE_REVIEW_ALL_SUCCESS,
+    deleted
+});
+
 export const deleteReview = review => dispatch => {
     const localtoken = localStorage.getItem('localtoken');
     const url = API + `/review/delete/${review}`;
@@ -447,6 +450,7 @@ export const deleteReview = review => dispatch => {
         .then(response => {
             dispatch(deleteReviewSuccess(review));
             dispatch(deleteReviewMainSuccess(review));
+            dispatch(deleteReviewAllSuccess(review));
         })
         .catch(err => {
             console.error(err);
