@@ -94,8 +94,48 @@
     border-radius: 5px;
 }
 
-/* .movie-video {
-    border: none;
-    height: 100%;
-} */
+@media(max-width:720px) {
 
+    .summary-container {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .summary-inner-left {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .summary-title {
+        text-align: center;
+        margin-left: 0;
+        margin-top: 150px;
+    }
+    .summary-details {
+        margin: 0;
+        flex-direction: column-reverse;
+    }
+
+    .summary-details-left {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .summary-paragraph-container {
+        margin-left: 0;
+    }
+
+    .summary-details-right {
+        margin-top: 50px;
+        height: 100px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .summary-inner-right {
+        position: absolute;
+        top: 75px;
+        left: 38%;
+    }
+
+}

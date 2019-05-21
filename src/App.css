@@ -12,3 +12,5 @@ body {
 .container {
   overflow: hidden;
 }
+
+/* * { word-break: break-all } */

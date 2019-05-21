@@ -114,3 +114,36 @@ footer {
 .credits a img {
   max-width: 50%;
 }
+
+@media(max-width:720px) {
+
+  .copyright {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .title-block, .contact, .social, .inner-copyright {
+    margin-left: 0;
+  }
+
+  .title-block {
+    flex-direction: column;
+  }
+  
+  .title-block * {
+    margin-right: 0;
+  }
+
+  .title-block-nav {
+    justify-content: space-between;
+  }
+
+  .credits div {
+    margin: 0;
+  }
+
+  .credits a img {
+    max-width: 100%;
+  }
+
+}

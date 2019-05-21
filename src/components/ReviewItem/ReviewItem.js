@@ -39,6 +39,7 @@ export class ReviewItem extends React.Component {
                <div className="review-score-container">
                     <p className="review-score" style={{ background: (this.props.data.reviewScore >= 4) ? '#7AC27A' : (this.props.data.reviewScore <= 2) ? '#FF6060' : '#666' }} ><span className="review-editable">{this.props.data.reviewScore}</span>/5</p>
                     {scoreOptions}
+                    <article className="not-mobile">- {this.props.data.reviewer.displayname}</article>
                </div>
             </div>
         );
