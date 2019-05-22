@@ -36,8 +36,8 @@
     .movieContainer {
         text-align: center;
     }
-    
-    .moviePoster {
+
+    .review-origin .movieContainer .moviePoster {
         width: 33%;
     }
 }

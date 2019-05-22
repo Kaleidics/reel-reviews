@@ -8,13 +8,14 @@
 }
 
 .topMid {
-    width: 100%;
+    width: 99%;
     height: 475px;
     position: relative;
     text-align: center;
     color: #f0f0f0;
     margin-left: 6%;
     margin-right: 6%;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -75,7 +76,7 @@
 
 .bLeft, .bMid, .bRight {
     margin: 1% auto;
-    width: 98%;
+    width: 97%;
     height: 250px;
     border: 2px solid transparent;
     opacity: 0.6;
@@ -153,7 +154,7 @@
 
 @media(max-width:1024px) {
     .topMid {
-        width: 98%;
+        width: 97%;
     }
 
 }
