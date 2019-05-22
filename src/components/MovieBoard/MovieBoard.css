@@ -28,6 +28,10 @@
     left: 73%;
 }
 
+.inner-desc {
+    border-radius: 5px;
+}
+
 .topMid .movieBoardItem .movieBoard-desc .inner-desc {
     text-align: right;
     background: linear-gradient(to left, rgba(55, 55, 55, 0.8), rgba(55, 55, 55, 0.8), rgba(66, 66, 66, 0.0));
@@ -70,7 +74,8 @@
 }
 
 .bLeft, .bMid, .bRight {
-    width: 100%;
+    margin: 1% auto;
+    width: 98%;
     height: 250px;
     border: 2px solid transparent;
     opacity: 0.6;
@@ -143,6 +148,14 @@
     border-color: rgb(235, 78, 122);
     opacity: 0.7;
     cursor: pointer;
+}
+
+
+@media(max-width:1024px) {
+    .topMid {
+        width: 98%;
+    }
+
 }
 
 @media(max-width:720px) {

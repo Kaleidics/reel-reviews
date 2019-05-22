@@ -30,3 +30,14 @@
 .movieGenre {
     margin-top: 0;
 }
+
+@media(max-width:720px) {
+
+    .movieContainer {
+        text-align: center;
+    }
+    
+    .moviePoster {
+        width: 33%;
+    }
+}
