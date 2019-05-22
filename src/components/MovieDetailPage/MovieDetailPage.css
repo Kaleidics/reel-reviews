@@ -22,7 +22,7 @@
 }
 
 .main-details {
-    margin-top: 10vh;
+    margin-top: 15vh;
 }
 
 .main-details-divider {
@@ -65,8 +65,3 @@
     background: none;
 }
 
-@media(max-width:720px) {
-
-    
-
-}
