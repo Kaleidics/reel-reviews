@@ -14,12 +14,21 @@ export class NavBar extends React.Component {
         
         return (
             <header className="navBar">
-               <ul className="navBar-ul">
-                   <li className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></li>
-                    <li className="search-bar"><SearchBar /></li>
-                    <li className="home"><Link to="/">Home</Link></li>
-                    <li className="profile"><Link to="/dashboard">{this.props.authState === true ? 'Profile' : 'Login | Sign Up'}</Link></li>
-                    <li className="profile">{this.props.authState === true ? <Logout /> : '' }</li>
+
+                <div className="mobile-nav-container">
+                    <div className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></div>
+                    <div class="content content-hidden unhide-content">
+                        <div class="icon1"></div>
+                        <div class="icon2"></div>
+                        <div class="icon3"></div>
+                    </div>
+                </div>
+                <ul className="navBar-ul mobile-options-hidden">
+                   {/* <li className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></li> */}
+                    <li className="search-bar hide-nav-mobile"><SearchBar /></li>
+                    <li className="home hide-nav-mobile"><Link to="/">Home</Link></li>
+                    <li className="profile hide-nav-mobile"><Link to="/dashboard">{this.props.authState === true ? 'Profile' : 'Login | Sign Up'}</Link></li>
+                    <li className="profile hide-nav-mobile">{this.props.authState === true ? <Logout /> : '' }</li>
                </ul>
             </header>
         );

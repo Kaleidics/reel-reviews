@@ -35,6 +35,10 @@ header {
     height: 50px;
 }
 
+.logo {
+    position: fixed;
+}
+
 .home a:visited, .profile a:visited {
     color: #f0f0f0;
 }
@@ -43,9 +47,74 @@ header {
     color: rgb(235, 78, 122);
 }
 
+.mobile-nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.content-hidden {
+    display: none;
+}
+
+.icon1, .icon2, .icon3{
+	width: 30px;
+	height: 4px;
+	background: rgb(235, 78, 122);
+	margin: 6px 0;
+	transition: .5s
+}
+
+.change .icon1{
+	transform: rotate(-45deg) translate(-9px,5px);
+}
+
+.change .icon2{
+	opacity: 0
+}
+
+.change .icon3{
+	transform: rotate(45deg) translate(-9px,-5px);
+}
+
+
 
 @media(max-width:1024px) {
 
-    
+    .unhide-content {
+        display: block;
+    }
 
+    .navBar-ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navBar-ul li {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        background: #131517;
+    }
+    .search-bar {
+        margin: 0;
+    }
+
+    .logo {
+        position: relative;
+    }
+    
+    .mobile-options-hidden {
+        display: none;
+    }
+
+    .mobile-options-show {
+        display: flex;
+    }
 }

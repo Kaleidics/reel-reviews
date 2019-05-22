@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
 
     render() {
         return (
-            <footer>
+            <footer role="contentinfo">
                 <section className="copyright">
                     <ul className="title-block">
                         <li><h3><Link to="/">Reel Reviews</Link></h3></li>
