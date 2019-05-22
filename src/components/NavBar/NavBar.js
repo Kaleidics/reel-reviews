@@ -6,24 +6,49 @@ import Logout from '../Logout/Logout';
 import logo from '../../assets/logo.png'
 import './NavBar.css';
 
-
-
 export class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            contentToggle: "content content-hidden unhide-content",
+            mobileContent: "navBar-ul mobile-options-hidden"
+        }
+
+        this.handleToggle = this.handleToggle.bind(this);
+    }
+
+    handleToggle() {
+        console.log('triggered', this.state)
+        if (this.state.contentToggle === "content content-hidden unhide-content") {
+            console.log('here')
+            this.setState({
+                contentToggle: "content content-hidden unhide-content change",
+                mobileContent: "navBar-ul"
+            });
+        } 
+        else {
+            this.setState({
+                contentToggle: "content content-hidden unhide-content",
+                mobileContent: "navBar-ul mobile-options-hidden"
+            });
+        }
+    }
 
     render() {
-        
+
         return (
             <header className="navBar">
 
                 <div className="mobile-nav-container">
                     <div className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></div>
-                    <div class="content content-hidden unhide-content">
-                        <div class="icon1"></div>
-                        <div class="icon2"></div>
-                        <div class="icon3"></div>
+                    <div className={this.state.contentToggle} onClick={this.handleToggle}>
+                        <div className="icon1"></div>
+                        <div className="icon2"></div>
+                        <div className="icon3"></div>
                     </div>
                 </div>
-                <ul className="navBar-ul mobile-options-hidden">
+                <ul className={this.state.mobileContent}>
                    {/* <li className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></li> */}
                     <li className="search-bar hide-nav-mobile"><SearchBar /></li>
                     <li className="home hide-nav-mobile"><Link to="/">Home</Link></li>
