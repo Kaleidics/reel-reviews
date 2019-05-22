@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { searchMovie, setSearchTerm } from '../../actions/index';
+import searchbtn from '../../assets/searchbtn.png';
 import './SearchBar.css'
 
 export class SearchBar extends React.Component {
@@ -23,7 +24,7 @@ export class SearchBar extends React.Component {
                 <form className="searchForm" onSubmit={this.handleSearchinput} >
                     <label htmlFor="search">Search</label>
                     <input id="search" type="text" name="search" placeholder="Search for a movie" ref="search" required />
-                            <button className="search-btn" type="submit">Search</button>
+                            <button className="search-btn" type="submit"><img className="search-icon" src={searchbtn} /></button>
                     </form>
             </div>
         );

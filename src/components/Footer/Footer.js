@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
                         <ul className="title-block-nav">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/search">Search</Link></li>
-                            <li><Link to="/search">Profile</Link></li>
+                            <li><Link to="/dashboard">Profile</Link></li>
                         </ul>
                     </ul>
                     <ul className="contact">
