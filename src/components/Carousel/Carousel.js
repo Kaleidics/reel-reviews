@@ -25,13 +25,13 @@ export class Carousel extends React.Component {
         });
 
         return (
-            <div className="inner-carousel">
-            <h2>{this.props.title}</h2>
+            <section className="inner-carousel" role="region" aria-labelledby={this.props.axeRegion}>
+            <h2 id={this.props.axeRegion}>{this.props.title}</h2>
                 <Slider {...settings}>
                     {carousel}
                 </Slider>
                 <hr className="carousel-divider"/>
-            </div>
+            </section>
         );
     }
 }

@@ -17,13 +17,13 @@ export class LandingPage extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container" role="main">
                 <MovieBoard movies={this.props.moviesUpcoming} />
                 <div className="carousels">
-                    <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} />
-                    <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} />
-                    <Carousel title={"Popular"} movies={this.props.moviesPopular} />
-                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} /> 
+                    <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} axeRegion={"region1"} />
+                    <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} axeRegion={"region2"} />
+                    <Carousel title={"Popular"} movies={this.props.moviesPopular} axeRegion={"region3"} />
+                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} axeRegion={"region4"} /> 
                 </div>
             </div>
         );

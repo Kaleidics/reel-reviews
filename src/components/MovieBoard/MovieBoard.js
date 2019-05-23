@@ -24,7 +24,7 @@ export class MovieBoard extends React.Component {
             <div className="outer-MovieBoard">
                 <div className="topMid">
                 <div className="title-section">
-                    <h2>Reel Reviews</h2>
+                    <h1>Reel Reviews</h1>
                     <p>Browse and rate the latest and greatest movies.</p>
                         <button><Link to="/login">{this.props.authState === true ? 'Welcome Back!' : 'Get Started'}</Link></button>
                 </div>
