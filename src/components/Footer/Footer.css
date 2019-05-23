@@ -67,6 +67,7 @@ footer {
 }
 
 .contact li span {
+  color: rgb(235, 78, 122);
   margin-right: 15px;
 }
 
@@ -95,7 +96,9 @@ footer {
 .social li a img {
   width: 30px;
 }
+
 .inner-copyright {
+  color: rgb(235, 78, 122);
   display: flex;
   margin-left: 6%;
 }

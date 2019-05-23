@@ -278,7 +278,6 @@ export const searchMovie = searchTerm => dispatch => {
             return res.json();
         })
         .then(results => {
-            console.log('loader');
             dispatch(searchMovieSuccess(results));
         })
         .catch(err => console.log(err));

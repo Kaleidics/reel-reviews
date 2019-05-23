@@ -16,7 +16,7 @@ export class MovieBoard extends React.Component {
         //Only showing the newest two reviews
         const allReviews = this.props.allReviews.slice(0,2).map((item, index) => {
             return (
-                <ReviewItem data={item} index={index} key={this.props.allReviews[index].movieId}  id={this.props.allReviews[index]._id} />
+                <ReviewItem data={item} index={index} key={this.props.allReviews[index]._id}  id={this.props.allReviews[index]._id} />
             );
         });
         

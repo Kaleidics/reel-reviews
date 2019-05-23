@@ -36,6 +36,8 @@ header {
 }
 
 .logo {
+    top:10px;
+    left: 10px;
     position: fixed;
 }
 
@@ -108,7 +110,6 @@ header {
     }
 
     .logo {
-        margin-top: 10px;
         position: relative;
     }
     
