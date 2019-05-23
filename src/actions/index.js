@@ -389,7 +389,6 @@ export const fetchUserReviews = reviews => dispatch => {
             return res.json()
         })
         .then(reviews => {
-            console.log(reviews);
             dispatch(fetchUserReviewSuccess(reviews));
         })
         .catch(err => console.log(err));
