@@ -23,12 +23,12 @@ export class Dashboard extends React.Component {
         });
 
         return (
-            <div className="dash-div">
+            <section className="dash-div" role="main">
                 <div className="dash-review-container">
                     <h2 className="reviews-h2">Your Latest Reviews</h2>
                     {myReviews}
                 </div>
-            </div>
+            </section>
         )
     }
 }

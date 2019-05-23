@@ -12,6 +12,10 @@
     display: flex;
     margin-left: 5%;
 }
+
+.summary-details li {
+    list-style-type: none;
+}
 .summary-title {
     text-transform: uppercase;
     letter-spacing: 3px;

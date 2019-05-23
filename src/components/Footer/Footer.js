@@ -12,13 +12,16 @@ export default class Footer extends React.Component {
         return (
             <footer role="contentinfo">
                 <section className="copyright">
+                    
                     <ul className="title-block">
                         <li><h3><Link to="/">Reel Reviews</Link></h3></li>
-                        <ul className="title-block-nav">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/search">Search</Link></li>
-                            <li><Link to="/dashboard">Profile</Link></li>
-                        </ul>
+                        <li>
+                            <ul className="title-block-nav">
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/search">Search</Link></li>
+                                <li><Link to="/dashboard">Profile</Link></li>
+                            </ul>
+                        </li>
                     </ul>
                     <ul className="social">
                         <li><a href="https://www.linkedin.com/in/eddie-chu-982019aa/" target="_blank" rel="noopener noreferrer" aria-label="Eddie Chu Linkedin"><img src={linkedin_set1} alt="linkedin" /></a></li>

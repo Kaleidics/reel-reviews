@@ -79,7 +79,7 @@ export class MovieDetailPage extends React.Component {
         }
 
         return (
-            <div className="movieDetail">
+            <main className="movieDetail" role="main">
                 <div className="movieDetail-container">
                     <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.backdrop_path}`} alt={this.props.movieDetails.title}/>
                 </div>
@@ -93,8 +93,8 @@ export class MovieDetailPage extends React.Component {
                     {reviewPost}
                 </div>
                 <ReviewContainer />
-                <Carousel title={"Recommended"} movies={this.props.moviesRecon} />
-            </div>
+                <Carousel title={"Recommended"} movies={this.props.moviesRecon} axeRegion={"region1"}/>
+            </main>
         );
     }
 }

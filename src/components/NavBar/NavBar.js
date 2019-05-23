@@ -19,9 +19,7 @@ export class NavBar extends React.Component {
     }
 
     handleToggle() {
-        console.log('triggered', this.state)
         if (this.state.contentToggle === "content content-hidden unhide-content") {
-            console.log('here')
             this.setState({
                 contentToggle: "content content-hidden unhide-content change",
                 mobileContent: "navBar-ul"
@@ -48,7 +46,6 @@ export class NavBar extends React.Component {
                     </div>
                 </div>
                 <ul className={this.state.mobileContent}>
-                   {/* <li className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></li> */}
                     <li className="search-bar hide-nav-mobile"><SearchBar /></li>
                     <li className="home hide-nav-mobile"><Link to="/">Home</Link></li>
                     <li className="profile hide-nav-mobile"><Link to="/dashboard">{this.props.authState === true ? 'Profile' : 'Login | Sign Up'}</Link></li>
