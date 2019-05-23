@@ -22,7 +22,7 @@ The Node.js backend can be found [here](https://github.com/Kaleidics/movie-backe
 **3rd Party APIs:**
 - [The Movie DataBase](https://www.themoviedb.org/?language=en-US)
 
-## Next Feautures
+## Next Features
 - Implement editing of reviews.
 - Implement a Actors info page.
 - Implement pagination for search results page.
