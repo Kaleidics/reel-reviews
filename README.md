@@ -29,12 +29,12 @@ The Node.js backend can be found [here](https://github.com/Kaleidics/movie-backe
 
 ## Next Features
 - Implement editing of reviews.
-- Implement a Actors info page.
+- Implement an Actors info page.
 - Implement pagination for search results page.
 - Implement some sort of filtering for searching movies.
 - Implement a more robust user profile dashboard.
 - Implement a more robust Register form field validation and checking.
-- Implment more axe features and adhere to accessibility guidelines.
+- Implment more axe features according to accessibility guidelines.
 
 ## Initial User Stories
 ```
