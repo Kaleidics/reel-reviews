@@ -8,9 +8,9 @@
 }
 
 .actor-picture {
-   min-width: 100px;
+    min-width: 110px;
     min-height: 167px;
-    max-width: 100px;
+    max-width: 110px;
     max-height: 167px;
     border: 2px solid transparent;
     border-radius: 5px;
