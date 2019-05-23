@@ -27,6 +27,7 @@ Reel Reviews is a full stack React.js and Node.js application to browse, search,
 - Implement some sort of filtering for searching movies.
 - Implement a more robust user profile dashboard
 - Implement a more robust Register form field validation and checking
+- Implment more axe features and adhere to accessibility guidelines
 
 ## Initial User Stories
 ```
