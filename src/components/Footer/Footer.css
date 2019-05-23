@@ -71,12 +71,12 @@ footer {
 }
 
 .contact li a {
-  color: #f0f0f0;
+  color: rgb(235, 78, 122);
   text-decoration: none;
 }
 
 .contact li a:visited {
-  color: #f0f0f0
+  color: rgb(235, 78, 122);
 }
 
 .social {
