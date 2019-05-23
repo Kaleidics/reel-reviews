@@ -39,7 +39,6 @@ export class NavBar extends React.Component {
 
         return (
             <header className="navBar">
-
                 <div className="mobile-nav-container">
                     <div className="logo"><Link to="/"><img src={logo} alt="logo" /></Link></div>
                     <div className={this.state.contentToggle} onClick={this.handleToggle}>
