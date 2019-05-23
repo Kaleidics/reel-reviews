@@ -100,19 +100,19 @@
 
 @media(max-width:1650px) {
     .splash {
-        height: 75%;
+        height: 70%;
     }
 }
 
 @media(max-width:1440px) {
     .splash {
-        height: 65%;
+        height: 60%;
     }
 }
 
 @media(max-width:1280px) {
     .splash {
-        height: 55%;
+        height: 50%;
     }
 }
 
