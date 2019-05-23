@@ -100,13 +100,13 @@
 
 @media(max-width:1650px) {
     .splash {
-        height: 70%;
+        height: 75%;
     }
 }
 
 @media(max-width:1440px) {
     .splash {
-        height: 60%;
+        height: 65%;
     }
 }
 
@@ -157,7 +157,7 @@
 
     .summary-inner-right {
         position: absolute;
-        top: 75px;
+        top: 100px;
         left: 38%;
     }
 
