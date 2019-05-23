@@ -1,6 +1,8 @@
 # [Reel Reviews](https://reelreviews.xyz/)
 
 Reel Reviews is a full stack React.js and Node.js application to browse, search, and rate movies.
+
+The Node.js backend can be found [here](https://github.com/Kaleidics/movie-backend).
 <div align="center">
   <img src="https://i.imgur.com/V0yYAi9.jpg" width="800px" height="450px">
 </div>
@@ -9,7 +11,6 @@ Reel Reviews is a full stack React.js and Node.js application to browse, search,
 **Front End:**
 - React, Redux, Router
 - HTML, CSS, Javascript
-
 
 **Back End:**
 - Node
@@ -23,11 +24,12 @@ Reel Reviews is a full stack React.js and Node.js application to browse, search,
 
 ## Next Feautures
 - Implement editing of reviews.
+- Implement a Actors info page.
 - Implement pagination for search results page.
 - Implement some sort of filtering for searching movies.
-- Implement a more robust user profile dashboard
-- Implement a more robust Register form field validation and checking
-- Implment more axe features and adhere to accessibility guidelines
+- Implement a more robust user profile dashboard.
+- Implement a more robust Register form field validation and checking.
+- Implment more axe features and adhere to accessibility guidelines.
 
 ## Initial User Stories
 ```
