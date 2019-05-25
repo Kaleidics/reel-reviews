@@ -21,7 +21,6 @@ export default class DetailSummary extends React.Component {
                     <h2 className="summary-title">{this.props.data.title}</h2>
                     <div className="summary-details">
                         <ul className="summary-details-left">
-                            
                             <li className="release">Original Title: {this.props.data.original_title}</li>
                             <li className="original-lang">Original Language: <span>{this.props.data.original_language}</span></li> 
                             <br />
