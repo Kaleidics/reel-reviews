@@ -43,7 +43,7 @@ export default class AuthPage extends React.Component {
                             </div>
                             <div className="overlay-panel overlay-right">
                                 <h1>Hello, Movie Fan!</h1>
-                                <p>Sign Up and start reviewing movies now.</p>
+                                <p>Sign Up to start reviewing movies now.</p>
                                 <button className="toggle-btn movement" onClick={() => {this.addClass()}}>Sign Up</button>
                             </div>
                         </div>
