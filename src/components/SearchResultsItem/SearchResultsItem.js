@@ -3,6 +3,7 @@ import './SearchResultsItem.css';
 import { connect } from 'react-redux';
 import { fetchMovieDetails, fetchRecon } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
+import placeholder from '../../assets/placeholder.png'
 
 
 export class SearchResultsItem extends React.Component{
@@ -16,6 +17,8 @@ export class SearchResultsItem extends React.Component{
 
     render() {
         
+        let splash = !this.props.data.poster_path ? <img className="movieResultsPoster" src={placeholder} alt={"placeholder"} /> : <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? '#333' : 'transparent' }} />;
+
         let genres = this.props.genres;
         let genreList = this.props.genres.length;
 
@@ -30,7 +33,7 @@ export class SearchResultsItem extends React.Component{
 
         return (
             <div className="movieResultsContainer" onClick={this.handleId}>
-                <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? '#333' : 'transparent'}} />
+                {splash}
                 <h3 className="movieName">{this.props.data.title}</h3>
                 <p className="movieGenre">{getGenreText(this.props.data.genre_ids[0])}</p>
             </div>
