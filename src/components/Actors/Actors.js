@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './Actors.css'
 import placeholder from '../../assets/placeholder.png';
+
 export class Actors extends React.Component {
 
     handleId = e => {

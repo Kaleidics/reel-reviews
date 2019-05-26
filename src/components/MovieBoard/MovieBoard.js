@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MovieBoardItem from '../MovieBoardItem/MovieBoardItem';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './MovieBoard.css';
+import { heroPoster } from './heroPoster';
 
 export class MovieBoard extends React.Component {
     render() {
@@ -28,7 +29,7 @@ export class MovieBoard extends React.Component {
                     <p>Browse and rate the latest and greatest movies.</p>
                         <button><Link to="/login">{this.props.authState === true ? 'Welcome Back!' : 'Get Started'}</Link></button>
                 </div>
-                    {movieBoardItems[0]}
+                    <MovieBoardItem data={heroPoster} index={0} key={heroPoster.id} id={heroPoster.id} />
                 </div>
                 <div className="bot">
                     <div className="bot-left">

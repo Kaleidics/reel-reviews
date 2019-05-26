@@ -32,7 +32,9 @@ footer {
   color: rgb(235, 78, 122);
   margin-right: 15px;
 }
+
 .title-block-nav {
+  width: 100%;
   display: flex;
   padding: 0;
 }

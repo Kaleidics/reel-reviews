@@ -18,7 +18,7 @@ export class LandingPage extends React.Component {
     render() {
         return (
             <div className="container" role="main">
-                <MovieBoard movies={this.props.moviesUpcoming} />
+                <MovieBoard movies={this.props.moviesPlaying} />
                 <div className="carousels">
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} axeRegion={"region1"} />
                     <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} axeRegion={"region2"} />
