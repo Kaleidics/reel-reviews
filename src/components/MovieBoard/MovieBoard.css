@@ -163,6 +163,7 @@
 @media(max-width:720px) {
 
     .title-section {
+        width: 100%;
         padding: 0;
         text-align: center;
         align-items: center
