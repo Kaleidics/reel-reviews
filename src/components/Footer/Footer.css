@@ -20,11 +20,11 @@ footer {
 }
 
 .title-block {
+  height: 45%;
   display: flex;
   padding: 0;
   margin-left: 6%;
   list-style-type: none;
-  
 }
 
 .title-block * {
@@ -136,6 +136,7 @@ footer {
   }
   
   .title-block * {
+    width: 50%;
     margin-right: 0;
   }
 
