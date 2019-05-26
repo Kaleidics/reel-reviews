@@ -169,6 +169,10 @@
         align-items: center
     }
 
+    .title-section h1 {
+        font-size: 3rem;
+    }
+
     .title-section p {
         font-size: 1.5em;
     }
