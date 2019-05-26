@@ -8,7 +8,7 @@ export default class DetailSummary extends React.Component {
     render() {
 
         const movie = this.props.data;
-        let splash = !movie.poster_path ? <img className="splash" src={placeholder} alt={"placeholder"} /> : <img className="splash" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />;
+        let splash = !movie.poster_path ? <img className="splash" src={placeholder} alt={"placeholder"} /> : <img className="splash" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />;
 
             //Computing average score for a movie, needs refactor and possibly export own file
              let score = 0;

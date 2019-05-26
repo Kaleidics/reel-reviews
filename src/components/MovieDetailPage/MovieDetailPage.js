@@ -51,7 +51,6 @@ export class MovieDetailPage extends React.Component {
     }
 
     handleModal = () => {
-        console.log('triggered modal');
 
         if (this.props.authState) {
             if (this.state.modalVisibility === false) {
@@ -69,8 +68,6 @@ export class MovieDetailPage extends React.Component {
         }
     }
 
-
-
     render() {
 
         let reviewPost;
@@ -78,10 +75,15 @@ export class MovieDetailPage extends React.Component {
             reviewPost = <CreatePost data={this.props.movieDetails} handleFn={this.handleModal} />
         }
 
+        let background = '';
+        if (this.props.movieDetails.backdrop_path) {
+            background = <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.backdrop_path}`} alt={this.props.movieDetails.title} />
+        }
+
         return (
             <main className="movieDetail" role="main">
                 <div className="movieDetail-container">
-                    <img className="movieDetail-bg" src={`https://image.tmdb.org/t/p/original/${this.props.movieDetails.backdrop_path}`} alt={this.props.movieDetails.title}/>
+                    {background}
                 </div>
                 <div className="main-details">
                     <DetailSummary data={this.props.movieDetails} castdata={this.props.movieActors} reviewData={this.props.reviewData} trailerdata={this.props.movieTrailer}/>
