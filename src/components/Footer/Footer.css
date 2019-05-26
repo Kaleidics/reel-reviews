@@ -120,7 +120,7 @@ footer {
   max-width: 50%;
 }
 
-@media(max-width:720px) {
+@media(max-width:750px) {
 
   .copyright {
     width: 65%;
@@ -132,11 +132,11 @@ footer {
   }
 
   .title-block {
+    width: 50%;
     flex-direction: column;
   }
   
   .title-block * {
-    width: 50%;
     margin-right: 0;
   }
 
@@ -152,4 +152,11 @@ footer {
     max-width: 100%;
   }
 
+}
+
+@media(max-width:570px) {
+
+  .title-block {
+    width: 100%;
+  }
 }
