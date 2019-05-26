@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './Actors.css'
-import placeholder from '../../assets/placeholder.png';
+import placeholder from '../../assets/actor_placeholder.png';
 
 export class Actors extends React.Component {
 

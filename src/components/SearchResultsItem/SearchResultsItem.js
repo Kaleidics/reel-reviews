@@ -3,7 +3,7 @@ import './SearchResultsItem.css';
 import { connect } from 'react-redux';
 import { fetchMovieDetails, fetchRecon } from '../../actions/index';
 import { withRouter } from 'react-router-dom';
-import placeholder from '../../assets/placeholder.png'
+import movie_placeholder from '../../assets/movie_placeholder.png'
 
 
 export class SearchResultsItem extends React.Component{
@@ -17,7 +17,7 @@ export class SearchResultsItem extends React.Component{
 
     render() {
         
-        let splash = !this.props.data.poster_path ? <img className="movieResultsPoster" src={placeholder} alt={"placeholder"} /> : <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? '#333' : 'transparent' }} />;
+        let splash = !this.props.data.poster_path ? <img className="movieResultsPoster" src={movie_placeholder} alt={"placeholder"} /> : <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? '#333' : 'transparent' }} />;
 
         let genres = this.props.genres;
         let genreList = this.props.genres.length;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cast } from '../Cast/Cast';
 import './DetailSummary.css';
-import placeholder from '../../assets/placeholder.png';
+import placeholder from '../../assets/movie_placeholder.png';
 
 export default class DetailSummary extends React.Component {
 
