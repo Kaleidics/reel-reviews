@@ -3,7 +3,7 @@ import React from 'react';
 export const loader = <div>
         <div className="scene">
           <svg version="1.1" id="dc-spinner" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="38" height="38" viewBox="0 0 38 38" preserveAspectRatio="xMinYMin meet">
-            <text x={12.5} y={21} fontSize="2px" fill="#f0f0f0">LOADING
+            <text x={14} y={21} fontSize="2px" fill="#f0f0f0">LOADING
               <animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" />
             </text>
             <path fill="#666" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
