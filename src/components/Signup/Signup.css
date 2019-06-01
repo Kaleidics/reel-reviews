@@ -1,0 +1,8 @@
+.sign-up-form label {
+    width: 100%;
+    text-align: left;
+}
+
+.sign-up-form input {
+    padding: 12px 0;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { loginUser } from '../../actions/index';
+import './Login.css';
 
 
 export class Login extends React.Component {
@@ -38,8 +39,10 @@ export class Login extends React.Component {
             <div className="form-container login-container">
                 <form className="login-form" onSubmit={this.handleLogin} >
                     <h2>Login</h2>
-                    <input type="text" placeholder="Username" onChange={e => this.setState({ username: e.target.value })} required/>
-                    <input type="password" placeholder="Password" onChange={e => this.setState({ password: e.target.value })} required/>
+                    <label htmlFor="username">Username</label>
+                    <input id="username" type="text" placeholder="" onChange={e => this.setState({ username: e.target.value })} required/>
+                    <label htmlFor="password">Password</label>
+                    <input id="password" type="password" placeholder="" onChange={e => this.setState({ password: e.target.value })} required/>
                     <button className="toggle-btn">Log In</button>
                     <button className="guest-toggle-btn" onClick={this.guestLogin}>Guest Log In</button>
                 </form>
