@@ -48,10 +48,6 @@ As a user, I should be able to write a review for a movie.
 As a user, I should be able to edit/update my review of a movie.
 As a user, I should be able to delete my review of a movie.
 ```
-
-## Early Mockups
- - https://i.imgur.com/k7UbAc7.jpg
- - https://i.imgur.com/eBDAPnw.png
  
  ## Design Awknowledgements
  - https://dribbble.com/shots/5311359-Diprella-Login
