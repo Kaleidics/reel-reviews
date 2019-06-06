@@ -233,32 +233,6 @@ export const fetchActors = id => dispatch => {
         .catch(err => console.log(err));
 }
 
-export const FETCH_TRAILER_SUCCESS = 'FETCH_TRAILER_SUCCESS';
-export const fetchTrailerSuccess = trailer => ({
-    type: FETCH_TRAILER_SUCCESS,
-    trailer
-});
-
-export const fetchMovieTrailer = id => dispatch => {
-    dispatch(loaderIncrement());
-
-    let iD = encodeURIComponent(id);
-    const url = API + `/3api/trailer/${iD}`;
-    return fetch(url)
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.status.Text);
-            }
-            return res.json();
-        })
-        .then(sleeper(1000))
-        .then(trailer => {
-            dispatch(fetchTrailerSuccess(trailer));
-            dispatch(loaderDecrement());
-        })
-        .catch(err => console.log(err));
-}
-
 export const SEARCH_MOVIE_SUCCESS = 'SEARCH_MOVIE_SUCCESS';
 export const searchMovieSuccess = results => ({
     type: SEARCH_MOVIE_SUCCESS,

@@ -12,7 +12,6 @@ import { LOGIN_USER_SUCCESS,
          SET_GENRES_SUCCESS, 
          FETCH_RECON_SUCCESS, 
          FETCH_MOVIE_DETAILS_SUCCESS, 
-         FETCH_TRAILER_SUCCESS,
          FETCH_USER_REVIEW_SUCCESS,
          FETCH_REVIEW_DATA_SUCCESS,
          DELETE_REVIEW_SUCCESS,
@@ -33,7 +32,6 @@ const initialState = {
     movieDetails: {},
     moviesRecon: [],
     movieActors: [],
-    movieTrailer: [],
     reconId: "",
     searchTerm: "",
     authState: false,
@@ -44,11 +42,6 @@ const initialState = {
 
 export const Reducer = (state = initialState, action) => {
 
-    if (action.type === FETCH_TRAILER_SUCCESS) {
-        return Object.assign({}, state, {
-            movieTrailer: action.trailer
-        })
-    }
 
     if (action.type === FETCH_ACTORS_SUCCESS) {
         return Object.assign({}, state, {
