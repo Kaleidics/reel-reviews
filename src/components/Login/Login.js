@@ -43,8 +43,8 @@ export class Login extends React.Component {
                     <h2>Login</h2>
                     <label htmlFor="username">Username</label>
                     <input id="username" type="text" placeholder="" onChange={e => this.setState({ username: e.target.value })} required />
-                    <label htmlFor="password">Password</label>
-                    <input id="password" type="password" placeholder="" onChange={e => this.setState({ password: e.target.value })} required />
+                    <label htmlFor="login-password">Password</label>
+                    <input id="login-password" type="password" placeholder="" onChange={e => this.setState({ password: e.target.value })} required />
                     <button className="toggle-btn">Log In</button>
                     <button className="guest-toggle-btn" onClick={this.guestLogin}>
                         Guest Log In
