@@ -2,7 +2,7 @@
     color: white;
     height: 100%;
     width: 95%;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: flex-start;
     flex-direction: row-reverse;
@@ -61,8 +61,8 @@
 
 .imdb-score {
     width: 40%;
-    height: 100%;;
-    background: rgba(1, 210, 119, 0.7);   
+    height: 100%;
+    background: rgba(1, 210, 119, 0.7);
 }
 
 .summary-inner-left {
@@ -81,6 +81,7 @@
 }
 
 .summary-paragraph-container p {
+    width: 50%;
     margin-bottom: 50px;
     line-height: 1.4;
     font-family: "Alegreya Sans", sans-serif;
@@ -98,30 +99,32 @@
     border-radius: 5px;
 }
 
-@media(max-width:1650px) {
+@media (max-width: 1650px) {
     .splash {
         height: 70%;
     }
 }
 
-@media(max-width:1440px) {
+@media (max-width: 1440px) {
     .splash {
         height: 60%;
     }
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .splash {
         height: 50%;
     }
 }
 
-@media(max-width:1024px) {
-
-
+@media (max-width: 1024px) {
     .summary-container {
         width: 100%;
         flex-direction: column-reverse;
+    }
+
+    .summary-paragraph-container p {
+        width: 100%;
     }
 
     .summary-inner-left {
@@ -160,22 +163,21 @@
         top: 100px;
         left: 38%;
     }
-
 }
 
-@media(max-width:800px) {
+@media (max-width: 800px) {
     .summary-title {
         margin-top: 300px;
     }
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
     .summary-title {
         margin-top: 220px;
     }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
     .summary-title {
         margin-top: 150px;
     }
