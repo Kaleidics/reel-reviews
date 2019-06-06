@@ -14,4 +14,4 @@ export const heroPoster = {
     video: false,
     vote_average: 7.4,
     vote_count: 507
-}
+};

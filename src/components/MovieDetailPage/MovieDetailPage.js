@@ -8,7 +8,6 @@ import DetailSummary from "../DetailSummary/DetailSummary";
 import CreatePost from "../CreatePost/CreatePost";
 import "./MovieDetailPage.css";
 
-
 export class MovieDetailPage extends React.Component {
     constructor(props) {
         super(props);

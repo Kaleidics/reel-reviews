@@ -1,25 +1,4 @@
-import { LOGIN_USER_SUCCESS,
-         FETCH_ACTORS_SUCCESS, 
-         SET_RECON_ID, 
-         SET_SEARCH_TERM, 
-         LOADER_INCREMENT, 
-         LOADER_DECREMENT, 
-         FETCH_PLAYING_SUCCESS, 
-         FETCH_POPULAR_SUCCESS, 
-         FETCH_UPCOMING_SUCCESS, 
-         FETCH_TOP_SUCCESS, 
-         SEARCH_MOVIE_SUCCESS, 
-         SET_GENRES_SUCCESS, 
-         FETCH_RECON_SUCCESS, 
-         FETCH_MOVIE_DETAILS_SUCCESS, 
-         FETCH_USER_REVIEW_SUCCESS,
-         FETCH_REVIEW_DATA_SUCCESS,
-         DELETE_REVIEW_SUCCESS,
-         DELETE_REVIEW_MAIN_SUCCESS,
-         DELETE_REVIEW_ALL_SUCCESS,
-         FETCH_ALL_REVIEWS_SUCCESS,
-         CREATE_POST_SUCCESS
-         } from "../actions";
+import { LOGIN_USER_SUCCESS, FETCH_ACTORS_SUCCESS, SET_RECON_ID, SET_SEARCH_TERM, LOADER_INCREMENT, LOADER_DECREMENT, FETCH_PLAYING_SUCCESS, FETCH_POPULAR_SUCCESS, FETCH_UPCOMING_SUCCESS, FETCH_TOP_SUCCESS, SEARCH_MOVIE_SUCCESS, SET_GENRES_SUCCESS, FETCH_RECON_SUCCESS, FETCH_MOVIE_DETAILS_SUCCESS, FETCH_USER_REVIEW_SUCCESS, FETCH_REVIEW_DATA_SUCCESS, DELETE_REVIEW_SUCCESS, DELETE_REVIEW_MAIN_SUCCESS, DELETE_REVIEW_ALL_SUCCESS, FETCH_ALL_REVIEWS_SUCCESS, CREATE_POST_SUCCESS } from "../actions";
 
 const initialState = {
     isLoading: 0,
@@ -37,12 +16,10 @@ const initialState = {
     authState: false,
     userReviews: [],
     reviewData: [],
-    allReviews:[]
+    allReviews: []
 };
 
 export const Reducer = (state = initialState, action) => {
-
-
     if (action.type === FETCH_ACTORS_SUCCESS) {
         return Object.assign({}, state, {
             movieActors: action.actors
@@ -99,19 +76,19 @@ export const Reducer = (state = initialState, action) => {
 
     if (action.type === FETCH_UPCOMING_SUCCESS) {
         return Object.assign({}, state, {
-            moviesUpcoming: action.upcoming,
+            moviesUpcoming: action.upcoming
         });
     }
 
     if (action.type === FETCH_TOP_SUCCESS) {
         return Object.assign({}, state, {
-            moviesTop: action.top,
+            moviesTop: action.top
         });
     }
 
     if (action.type === FETCH_POPULAR_SUCCESS) {
         return Object.assign({}, state, {
-            moviesPopular: action.popular,
+            moviesPopular: action.popular
         });
     }
 
@@ -176,4 +153,4 @@ export const Reducer = (state = initialState, action) => {
     }
 
     return state;
-}
+};

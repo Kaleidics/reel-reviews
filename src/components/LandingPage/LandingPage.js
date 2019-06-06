@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Carousel } from '../Carousel/Carousel';
-import MovieBoard from '../MovieBoard/MovieBoard';
-import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop, fetchAllReviews } from '../../actions/index';
-import './LandingPage.css';
+import React from "react";
+import { connect } from "react-redux";
+import { Carousel } from "../Carousel/Carousel";
+import MovieBoard from "../MovieBoard/MovieBoard";
+import { fetchPlaying, fetchUpcoming, fetchPopular, fetchTop, fetchAllReviews } from "../../actions/index";
+import "./LandingPage.css";
 
 export class LandingPage extends React.Component {
     componentDidMount() {
@@ -23,7 +23,7 @@ export class LandingPage extends React.Component {
                     <Carousel title={"Now Playing"} movies={this.props.moviesPlaying} axeRegion={"region1"} />
                     <Carousel title={"Upcoming"} movies={this.props.moviesUpcoming} axeRegion={"region2"} />
                     <Carousel title={"Popular"} movies={this.props.moviesPopular} axeRegion={"region3"} />
-                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} axeRegion={"region4"} /> 
+                    <Carousel title={"Top Rated"} movies={this.props.moviesTop} axeRegion={"region4"} />
                 </div>
             </div>
         );
@@ -39,4 +39,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(LandingPage);
-

@@ -1,13 +1,10 @@
-import React from 'react';
-import './Dashboard.css';
-import { connect } from 'react-redux';
-import { fetchUserReviews, checkAuthState } from '../../actions/index';
-import ReviewItem from '../ReviewItem/ReviewItem';
-
-
+import React from "react";
+import "./Dashboard.css";
+import { connect } from "react-redux";
+import { fetchUserReviews, checkAuthState } from "../../actions/index";
+import ReviewItem from "../ReviewItem/ReviewItem";
 
 export class Dashboard extends React.Component {
-
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.dispatch(checkAuthState());
@@ -15,11 +12,8 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-
         const myReviews = this.props.userReviews.map((item, index) => {
-            return (
-                <ReviewItem data={item} index={index} key={this.props.userReviews[index]._id} id={this.props.userReviews[index]._id} />
-            );
+            return <ReviewItem data={item} index={index} key={this.props.userReviews[index]._id} id={this.props.userReviews[index]._id} />;
         });
 
         return (
@@ -29,7 +23,7 @@ export class Dashboard extends React.Component {
                     {myReviews}
                 </div>
             </section>
-        )
+        );
     }
 }
 

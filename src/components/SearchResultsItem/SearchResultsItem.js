@@ -1,23 +1,20 @@
-import React from 'react';
-import './SearchResultsItem.css';
-import { connect } from 'react-redux';
-import { fetchMovieDetails, fetchRecon } from '../../actions/index';
-import { withRouter } from 'react-router-dom';
-import movie_placeholder from '../../assets/movie_placeholder.png'
+import React from "react";
+import "./SearchResultsItem.css";
+import { connect } from "react-redux";
+import { fetchMovieDetails, fetchRecon } from "../../actions/index";
+import { withRouter } from "react-router-dom";
+import movie_placeholder from "../../assets/movie_placeholder.png";
 
-
-export class SearchResultsItem extends React.Component{
-
+export class SearchResultsItem extends React.Component {
     handleId = e => {
-        let movieId = this.props.id
+        let movieId = this.props.id;
         this.props.dispatch(fetchRecon(movieId));
         this.props.dispatch(fetchMovieDetails(movieId));
         this.props.history.push(`/movie-detail?query=${movieId}`);
-    }
+    };
 
     render() {
-        
-        let splash = !this.props.data.poster_path ? <img className="movieResultsPoster" src={movie_placeholder} alt={"placeholder"} /> : <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? '#333' : 'transparent' }} />;
+        let splash = !this.props.data.poster_path ? <img className="movieResultsPoster" src={movie_placeholder} alt={"placeholder"} /> : <img className="movieResultsPoster" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} alt={this.props.data.title} style={{ background: this.props.data.poster_path == null ? "#333" : "transparent" }} />;
 
         let genres = this.props.genres;
         let genreList = this.props.genres.length;

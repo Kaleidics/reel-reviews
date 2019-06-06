@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { registerUser } from '../../actions/index';
-import './Signup.css';
+import React from "react";
+import { connect } from "react-redux";
+import { registerUser } from "../../actions/index";
+import "./Signup.css";
 
 export class Signup extends React.Component {
     constructor(props) {
@@ -11,13 +11,13 @@ export class Signup extends React.Component {
             displayname: "",
             username: "",
             password: ""
-        }
+        };
     }
 
     handleRegister = e => {
-        e.preventDefault();                 
+        e.preventDefault();
         this.props.registerUser(this.state);
-    }
+    };
 
     render() {
         return (
@@ -39,12 +39,15 @@ export class Signup extends React.Component {
 
 // const mapStateToProps = state => ({});
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
     return {
-        registerUser: (userInfo) => {
+        registerUser: userInfo => {
             dispatch(registerUser(userInfo));
         }
-    }
-}
+    };
+};
 
-export default connect(null, mapDispatchToProps)(Signup);
+export default connect(
+    null,
+    mapDispatchToProps
+)(Signup);
