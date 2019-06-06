@@ -95,19 +95,19 @@
 
 .splash {
     width: 100%;
-    height: 90%;
+    height: 80%;
     border-radius: 5px;
 }
 
 @media (max-width: 1650px) {
     .splash {
-        height: 70%;
+        height: 60%;
     }
 }
 
 @media (max-width: 1440px) {
     .splash {
-        height: 60%;
+        height: 50%;
     }
 }
 
