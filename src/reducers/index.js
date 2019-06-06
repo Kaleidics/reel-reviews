@@ -148,7 +148,7 @@ export const Reducer = (state = initialState, action) => {
 
     if (action.type === CREATE_POST_SUCCESS) {
         return Object.assign({}, state, {
-            reviewData: [...state.reviewData, action.review]
+            reviewData: [action.review, ...state.reviewData]
         });
     }
 
