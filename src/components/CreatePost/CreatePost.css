@@ -1,21 +1,28 @@
 .review-form-container {
-    margin-top: 10px;
+    margin: 50px 0 100px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* position: absolute; */
+    /* z-index: 10;
+    left: 40%; */
 }
 
 .create-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 33%;
+    width: 40%;
+    padding-bottom: 50px;
+    background: #131517;
+    border-radius: 5px;
 }
 
 .submit-create {
     width: 100px;
     height: 37px;
+    margin: 10px 0;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: #f0f0f0;
@@ -44,13 +51,17 @@ label {
 .review-form input, .review-form textarea {
     color: #f0f0f0;
 }
+
+.create-form label, .create-form input, .create-form textarea {
+    margin: 10px 100px;
+}
+
 .input-width {
     font-size: 16px;
-    width: 100%;
+    max-width: 100%;
     background: rgba(255, 255, 255, 0.3);
     border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
+    padding: 20px 0;
 }
 
 .input-width::placeholder {
@@ -69,9 +80,44 @@ label {
     margin-bottom: 5px;
 }
 
+.review-exit {
+    align-self: flex-end;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.exit-icon1, .exit-icon2 {
+	width: 30px;
+	height: 4px;
+    background: rgb(235, 78, 122);
+    border-radius: 10px;
+	margin: 6px 0;
+    transition: .5s;
+}
+
+.exit-icon1{
+	transform: rotate(-45deg) translate(-1px, 6px);
+}
+
+.exit-icon2{
+	transform: rotate(45deg) translate(-1px,-6px);
+}
+
+
 @media(max-width:1024px) {
     .create-form {
-        width: 80%;
+        width: 100%;
     }
 
+    .create-form label, .create-form input, .create-form textarea {
+        margin: 10px 20px;
+    }
+
+    .create-form label {
+        text-align: center;
+    }
+
+    .score-input {
+        align-self: center;
+    }
 }
