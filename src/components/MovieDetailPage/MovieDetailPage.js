@@ -35,6 +35,7 @@ export class MovieDetailPage extends React.Component {
             }
         };
 
+        //Allows app async actions to be triggered on url params search
         const params = new URL(document.location).searchParams;
         const clickedMovie = params.get("query");
 
