@@ -34,7 +34,7 @@ export class MovieBoardItem extends React.Component {
                         <p>{`${this.props.data.overview.substring(0, 200)}...`}</p>
                     </div>
                 </div>
-                <img className="inner-movieBoardItem" src={`https://image.tmdb.org/t/p/original${this.props.data.poster_path}`} alt={this.props.data.title} />
+                <img className="inner-movieBoardItem" src={`https://image.tmdb.org/t/p/original${this.props.data.backdrop_path}`} alt={this.props.data.title} />
             </div>
         );
     }
