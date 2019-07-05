@@ -25,7 +25,7 @@ export class MovieBoard extends React.Component {
                         <h1>Reel Reviews</h1>
                         <p>Browse and rate the latest and greatest movies.</p>
                         <button>
-                            <Link to="/login">{this.props.authState === true ? "Welcome Back!" : "Get Started"}</Link>
+                            <Link class="button" to="/login">{this.props.authState === true ? "Welcome Back!" : "Get Started"}</Link>
                         </button>
                     </div>
                     <MovieBoardItem data={heroPoster} index={0} key={heroPoster.id} id={heroPoster.id} />
