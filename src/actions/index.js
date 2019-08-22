@@ -175,7 +175,10 @@ export const fetchRecon = id => dispatch => {
             dispatch(fetchReconSuccess(recon));
             dispatch(loaderDecrement());
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            dispatch(loaderDecrement());
+        });
 };
 
 export const FETCH_MOVIE_DETAILS_SUCCESS = "FETCH_MOVIE_DETAILS_SUCCESS";
@@ -202,7 +205,10 @@ export const fetchMovieDetails = id => dispatch => {
         })
         .then(sleeper(1000))
         .then(dispatch(loaderDecrement()))
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            dispatch(loaderDecrement());
+        });
 };
 
 export const FETCH_ACTORS_SUCCESS = "FETCH_ACTORS_SUCCESS";
